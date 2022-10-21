@@ -1,6 +1,9 @@
+// import sni
+
 const Home = () => {
+
   return (
-    <div className="border border-black">
+    <div className="w-screen h-screen bg-zinc-800	">
       <p>Home</p>
     </div>
   );
