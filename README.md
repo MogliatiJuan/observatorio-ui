@@ -1,58 +1,60 @@
-# Template desarollo de aplicacion UI 🚀
+# Plantilla UI 🚀
 
-## Municipalidad de San Nicolas de los Arroyos💻
+<img src="./public/repository-header.jpeg">
 
-<img src="src/assets/sn-logos/insignia.png" height="230">
+## Objetivo del proyecto
 
-> El repositorio fue creado con la idea de
-> estandarizar y darle uniformidad a la estructura
-> de todas las aplicaciones Frontend's
+Ofrecer a los desarrolladores de la organización una estructura normalizada y escalable sobre la cual iniciar nuevos proyectos frontend utilizando la librería React de JavaScript.
 
-## Instalación
+## Instrucciones de uso
 
-A continuacion se detalla el procedimiento de instalacion y ejecución del template
+1. Clonar el repositorio
 
-Previo a la instalacion se debe clonar [el repositorio](https://github.com/org-sistemas-sn/ui-template)
-
-```sh
+```
 git clone https://github.com/org-sistemas-sn/ui-template
 ```
 
-Instalar las dependencias de repositorio
+2. Ingresar a la carpeta del proyecto
 
-```sh
-npm install
+```
+cd ui-template
 ```
 
-Ejecutar la aplicación
+3. Instalar las dependencias
 
-```sh
+```
+npm i
+```
+
+4. Ejecutar el servidor
+
+```
 npm run dev
 ```
 
-## Información tecnica de relevancia
+Luego, la aplicación podrá visualizarse accediendo a la siguiente dirección: http://localhost:5173/.
 
-El template esta pensado para integrar de manera eficaz y más agil una apliacion de React Js (ya que es el framework con mayor utilizacion en el los desarrollos del equipo), Utiliza [Vite](https://vitejs.dev/) como inicializador, una herramienta de tooling para el Frontend
+## Dependencias incluidas
 
-## Librerias por defecto
+| Nombre             | Detalle               | Documentación                |
+| ------------------ | --------------------- | ---------------------------- |
+| Vite               | Entorno de desarrollo | https://vitejs.dev           |
+| React Router       | Enrutamiento          | https://reactrouter.com      |
+| Tailwind CSS       | Framework CSS         | https://tailwindcss.com      |
+| Axios              | Cliente HTTP          | https://axios-http.com       |
+| React Redux (\*)   | Manejador de estado   | https://react-redux.js.org   |
+| Redux Toolkit (\*) | Estandariza Redux     | https://redux-toolkit.js.org |
 
-A continuacion se detallan las librerias comunmente utilizadas por nuestro equipo de desarrollo
+(\*) Al no ser necesario un manejador global del estado en todos los proyectos, la integración de React Redux con Redux Toolkit se incluye en otra rama del presente repositorio.
 
-| Nombre        | Documentacion                     |
-| ------------- | --------------------------------- |
-| Axios         | https://axios-http.com/docs/intro |
-| React Router  | https://reactrouter.com/en/main   |
-| Tailwind CSS  | https://tailwindcss.com/          |
-| Redux         | https://es.redux.js.org/          |
-| Redux ToolKit | https://redux-toolkit.js.org/     |
+## Dependencias recomendadas
 
-## Librerias Recomendadas que podrian ayudarte en el desarrollo de tu aplicación
-
-| Nombre                                                               | Descripción                      |
-| -------------------------------------------------------------------- | -------------------------------- |
-| [Moment](https://momentjs.com/)                                      | Formateos de fechas y horarios   |
-| [react-hook-form](https://react-hook-form.com/)                      | Manipulacion de formularios      |
-| [Yup](https://www.npmjs.com/package/yup)                             | Validacion de formularios        |
-| [SweetAlert2](https://sweetalert2.github.io/)                        | Alertas Customizadas             |
-| [React Icons](https://react-icons.github.io/react-icons/)            | Iconos para implementar en react |
-| [Echarts-for-react](https://www.npmjs.com/package/echarts-for-react) | Graficos para React Js           |
+| Nombre            | Detalle                               | Documentación                                   |
+| ----------------- | ------------------------------------- | ----------------------------------------------- |
+| SweetAlert2       | Modales y alertas                     | https://sweetalert2.github.io                   |
+| React Hook Form   | Manejador de estado de formularios    | https://react-hook-form.com                     |
+| Yup               | Constructor de esquemas de validación | https://www.npmjs.com/package/yup               |
+| React Icons       | Íconos                                | https://react-icons.github.io/react-icons       |
+| Moment            | Manipulador de fechas                 | https://momentjs.com                            |
+| Echarts for React | Gráficos                              | https://www.npmjs.com/package/echarts-for-react |
+| React Tabs        | Tabs                                  | https://www.npmjs.com/package/react-tabs        |
