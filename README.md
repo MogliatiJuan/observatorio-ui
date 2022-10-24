@@ -44,7 +44,7 @@ Luego, la aplicación podrá visualizarse accediendo a la siguiente dirección: 
 | Redux Toolkit (*) | Estandariza Redux     | https://redux-toolkit.js.org |
 | Axios         | Cliente HTTP          | https://axios-http.com       |
 
-(*) Al no ser necesario un manejador global del estado en todos los proyectos, la integración de React Redux se incluye en otra rama del presente repositorio.
+(*) Al no ser necesario un manejador global del estado en todos los proyectos, la integración de React Redux con Redux Toolkit se incluye en otra rama del presente repositorio.
 
 ## Dependencias recomendadas
 
