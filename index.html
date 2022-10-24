@@ -3,7 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1"
+    />
+
+    <!-- 
+        Los metafields con la property "og: " (open graph) 
+      cuando compartimos el enlace de nuestro sitio 
+      son las que definen la manera que se muestra el cuadro en miniatura 
+      en whatsapp por ejemplo
+    -->
+    <meta property="og:site_name" content="Nombre del proyecto" />
+
+    <meta
+      property="og:image"
+      content="https://user-images.githubusercontent.com/59923978/167408693-868c0b67-9a7e-4cc6-b88a-adbe98b63e1d.png"
+    />
+    <meta property="og:image:width" content="64" />
+    <meta property="og:image:height" content="64" />
+
+    <meta
+      property="og:title"
+      content="Nombre del proyecto | Municipalidad SN"
+    />
+    <meta property="og:description" content="Descripción del proyecto" />
+    <meta property="og:url" content="https://" />
+
+    <!--
+        manifest.json provides metadata used when your web app is installed on a
+        user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+      -->
+
     <title>Vite + React</title>
   </head>
   <body>
