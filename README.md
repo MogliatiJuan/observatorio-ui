@@ -40,9 +40,11 @@ Luego, la aplicación podrá visualizarse accediendo a la siguiente dirección: 
 | Vite          | Entorno de desarrollo | https://vitejs.dev           |
 | React Router  | Enrutamiento          | https://reactrouter.com      |
 | Tailwind CSS  | Framework CSS         | https://tailwindcss.com      |
-| React Redux   | Manejador de estado   | https://react-redux.js.org   |
-| Redux Toolkit | Estandariza Redux     | https://redux-toolkit.js.org |
+| React Redux (*)  | Manejador de estado   | https://react-redux.js.org   |
+| Redux Toolkit (*) | Estandariza Redux     | https://redux-toolkit.js.org |
 | Axios         | Cliente HTTP          | https://axios-http.com       |
+
+(*) Al no ser necesario un manejador global del estado en todos los proyectos, la integración de React Redux se incluye en otra rama del presente repositorio.
 
 ## Dependencias recomendadas
 
