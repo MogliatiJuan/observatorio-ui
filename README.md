@@ -1,5 +1,5 @@
 # Plantilla UI 🚀
-<!-- <img src="src/assets/sn-logos/insignia.png" height="230"> -->
+<img src="./public/repository-header.jpeg">
 
 ## Objetivo del proyecto
 
