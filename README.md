@@ -1,12 +1,23 @@
-# Template desarollo de aplicacion UI 🚀
+# Plantilla UI 🚀
 
-## Municipalidad de San Nicolas de los Arroyos💻
+## Objetivos del proyecto
+
+Ofrecer a los desarrolladores de la organización una estructura normalizada y escalable sobre la cual iniciar nuevos proyectos frontend que utilicen la librería React de JavaScript.
+
+## Clonación del repositorio
+
+```sh
+git clone https://github.com/org-sistemas-sn/ui-template
+```
+
+
+<!-- ## Municipalidad de San Nicolas de los Arroyos💻
 
 <img src="src/assets/sn-logos/insignia.png" height="230">
 
 > El repositorio fue creado con la idea de
 > estandarizar y darle uniformidad a la estructura
-> de todas las aplicaciones Frontend's
+> de todas las aplicaciones Frontend's -->
 
 ## Instalación
 
