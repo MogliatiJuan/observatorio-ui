@@ -1,0 +1,14 @@
+{
+  "name": "[ Nombre del proyecto ] - Municipalidad SN",
+  "short_name": "[ Nombre del proyecto ]",
+  "author": "Municipalidad SN",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone"
+}
