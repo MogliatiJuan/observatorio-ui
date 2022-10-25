@@ -1,9 +1,7 @@
-// Declará en este archivo las variables de entorno o constantes de configuración,
-// no olvides asignarles por defecto.
+// Declará en este archivo variables de entorno (asignandole valores por defecto)
+// o constantes de configuración,
 
-const config = {
-  // MY_VARIABLE: import.meta.env.MY_VARIABLE || "root"
-};
+const config = {};
 
 export default config;
 
