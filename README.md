@@ -1,6 +1,6 @@
 # Plantilla UI 🚀
 
-<img src="./public/repository-header.jpeg">
+<img src="./public/repository-header.jpg">
 
 ## Objetivo del proyecto
 
