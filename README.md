@@ -24,7 +24,7 @@ git clone [direccion url del proyecto]
 3. Ingresar a la carpeta del proyecto
 
 ```
-cd [nombre de tu proyuecto]
+cd [nombre de tu proyecto]
 ```
 
 4. Instalar las dependencias
