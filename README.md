@@ -4,29 +4,36 @@
 
 ## Objetivo del proyecto
 
-Ofrecer a los desarrolladores de la organización una estructura normalizada y escalable sobre la cual iniciar nuevos proyectos frontend utilizando la librería React de JavaScript.
+Ofrecer a los desarrolladores de la organización una estructura normalizada y escalable sobre la cual iniciar nuevos proyectos frontend utilizando la Biblioteca React de JavaScript.
 
 ## Instrucciones de uso
 
-1. Clonar el repositorio
+1. Seleccionar la opcion "Use this template"
 
 ```
-git clone https://github.com/org-sistemas-sn/ui-template
+Se le solicita un nombre al nuevo repositorio.
+Este se iniciará con los mismo archivos y carpetas del template.
 ```
 
-2. Ingresar a la carpeta del proyecto
+2. Clonar el repositorio
 
 ```
-cd ui-template
+git clone [direccion url del proyecto]
 ```
 
-3. Instalar las dependencias
+3. Ingresar a la carpeta del proyecto
+
+```
+cd [nombre de tu proyuecto]
+```
+
+4. Instalar las dependencias
 
 ```
 npm i
 ```
 
-4. Ejecutar el servidor
+5. Ejecutar el servidor
 
 ```
 npm run dev
