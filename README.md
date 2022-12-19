@@ -1,39 +1,31 @@
-# Plantilla UI 🚀
-
-<img src="./public/repository-header.jpg">
+# Observatorio Fallos UI🚀
 
 ## Objetivo del proyecto
 
-Ofrecer a los desarrolladores de la organización una estructura normalizada y escalable sobre la cual iniciar nuevos proyectos frontend utilizando la Biblioteca React de JavaScript.
+Llevar a cabo una solucion web atendiendo el siguiente requerimiento:
+Un proyecto comunitario organizado por Usuarios y Consumidores Unidos cuyo objetivo es contener, compilar la mayor cantidad de antecedentes jurisprudenciales en materia de defensa del consumidor
 
 ## Instrucciones de uso
 
-1. Seleccionar la opcion "Use this template"
+1. Clonar el repositorio
 
 ```
-Se le solicita un nombre al nuevo repositorio.
-Este se iniciará con los mismo archivos y carpetas del template.
+git clone http://gitlab.boxofcodes.com/observatorio/frontend.git
 ```
 
-2. Clonar el repositorio
+2. Ingresar a la carpeta del proyecto
 
 ```
-git clone [direccion url del proyecto]
+cd frontend
 ```
 
-3. Ingresar a la carpeta del proyecto
-
-```
-cd [nombre de tu proyecto]
-```
-
-4. Instalar las dependencias
+3. Instalar las dependencias
 
 ```
 npm i
 ```
 
-5. Ejecutar el servidor
+4. Ejecutar el servidor
 
 ```
 npm run dev
@@ -52,7 +44,7 @@ Luego, la aplicación podrá visualizarse accediendo a la siguiente dirección: 
 | React Redux (\*)   | Manejador de estado   | https://react-redux.js.org   |
 | Redux Toolkit (\*) | Estandariza Redux     | https://redux-toolkit.js.org |
 
-(\*) Al no ser necesario un manejador global del estado en todos los proyectos, la integración de React Redux con Redux Toolkit se incluye en otra rama del presente repositorio.
+(\*) Al no ser necesario un manejador global del estado en todos los proyectos, la integración de React Redux con Redux Toolkit se podrá instalar a futuro, conforme avancen las etapas del proyecto.
 
 ## Dependencias recomendadas
 

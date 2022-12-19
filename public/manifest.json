@@ -1,7 +1,7 @@
 {
-  "name": "[ Nombre del proyecto ] - Municipalidad SN",
-  "short_name": "[ Nombre del proyecto ]",
-  "author": "Municipalidad SN",
+  "name": "Observatorio Fallos del Consumo",
+  "short_name": "Observatorio Fallos",
+  "author": "Mercado & Acosta",
   "icons": [
     {
       "src": "favicon.ico",

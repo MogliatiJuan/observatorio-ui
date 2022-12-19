@@ -1,17 +1,15 @@
-import snInsignia from "@Assets/sn-logos/insignia.png";
+import iconTest from "@Assets/balance.png";
 
 const Home = () => {
   return (
     <div className="w-full h-full bg-zinc-800 flex flex-col justify-center items-center gap-y-3">
       <div className="w-80">
-        <img src={snInsignia} alt="Logo insignia de la ciudad" />
+        <img src={iconTest} alt="Logo insignia observatorio" />
       </div>
       <div className="text-center">
-        <p className="text-white text-2xl font-semibold">
-          ¡Éxitos en tu nuevo proyecto!
-        </p>
+        <p className="text-white text-2xl font-semibold">¡Hola mundo!</p>
         <p className="text-gray-400	">
-          Secretaría de Innovación y Transformación Digital
+          <> Mercado & Acosta </>
         </p>
       </div>
     </div>
