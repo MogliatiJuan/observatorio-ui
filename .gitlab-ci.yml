@@ -28,7 +28,7 @@ Build and Push to Private Registry:
     - docker push $IMAGEN  
     - echo $IMAGEN 
 
-Parar y Borrar Contenedor Remoto:
+stopcontainer:
   stage: stopcontainer
   before_script:
     - apt-get update
@@ -44,7 +44,7 @@ Parar y Borrar Contenedor Remoto:
   only:
       - main  
 
-Borrado de Imagen Remota:
+borrarimagen:
   stage: borrarimagen
   # Si no encuentrra ninguna imagen que exista en el servidor remoto con el nombre del repositorio. falla. con esto permitimos que continue al siguiente stage
   allow_failure: true
@@ -67,7 +67,7 @@ Borrado de Imagen Remota:
 
 
 # CORREGIR EL HASH <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-Deploy en Servidor Remoto:
+deploy:
   stage: deploy
   before_script:
     - apt-get update
