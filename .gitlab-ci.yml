@@ -16,7 +16,6 @@ stages:
     - borrarimagen
     - deploy
     
-
 # buildpush:  
 #   stage: buildpush
 #   image: docker:latest
