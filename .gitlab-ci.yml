@@ -17,7 +17,6 @@ stages:
     - deploy
     
 
-
 Build and Push to Private Registry:  
   stage: buildpush
   image: docker:latest
