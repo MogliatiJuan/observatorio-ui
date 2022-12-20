@@ -11,22 +11,22 @@ variables:
   IMAGEN: $SERVER_REGISTRY/$PROYECTO:$CI_COMMIT_SHORT_SHA
   IMAGENNOTSHA: $SERVER_REGISTRY/$PROYECTO
 stages:
-    - buildpush
+    # - buildpush
     - stopcontainer
     - borrarimagen
     - deploy
     
 
-Build and Push to Private Registry:  
-  stage: buildpush
-  image: docker:latest
-  services:
-  - name: docker:dind
-    alias: thedockerhost
-  script:
-    - docker build -t $IMAGEN .
-    - docker push $IMAGEN  
-    - echo $IMAGEN 
+# buildpush:  
+#   stage: buildpush
+#   image: docker:latest
+#   services:
+#   - name: docker:dind
+#     alias: thedockerhost
+#   script:
+#     - docker build -t $IMAGEN .
+#     - docker push $IMAGEN  
+#     - echo $IMAGEN 
 
 stopcontainer:
   stage: stopcontainer
