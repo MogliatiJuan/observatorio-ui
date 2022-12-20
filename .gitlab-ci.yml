@@ -11,21 +11,23 @@ variables:
   IMAGEN: $SERVER_REGISTRY/$PROYECTO:$CI_COMMIT_SHORT_SHA
   IMAGENNOTSHA: $SERVER_REGISTRY/$PROYECTO
 stages:
-    # - buildpush
+    - buildpush
     - stopcontainer
     - borrarimagen
     - deploy
     
-# buildpush:  
-#   stage: buildpush
-#   image: docker:latest
-#   services:
-#   - name: docker:dind
-#     alias: thedockerhost
-#   script:
-#     - docker build -t $IMAGEN .
-#     - docker push $IMAGEN  
-#     - echo $IMAGEN 
+buildpush:  
+  stage: buildpush
+  image: docker:latest
+  services:
+  - name: docker:dind
+    alias: thedockerhost
+  script:
+    - docker build -t $IMAGEN .
+    - docker push $IMAGEN  
+    - echo $IMAGEN 
+  only:
+      - master 
 
 stopcontainer:
   stage: stopcontainer
@@ -41,7 +43,7 @@ stopcontainer:
     - echo ">>> PRUNE CONTAINERS <<<"
     - ssh $SERVER_PRO_USER@$SERVER_PRO "docker ps -a && docker rm -f $PROYECTO && docker ps -a"
   only:
-      - main  
+      - master  
 
 borrarimagen:
   stage: borrarimagen
@@ -62,7 +64,7 @@ borrarimagen:
     - $CMD_BORRAR
     - ssh $SERVER_PRO_USER@$SERVER_PRO "docker image ls"
   only:
-      - main  
+      - master  
 
 
 # CORREGIR EL HASH <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -81,7 +83,7 @@ deploy:
     - echo $IMAGEN 
     - ssh $SERVER_PRO_USER@$SERVER_PRO "docker run -d -p $PORT_EXT:$PORT_INT --name $PROYECTO $IMAGEN"
   only:
-      - main    
+      - master    
 
 
 
