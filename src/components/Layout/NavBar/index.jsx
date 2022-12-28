@@ -13,15 +13,17 @@ const NavBar = () => {
   ];
   const [open, setOpen] = useState(false);
   return (
-    <div className="shadow-md w-full fixed top-0 left-0 ">
-      <div className="flex items-center justify-between bg-slate-800 py-4 md:px-10 px-7">
-        <Link
-          to="/"
-          className="flex items-center gap-x-2.5 divide-x divide-x-white"
-        >
-          <img src={balanceIcon} className="h-6" />
-          <p className="pl-2 text-white">OBSERVATORIO</p>
-        </Link>
+    <div className="shadow-md w-full bg-slate-800">
+      <div className="flex items-center justify-between py-4 md:px-10 px-7 h-20">
+        <div>
+          <Link
+            to="/"
+            className="flex items-center gap-x-2.5 divide-x divide-x-white"
+          >
+            <img src={balanceIcon} className="h-6" />
+            <p className="pl-2 text-white">OBSERVATORIO</p>
+          </Link>
+        </div>
 
         <div
           onClick={() => setOpen(!open)}
@@ -37,8 +39,7 @@ const NavBar = () => {
         >
           {Links.map((link) => (
             <li key={link.id} className="md:ml-8 text-xl md:my-0 my-7">
-              {/* <Link to={link.path}>{link.name}</Link> */}
-              <Link>{link.name}</Link>
+              <Link to={link.path}>{link.name}</Link>
             </li>
           ))}
         </ul>
