@@ -1,7 +1,7 @@
 import React from "react";
 import bgHome from "@Assets/backgroundObs.jpg";
 
-const home = () => {
+const Home = () => {
   return (
     <div className="h-outlet w-full ">
       <div className="bg-slate-800 h-1/2 flex items-center justify-center text-center">
@@ -30,4 +30,4 @@ const home = () => {
   );
 };
 
-export default home;
+export default Home;
