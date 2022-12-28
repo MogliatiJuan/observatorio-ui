@@ -1,16 +1,30 @@
-import iconTest from "@Assets/balance.png";
+import React from "react";
+import bgHome from "@Assets/backgroundObs.jpg";
 
 const Home = () => {
   return (
-    <div className="w-full h-full bg-zinc-800 flex flex-col justify-center items-center gap-y-3">
-      <div className="w-80">
-        <img src={iconTest} alt="Logo insignia observatorio" />
+    <div className="h-outlet w-full ">
+      <div className="bg-slate-800 h-1/2 flex items-center justify-center text-center">
+        <span className="text-white text-6xl">
+          Observatorio de fallos de consumo
+        </span>
       </div>
-      <div className="text-center">
-        <p className="text-white text-2xl font-semibold">¡Hola mundo!</p>
-        <p className="text-gray-400	">
-          <> Mercado & Acosta </>
-        </p>
+      <div className="w-full h-1/2 py-4 px-2 md:px-10  flex justify-center gap-x-8 ">
+        <img
+          src={bgHome}
+          alt="imagen representativa"
+          className="hidden xl:block"
+        />
+        <div className="w-full md:w-1/2 flex flex-col gap-y-5 justify-center items-center">
+          <h1 className="text-subtitle text-4xl text-center whitespace-nowrap">
+            ¿Qué es el observatorio?
+          </h1>
+          <span className="text-black">
+            Es un proyecto comuntario organizado por Usuarios y Consumidores
+            Unidos cuyo objetivo es contener, compilar la mayor cantidad de
+            antecedentes jurisprudenciales en materia de defensa del consumidor.
+          </span>
+        </div>
       </div>
     </div>
   );
