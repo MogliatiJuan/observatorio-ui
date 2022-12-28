@@ -24,8 +24,8 @@ buildpush:
     alias: thedockerhost
   script:
     - docker build -t $IMAGEN .
-    - docker push $IMAGEN  
     - echo $IMAGEN 
+    - docker push $IMAGEN  
   only:
       - master 
 
