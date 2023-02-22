@@ -1,14 +1,11 @@
 import React from "react";
 import bgHome from "@Assets/backgroundObs.jpg";
+import TitlePage from "@Components/TitlePage";
 
 const Home = () => {
   return (
     <div className="h-outlet w-full ">
-      <div className="bg-slate-800 h-1/2 flex items-center justify-center text-center">
-        <span className="text-white text-6xl">
-          Observatorio de fallos de consumo
-        </span>
-      </div>
+      <TitlePage title="Observatorio de fallos de consumo" />
       <div className="w-full h-1/2 py-4 px-2 md:px-10  flex justify-center gap-x-8 ">
         <img
           src={bgHome}
