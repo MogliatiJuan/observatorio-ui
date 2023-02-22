@@ -33,6 +33,9 @@ module.exports = {
       backgroundImage: { home: "url('src/assets/backgroundObs.jpg')" },
       colors: {
         subtitle: "#00685B",
+        title: "#3E4345",
+        button: "#0477AD",
+        buttonHover: "#0A5477",
       },
     },
   },
