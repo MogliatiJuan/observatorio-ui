@@ -16,8 +16,7 @@ stages:
     - borrarimagen
     - deploy
     
-
-Build and Push to Private Registry:  
+buildpush:  
   stage: buildpush
   image: docker:latest
   services:
@@ -25,8 +24,10 @@ Build and Push to Private Registry:
     alias: thedockerhost
   script:
     - docker build -t $IMAGEN .
-    - docker push $IMAGEN  
     - echo $IMAGEN 
+    - docker push $IMAGEN  
+  only:
+      - master 
 
 stopcontainer:
   stage: stopcontainer
@@ -42,7 +43,7 @@ stopcontainer:
     - echo ">>> PRUNE CONTAINERS <<<"
     - ssh $SERVER_PRO_USER@$SERVER_PRO "docker ps -a && docker rm -f $PROYECTO && docker ps -a"
   only:
-      - main  
+      - master  
 
 borrarimagen:
   stage: borrarimagen
@@ -63,7 +64,7 @@ borrarimagen:
     - $CMD_BORRAR
     - ssh $SERVER_PRO_USER@$SERVER_PRO "docker image ls"
   only:
-      - main  
+      - master  
 
 
 # CORREGIR EL HASH <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -82,7 +83,7 @@ deploy:
     - echo $IMAGEN 
     - ssh $SERVER_PRO_USER@$SERVER_PRO "docker run -d -p $PORT_EXT:$PORT_INT --name $PROYECTO $IMAGEN"
   only:
-      - main    
+      - master    
 
 
 

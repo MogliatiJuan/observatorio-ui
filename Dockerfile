@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:alpine
 # Create app directory
 WORKDIR /usr/src/docker-react-sample
 # Install app dependencies
