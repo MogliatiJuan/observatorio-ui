@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import TitlePage from "@Components/TitlePage";
 import { useForm } from "react-hook-form";
 import Input from "@Components/Input";
@@ -11,10 +11,6 @@ const UploadLegal = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  useEffect(() => {
-    console.log(errors);
-  }, [errors, register]);
 
   const fieldsDefinidos = [
     { label: "Actor/es", name: "actor", type: "text" },
@@ -139,6 +135,29 @@ const UploadLegal = () => {
               type={"text"}
             />
           ))}
+          <div className="flex flex-col">
+            <label>Resumen del caso</label>
+            <textarea
+              className={`border border-[#687073] pl-1 py-2.5 rounded-md outline-none ${
+                errors["summary"] && "border-red-500"
+              }`}
+              {...register("summary", {
+                required: true,
+                maxLength: 100,
+              })}
+            ></textarea>
+
+            {errors["summary"] && errors["summary"].type === "required" && (
+              <p className="text-sm text-red-500">
+                Debe completar el campo para continuar
+              </p>
+            )}
+            {errors["summary"] && errors["summary"].type === "maxLength" && (
+              <p className="text-sm text-red-500">
+                Máximo de caracteres alcanzado: 100
+              </p>
+            )}
+          </div>
           <button
             type="submit"
             className="w-24 h-12 bg-button flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover"
