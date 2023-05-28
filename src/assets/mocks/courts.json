@@ -1,0 +1,1802 @@
+[
+  {
+    "id": 149,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 150,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 151,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 152,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 153,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 154,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 155,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 156,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 157,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 158,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 159,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 160,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 161,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 162,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 163,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 164,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 165,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 11",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 166,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 12",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 167,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 13",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 168,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 14",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 169,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 15",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 170,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 16",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 171,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 17",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 172,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 18",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 173,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 19",
+    "id_departamento": 6,
+    "id_ciudad": 412,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 174,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 175,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 176,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 177,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 178,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 179,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 180,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 181,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 182,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 183,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 184,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 11",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 185,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 12",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 186,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 13",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 187,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 14",
+    "id_departamento": 7,
+    "id_ciudad": 453,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 188,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 189,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 190,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1 - Olavarría",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 191,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2 - Olavarría",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 192,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 193,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 194,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 195,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 196,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 197,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 198,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 199,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 200,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 3,
+    "id_ciudad": 230,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 201,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 3,
+    "id_ciudad": 230,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 202,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 3,
+    "id_ciudad": 230,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 203,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 3,
+    "id_ciudad": 230,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 204,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 4,
+    "id_ciudad": 388,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 205,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 4,
+    "id_ciudad": 388,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 206,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 4,
+    "id_ciudad": 388,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 207,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 4,
+    "id_ciudad": 388,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 208,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 209,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 210,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 211,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 212,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 213,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 214,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 215,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 5,
+    "id_ciudad": 410,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 216,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 217,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 218,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 219,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 220,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 221,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 222,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 223,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 224,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 225,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 226,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 11",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 227,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 12",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 228,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 13",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 229,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 14",
+    "id_departamento": 8,
+    "id_ciudad": 494,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 230,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 231,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 232,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 233,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 234,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 235,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 236,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 237,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 238,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 239,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 38,
+    "id_ciudad": 517,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 240,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 241,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 242,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 243,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 244,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 245,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 246,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 247,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 248,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 249,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 250,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 11",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 251,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 12",
+    "id_departamento": 37,
+    "id_ciudad": 531,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 252,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 39,
+    "id_ciudad": 537,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 253,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 39,
+    "id_ciudad": 537,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 254,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 34,
+    "id_ciudad": 574,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 255,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 34,
+    "id_ciudad": 574,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 256,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 34,
+    "id_ciudad": 574,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 257,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 258,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 259,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 260,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 261,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 262,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 263,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 264,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 265,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 266,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 40,
+    "id_ciudad": 608,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 267,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 268,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 269,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 270,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 271,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 272,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 273,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 274,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 275,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 276,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 277,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 11",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 278,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 12",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 279,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 13",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 280,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 14",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 281,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 15",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 282,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 16",
+    "id_departamento": 41,
+    "id_ciudad": 667,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 283,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 284,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 285,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 286,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 4",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 287,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 5",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 288,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 6",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 289,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 7",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 290,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 8",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 291,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 9",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 292,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 10",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 293,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 11",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 294,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 12",
+    "id_departamento": 42,
+    "id_ciudad": 4012,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 295,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 43,
+    "id_ciudad": 729,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 296,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 43,
+    "id_ciudad": 729,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 301,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Familia N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 302,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Familia N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 303,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Familia N° 3",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 304,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 731,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 305,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 731,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 306,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 711,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 307,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 711,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 308,
+    "id_tipo": 1,
+    "nombre": "Juzgado Civil y Comercial N° 3",
+    "id_departamento": 1,
+    "id_ciudad": 711,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 309,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Familia  N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 711,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 310,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Familia  N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 711,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 311,
+    "id_tipo": 6,
+    "nombre": "UFI N° 1",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 312,
+    "id_tipo": 6,
+    "nombre": "UFI N° 2",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 313,
+    "id_tipo": 6,
+    "nombre": "UFI N° 3",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 314,
+    "id_tipo": 6,
+    "nombre": "UFI N° 4",
+    "id_departamento": 33,
+    "id_ciudad": 676,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 315,
+    "id_tipo": 7,
+    "nombre": "Camara de Apelaciones Civil y Comercial N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 316,
+    "id_tipo": 7,
+    "nombre": "Camara de Apelaciones Civil y Comercial N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 317,
+    "id_tipo": 7,
+    "nombre": "Cámara de Apelación y Garantías en lo Penal - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 318,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Contencioso Administrativo NÂº 1 - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 319,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Familia N° 1 - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 320,
+    "id_tipo": 1,
+    "nombre": "Juzgado de EjecuciÃ³n N°1 - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 321,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantías  N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 322,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantías  N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 323,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantías  N° 3",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 324,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Correccional  N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 325,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Correccional  N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 327,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantias del Joven NÂº  1 - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 328,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Responsabilidad Penal Juvenil NÂº 1 - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 329,
+    "id_tipo": 8,
+    "nombre": "Tribunal de Trabajo - Azul",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 330,
+    "id_tipo": 8,
+    "nombre": "Tribunal en lo Criminal  N° 1",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 331,
+    "id_tipo": 8,
+    "nombre": "Tribunal en lo Criminal  N° 2",
+    "id_departamento": 1,
+    "id_ciudad": 50,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 333,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Paz - Benito Juarez",
+    "id_departamento": 1,
+    "id_ciudad": 102,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 334,
+    "id_tipo": 7,
+    "nombre": "Cámara de Apelaciones Civil y Comercial nÂº1 - Bahia Blanca",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 335,
+    "id_tipo": 7,
+    "nombre": "Cámara de Apelaciones Civil y Comercial nÂº2 ",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 336,
+    "id_tipo": 7,
+    "nombre": "Cámara de Apelación y Garantías en lo penal nÂº1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 337,
+    "id_tipo": 7,
+    "nombre": "Cámara de Apelación y Garantías en lo Penal nÂº2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 338,
+    "id_tipo": 6,
+    "nombre": "Fiscalia General - Bahía Blanca",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 339,
+    "id_tipo": 2,
+    "nombre": "Defensoría General - Bahía Blanca",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 340,
+    "id_tipo": 8,
+    "nombre": "Tribunal en lo Criminal  N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 341,
+    "id_tipo": 8,
+    "nombre": "Tribunal en lo Criminal  N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 342,
+    "id_tipo": 8,
+    "nombre": "Tribunal en lo Criminal  N° 3",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 343,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantías  N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 344,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantías  N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 345,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Garantías  N° 3",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 346,
+    "id_tipo": 1,
+    "nombre": "Juzgado de EjecuciÃ³n - Bahia Blanca",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 347,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Correcional  N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 348,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Correcional  N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 349,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Correcional  N° 3",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 350,
+    "id_tipo": 1,
+    "nombre": "Juzgado en lo Correcional  N° 4",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 351,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Transición  N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 352,
+    "id_tipo": 1,
+    "nombre": "Juzgado de Transición  N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 353,
+    "id_tipo": 8,
+    "nombre": "Tribunal de Menores  N° 1",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  },
+  {
+    "id": 354,
+    "id_tipo": 8,
+    "nombre": "Tribunal de Menores  N° 2",
+    "id_departamento": 2,
+    "id_ciudad": 51,
+    "juez": "",
+    "estado": 1
+  }
+]

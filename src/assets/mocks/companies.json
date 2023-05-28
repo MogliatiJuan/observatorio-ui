@@ -1,0 +1,2746 @@
+[
+  {
+    "id": "1",
+    "razonSocial": "BETA S.A - FIAT",
+    "CUIT": "30517518103",
+    "DIRECCION": "NECOCHEA 2601",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "2",
+    "razonSocial": "ELECTROLUX ARGENTINA S.A.",
+    "CUIT": "30663471453",
+    "DIRECCION": "OLGA COSSETTINI 771",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "3",
+    "razonSocial": "/ TN SRL – EMPRESA DE TURISMO",
+    "CUIT": "30708151072",
+    "DIRECCION": "CRISOLOGO LARRALD 5614",
+    "SERVICIO": "TRANSPORTE AÉREO; OPERADOR TURISTICO"
+  },
+  {
+    "id": "4",
+    "razonSocial": "A CUMBRES CONDOMINIO S.A.",
+    "CUIT": "30710876300",
+    "DIRECCION": "SARMIENTO 45",
+    "SERVICIO": "TIEMPO COMPARTidO"
+  },
+  {
+    "id": "5",
+    "razonSocial": "ABBOTT LABORATORIES ARGENTINA SA",
+    "CUIT": "30500846301",
+    "DIRECCION": "AV VALENTIN VERGARA 7989",
+    "SERVICIO": "LABORATORIO"
+  },
+  {
+    "id": "6",
+    "razonSocial": "ACA SALUD COOPERATIVA DE PRESTACION DE SERVICIOS MEDICO ASISTENCIALES LIMITADA (AVALIAN SALUD)",
+    "CUIT": "30604958640",
+    "DIRECCION": "COMBATE DE LOS POZOS 220",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "7",
+    "razonSocial": "ACANTILADOS S.A.",
+    "CUIT": "30709414786",
+    "DIRECCION": "SAN LUIS 3102",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "8",
+    "razonSocial": "ADDACOR SRL",
+    "CUIT": "30715031147",
+    "DIRECCION": "GONZALEZ JOAQUIN V. 913",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "9",
+    "razonSocial": "ADSUS S.A.",
+    "CUIT": "30711173354",
+    "DIRECCION": "RIOBAMBA 429",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "10",
+    "razonSocial": "ADT SECURITY SERVICES S.A.",
+    "CUIT": "30656631615",
+    "DIRECCION": "THAMES 121",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "11",
+    "razonSocial": "AEROLINEAS ARGENTINAS S.A.",
+    "CUIT": "30641405554",
+    "DIRECCION": "AV. RAFAEL DE OBLIGADO S/N, TERMINAL 4 P 6 D",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "12",
+    "razonSocial": "AEROVIAS DE MEXICO SA DE CAPITAL VARIABLE (AEROMEXICO)",
+    "CUIT": "30662014059",
+    "DIRECCION": "PELLEGRINI 1259",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "13",
+    "razonSocial": "AEROVIAS DEL CONTINENTE AMERICANO S.A. AVIANCA",
+    "CUIT": "30506944666",
+    "DIRECCION": "CARLOS PELLEGRINI 1175",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "14",
+    "razonSocial": "AGENCIA SUEÑOS VIAJES Y TURISMO (PATRICIA GISELE CASTRO)",
+    "CUIT": "27317183629",
+    "DIRECCION": "URQUIZA 78",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "15",
+    "razonSocial": "AIR EUROPA LÍNEAS AEREAS S.A.",
+    "CUIT": "30708140208",
+    "DIRECCION": "25 DE MAYO 611",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "16",
+    "razonSocial": "ALAU TECNOLOGIA S.A.U. (UALA)",
+    "CUIT": "30715421700",
+    "DIRECCION": "AV. PRESidENTE QUINTANA 535",
+    "SERVICIO": "TARJETA DE CREDITO; SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "17",
+    "razonSocial": "ALBERTO J. MACUA S.A.",
+    "CUIT": "30605416280",
+    "DIRECCION": "LOPEZ Y PLANES 4250",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "18",
+    "razonSocial": "ALEJANDRO JAVIER IBANOFF",
+    "CUIT": "20314245513",
+    "DIRECCION": "IRIGOYEN 978",
+    "SERVICIO": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "19",
+    "razonSocial": "ALITALIA SOC. AÉREA ITALIANA SUC. EMP. EXT.",
+    "CUIT": "30714808474",
+    "DIRECCION": "CARLOS PELLEGRINI 1141 P 13 D 00",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "20",
+    "razonSocial": "ALMUNDO.COM SRL",
+    "CUIT": "30659514628",
+    "DIRECCION": "ESMERALDA 950 P 21 D",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "21",
+    "razonSocial": "ALRA SOCIEDAD ANONIMA",
+    "CUIT": "30597285511",
+    "DIRECCION": "JUAN B JUSTO 2611",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "22",
+    "razonSocial": "AMEPORT-MUTUAL DEL PERSONAL DEL ESTADO NACIONAL PROVINCIAL MUNICIPAL Y AFINES",
+    "CUIT": "30598665563",
+    "DIRECCION": "YRIGOYEN HIPOLITO 684",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "23",
+    "razonSocial": "AMERICAN AIRLINES INC. SUCURSAL ARGENTINA",
+    "CUIT": "30639085143",
+    "DIRECCION": "SUIPACHA 1111 P 23 D 00",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "24",
+    "razonSocial": "AMX S.A. (CLARO)",
+    "CUIT": "30663288497",
+    "DIRECCION": "AV. DE MAYO 878",
+    "SERVICIO": "TELEFONIA MOVIL"
+  },
+  {
+    "id": "25",
+    "razonSocial": "ANDES LINEAS AEREAS S.A.",
+    "CUIT": "30709251739",
+    "DIRECCION": "TACUARI 1353",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "26",
+    "razonSocial": "ANTUNA FEDERICO PABLO (BLUE PISCINAS DEL SUR)",
+    "CUIT": "23314269179",
+    "DIRECCION": "TORRENT 1721",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "27",
+    "razonSocial": "APG GLOBAL S.R.L. (SUPREMACIA LEGAL)",
+    "CUIT": "30716921367",
+    "DIRECCION": "ADOLFO ALSINA 1433",
+    "SERVICIO": "ASESORAMIENTO"
+  },
+  {
+    "id": "28",
+    "razonSocial": "APPLE EGRESADOS",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "29",
+    "razonSocial": "AQUIPRESTAMOS.COM S.A.",
+    "CUIT": "30714039195",
+    "DIRECCION": "ECHEVERRIA 1544",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "30",
+    "razonSocial": "ARDOINO GUSTAVO ARIEL",
+    "CUIT": "20269389703",
+    "DIRECCION": "TIBURCIO BENEGAS 814",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "31",
+    "razonSocial": "ASATEJ S.R.L",
+    "CUIT": "30659514628",
+    "DIRECCION": "ESMERALDA 950 P 21 D",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "32",
+    "razonSocial": "ASE",
+    "CUIT": "30578079994",
+    "DIRECCION": "LIMA 87",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "33",
+    "razonSocial": "ASESORARTE S.A.",
+    "CUIT": "30714966762",
+    "DIRECCION": "ROSARIO 470",
+    "SERVICIO": "ASESORAMIENTO"
+  },
+  {
+    "id": "34",
+    "razonSocial": "ASIST-LEY",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "VIAMONTE 640 P 1 D 6",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "35",
+    "razonSocial": "ASOC. MUTUALISTA EMPLEADOS PROVINCIALES ASOCIADOS (AMEPA)",
+    "CUIT": "30707103082",
+    "DIRECCION": "48 401",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "36",
+    "razonSocial": "ASOCIACION DE DOCENTES DE MENORES",
+    "CUIT": "30699963379",
+    "DIRECCION": "DIAGONAL 77 670",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "37",
+    "razonSocial": "ASOCIACION MUTUAL DE PROTECCION FAMILIAR",
+    "CUIT": "30678562846",
+    "DIRECCION": "ALMAFUERTE 30",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "38",
+    "razonSocial": "ASOCIACION MUTUAL SANCOR SALUD",
+    "CUIT": "30590354798",
+    "DIRECCION": "25 DE MAYO 201",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "39",
+    "razonSocial": "ASPEN ARGENTINA S.A.",
+    "CUIT": "33714198969",
+    "DIRECCION": "RUTA 9 RAMAL CAMPANA KM 73,200",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "40",
+    "razonSocial": "ASSURANT ARGENTINA COMPAÑIA DE SEGUROS SA",
+    "CUIT": "30500045406",
+    "DIRECCION": "ING. ENRIQUE BUTTY 240",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "41",
+    "razonSocial": "ATM COMPAÑIA DE SEGUROS S.A.",
+    "CUIT": "30699408154",
+    "DIRECCION": "FLORidA 833",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "42",
+    "razonSocial": "ATRAPALO S.R.L",
+    "CUIT": "30714081329",
+    "DIRECCION": "DE LA PAZ 450",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "43",
+    "razonSocial": "AUTO DEL SOL S.A.",
+    "CUIT": "30696587724",
+    "DIRECCION": "AVENidA CENTENARIO 1001",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "44",
+    "razonSocial": "AUTO GENERALI S.A.",
+    "CUIT": "30685781502",
+    "DIRECCION": "AV. TRIUNVIRATO 3470",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "45",
+    "razonSocial": "AUTO NOVO S.A.",
+    "CUIT": "30707356339",
+    "DIRECCION": "LA PAMPA 1512",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "46",
+    "razonSocial": "AUTOCREDITO S.A. DE CAPITALIZACION",
+    "CUIT": "33704953319",
+    "DIRECCION": "14 DE FEBRERO 452",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "47",
+    "razonSocial": "AUTOFRANCE S.A.",
+    "CUIT": "30707041397",
+    "DIRECCION": "AV. ANGEL T. DE ALVEAR 1014",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "48",
+    "razonSocial": "AUTOLOGICA SA",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "AV PLAZA DE MAYO 3020 P 3 D A",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "49",
+    "razonSocial": "AUTOMOVILE GROUP S.A.",
+    "CUIT": "30716288915",
+    "DIRECCION": "CHILE 1155",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "50",
+    "razonSocial": "AUTOSTADT S.A.",
+    "CUIT": "30667187091",
+    "DIRECCION": "AV. PRES. JUAN DOMINGO PERÓN 965",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "51",
+    "razonSocial": "AUTOTAG S.A.",
+    "CUIT": "30710963424",
+    "DIRECCION": "AV. CALCHAQUI 252",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "52",
+    "razonSocial": "AVALOS GUSTAVO ESTEBAN",
+    "CUIT": "20336013748",
+    "DIRECCION": "SARMIENTO 910",
+    "SERVICIO": "TRANSPORTE AUTOMOTOR DE CARGAS"
+  },
+  {
+    "id": "53",
+    "razonSocial": "AVANTRIP.COM SRL",
+    "CUIT": "33710745159",
+    "DIRECCION": "SÁNCHEZ DE LORIA 2395 P 6 D",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "54",
+    "razonSocial": "AXA ASSISTANCE ARGENTINA S.A.",
+    "CUIT": "33653284069",
+    "DIRECCION": "MAIPU 255",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "55",
+    "razonSocial": "BALI HAI S.R.L.",
+    "CUIT": "30708608226",
+    "DIRECCION": "MUÑECAS 380",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "56",
+    "razonSocial": "BANCO BBVA ARGENTINA S.A. (BANCO FRANCES)",
+    "CUIT": "30500003193",
+    "DIRECCION": "AV CORDOBA 111",
+    "SERVICIO": "TARJETA DE CREDITO;BANCOS"
+  },
+  {
+    "id": "57",
+    "razonSocial": "BANCO COLUMBIA SA",
+    "CUIT": "30517637498",
+    "DIRECCION": "PERON (CP C1038AAH) 350",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "58",
+    "razonSocial": "BANCO CREDICOOP COOPERATIVO LTDO ·",
+    "CUIT": "30571421352",
+    "DIRECCION": "RECONQUISTA 484",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "59",
+    "razonSocial": "BANCO DE COMERCIO S.A.",
+    "CUIT": "30542033637",
+    "DIRECCION": "SARMIENTO 356",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "60",
+    "razonSocial": "BANCO DE GALICIA Y BUENOS AIRES SAU",
+    "CUIT": "30500001735",
+    "DIRECCION": "PERON JUAN TTE. GRAL. 407",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "61",
+    "razonSocial": "BANCO DE LA CIUDAD",
+    "CUIT": "30-99903208-3",
+    "DIRECCION": "FLORidA 302",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "62",
+    "razonSocial": "BANCO DE LA NACION ARGENTINA",
+    "CUIT": "30500010912",
+    "DIRECCION": "MITRE 326",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "63",
+    "razonSocial": "BANCO DE LA PROVINCIA DE BUENOS AIRES",
+    "CUIT": "33999242109",
+    "DIRECCION": "7 726",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "64",
+    "razonSocial": "BANCO DE LA PROVINCIA DE CORDOBA (BANCOR)",
+    "CUIT": "30999228565",
+    "DIRECCION": "SAN JERONIMO 166",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "65",
+    "razonSocial": "BANCO DE SANTA CRUZ S.A.",
+    "CUIT": "30500098801",
+    "DIRECCION": "AV. PRESidENTE NESTOR KIRCHNER 812",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "66",
+    "razonSocial": "BANCO DE SERVICIOS FINANCIEROS S.A. (TARJETA CARREFOUR)",
+    "CUIT": "30697265895",
+    "DIRECCION": "BERUTI 2915",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "67",
+    "razonSocial": "BANCO FINANSUR S.A.",
+    "CUIT": "30518954241",
+    "DIRECCION": "SAN LORENZO 1133",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "68",
+    "razonSocial": "BANCO HIPOTECARIO S.A.",
+    "CUIT": "30500011072",
+    "DIRECCION": "RECONQUISTA 151",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "69",
+    "razonSocial": "BANCO ICBC",
+    "CUIT": "30709447846",
+    "DIRECCION": "ICBKARBA 11",
+    "SERVICIO": "TARJETA DE CREDITO;BANCOS"
+  },
+  {
+    "id": "70",
+    "razonSocial": "BANCO ITAU ARGENTINA S.A.",
+    "CUIT": "30580189411",
+    "DIRECCION": "VICTORIA OCAMPO 360 P 8 D",
+    "SERVICIO": "TARJETA DE CREDITO;BANCOS"
+  },
+  {
+    "id": "71",
+    "razonSocial": "BANCO MACRO SA",
+    "CUIT": "30576095577",
+    "DIRECCION": "SARMIENTO 735",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "72",
+    "razonSocial": "BANCO PATAGONIA S.A.",
+    "CUIT": "30500006613",
+    "DIRECCION": "AV. DE MAYO 701 P 24 D",
+    "SERVICIO": "TARJETA DE CREDITO;BANCOS"
+  },
+  {
+    "id": "73",
+    "razonSocial": "BANCO PIANO S.A.",
+    "CUIT": "30569151763",
+    "DIRECCION": "SAN MARTÍN 345",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "74",
+    "razonSocial": "BANCO SANTANDER RIO SA",
+    "CUIT": "30500008454",
+    "DIRECCION": "AV. JUAN DE GARAY 151",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "75",
+    "razonSocial": "BANCO SUPERVIELLE S.A.",
+    "CUIT": "3350000517P",
+    "DIRECCION": "RIVADAVIA 699",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "76",
+    "razonSocial": "BANCO VOII S.A.",
+    "CUIT": "30546741636",
+    "DIRECCION": "SARMIENTO 336",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "77",
+    "razonSocial": "BAREMBAUM, CLAUDIO MARCELO",
+    "CUIT": "20142173620",
+    "DIRECCION": "CHARCAS 3180",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "78",
+    "razonSocial": "BARSATEX S.A. (ANTICIPO)",
+    "CUIT": "30715687093",
+    "DIRECCION": "MAIPU 231",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "79",
+    "razonSocial": "BAUEN ARQUITECTURA SRL -PILAY S.A.- PILARES SRL -UTE",
+    "CUIT": "30-63864443-2",
+    "DIRECCION": "JUJUY 1407",
+    "SERVICIO": "FidEICOMISO INMOBILIARIO"
+  },
+  {
+    "id": "80",
+    "razonSocial": "BED TIME S.A.",
+    "CUIT": "30716198010",
+    "DIRECCION": "SALGUERO 2835",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "81",
+    "razonSocial": "BEST DAY",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "82",
+    "razonSocial": "BETA AUTOMOTORES S.A.",
+    "CUIT": "30688579275",
+    "DIRECCION": "AV. SANTA FE 1027",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "83",
+    "razonSocial": "BKR ARGENTINA SA",
+    "CUIT": "30716043602",
+    "DIRECCION": "SUIPACHA 1111",
+    "SERVICIO": ""
+  },
+  {
+    "id": "84",
+    "razonSocial": "BOOKING.COM ARGENTINA SRL",
+    "CUIT": "30711489750",
+    "DIRECCION": "BOUCHARD 710 P 3 D",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "85",
+    "razonSocial": "BRUBANK S.A.U.",
+    "CUIT": "30715899716",
+    "DIRECCION": "AV. DEL LIBERTADOR 6680 P 12 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "86",
+    "razonSocial": "BTC TRADE SRL (BUENBIT)",
+    "CUIT": "30715669478",
+    "DIRECCION": "VidAL 2152 P 13 D D",
+    "SERVICIO": "EXCHANGE DE CRIPTOMONEDAS"
+  },
+  {
+    "id": "87",
+    "razonSocial": "C M R FALABELLA S A (FALABELLA)",
+    "CUIT": "30655723532",
+    "DIRECCION": "SUIPACHA 1111 P 18 D",
+    "SERVICIO": "PRODUCTOR DE SEGURO; RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "88",
+    "razonSocial": "CAJA DE SEGUROS S.A.",
+    "CUIT": "30663205621",
+    "DIRECCION": "FITZ ROY 957",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "89",
+    "razonSocial": "CANDY ELECTRODOMESTICOS ARGENTINA SA",
+    "CUIT": "30709826111",
+    "DIRECCION": "AV. LUIS MARÍA CAMPOS 1059, PISO 7, DPTO. A, C.A.B.A. 1059 P 7 D A",
+    "SERVICIO": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "90",
+    "razonSocial": "CAR GROUP S.A. (CONCESIONARIA GIAMA)",
+    "CUIT": "30709277142",
+    "DIRECCION": "ADOLFO ALSINA 2369",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "91",
+    "razonSocial": "CAR PLAN SRL",
+    "CUIT": "30708137193",
+    "DIRECCION": "AV. 25 DE MAYO 671",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "92",
+    "razonSocial": "CARDENAS LUIS LEANDRO (MEGACELL)",
+    "CUIT": "20334995012",
+    "DIRECCION": "AV. SAVIO 1213",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "93",
+    "razonSocial": "CARRANO LEANDRO ADOLFO",
+    "CUIT": "23328915189",
+    "DIRECCION": "AV. GRAL. PAZ 186- GALERIA LONDON- LOCAL 18 0",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "94",
+    "razonSocial": "CARTASUR CARDS S.A.",
+    "CUIT": "30655808465",
+    "DIRECCION": "SIXTO FERNANDEZ 124",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "95",
+    "razonSocial": "CASANO GROUP AUTOMOTRIZ S.R.L.",
+    "CUIT": "30717241750",
+    "DIRECCION": "AV. DIRECTORIO 1747",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "96",
+    "razonSocial": "CASUR VIVIENDAS PREFABRICADAS",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "97",
+    "razonSocial": "CENCOSUD S.A.",
+    "CUIT": "30-59036076-3",
+    "DIRECCION": "SUIPACHA 1111 P 18 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "98",
+    "razonSocial": "CENTRO HOGAR SODIMAC ARGENTINA S.A.",
+    "CUIT": "30706052514",
+    "DIRECCION": "SAN MARTIN 323",
+    "SERVICIO": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "99",
+    "razonSocial": "CENTRO SOCIEDAD ANONIMA (CONCESIONARIA CENTRO ROSARIO)",
+    "CUIT": "30541781397",
+    "DIRECCION": "CORRIENTES 520",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "100",
+    "razonSocial": "CETROGAR S.A",
+    "CUIT": "30592845748",
+    "DIRECCION": "25 DE MAYO 1850",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "101",
+    "razonSocial": "CFN S.A. (CREDITO ARGENTINO)",
+    "CUIT": "30641056177",
+    "DIRECCION": "RUTA NACIONAL 168 KM 473,6 0",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "102",
+    "razonSocial": "CHESTER S.A.",
+    "CUIT": "30689393310",
+    "DIRECCION": "AV. HIPOLITO YRIGOYEN 247",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "103",
+    "razonSocial": "CHEVROLET S.A. DE AHORRO PARA FINES DETERMINADOS",
+    "CUIT": "30685888471",
+    "DIRECCION": "AV. DEL LIBERTADOR 101 P 14 D",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "104",
+    "razonSocial": "CHEXA S.A.",
+    "CUIT": "30681026386",
+    "DIRECCION": "AVDA. FUERZA AEREA 3712",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "105",
+    "razonSocial": "CHICCO",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "106",
+    "razonSocial": "CIRCULAR S.A.",
+    "CUIT": "30594223787",
+    "DIRECCION": "CORDOBA 2801",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "107",
+    "razonSocial": "CIRCULO DE INVERSORES S.A.U. DE AHORRO PARA FINES DETERMINADOS (PEUGEOT AUTOPLAN) (CIRCULO CITROËN)",
+    "CUIT": "30569618106",
+    "DIRECCION": "DELLA PAOLERA 265 PISO P 22 D",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "108",
+    "razonSocial": "CISLO S.R.L.",
+    "CUIT": "30715613731",
+    "DIRECCION": "MAIPU 696",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "109",
+    "razonSocial": "CITYBANK NA",
+    "CUIT": "30500005625",
+    "DIRECCION": "BARTOLOME MITRE 502",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "110",
+    "razonSocial": "CLAWI SA (MUNDO GATURRO)",
+    "CUIT": "30711304882",
+    "DIRECCION": "ORTIZ DE OCAMPO 2655 P 22 D 3",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "111",
+    "razonSocial": "CLUB INN S.A.",
+    "CUIT": "30709629146",
+    "DIRECCION": "DR. LUIS GARCIA 695 P 4 D A",
+    "SERVICIO": "TIEMPO COMPARTidO"
+  },
+  {
+    "id": "112",
+    "razonSocial": "COEFIX",
+    "CUIT": "33716539119",
+    "DIRECCION": "NICARAGUA 6044",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "113",
+    "razonSocial": "COMAFI SOLUCIONES SA",
+    "CUIT": "30715731378",
+    "DIRECCION": "MITRE 699 P 8 D",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "114",
+    "razonSocial": "COMPAÑIA DE CREDITO ARGENTINA S.A. DE AHORRO PARA FINES DETERMINADOS",
+    "CUIT": "30553641914",
+    "DIRECCION": "URUGUAY 743 P 5 D",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "115",
+    "razonSocial": "COMPAÑIA PANAMEÑA DE AVIACION S.A. (COPA AIRLINES)",
+    "CUIT": "30705061722",
+    "DIRECCION": "DE LA BARRA,EMMA 353 P 7 D",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "116",
+    "razonSocial": "CONCESIONARIO TONNELIER (CENTRO AUTOMOTORES S.A.)",
+    "CUIT": "30519764608",
+    "DIRECCION": "AV. SANTA FE 4928",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "117",
+    "razonSocial": "CONECTAR VIAJES S.R.L.",
+    "CUIT": "30714716936",
+    "DIRECCION": "PARANA 1097",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "118",
+    "razonSocial": "COOP DE PROVISION DE AGUA POTABLE LA EMILIA LTDA",
+    "CUIT": "30596273846",
+    "DIRECCION": "ERACLIO FERREYRA (LA EMILIA) 344",
+    "SERVICIO": "SERVICIO PUBLICO DOMICILIARIO - AGUA"
+  },
+  {
+    "id": "119",
+    "razonSocial": "COOP DE VIVIENDA Y CONSUMO LIMITADA DEL PERSONAL DE LA ADMIN PUBLICA DE LA PROVINCIA BS AS (COOPERBA",
+    "CUIT": "30593693526",
+    "DIRECCION": "3 920",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "120",
+    "razonSocial": "COOPERATIVA DE VIVIENDA CREDITO Y CONSUMO FENANJOR LIMITADA",
+    "CUIT": "30700505010",
+    "DIRECCION": "TUCUMAN 2133",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "121",
+    "razonSocial": "COPERBA",
+    "CUIT": "30593693526",
+    "DIRECCION": "3 920",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "122",
+    "razonSocial": "COPPEL S.A.",
+    "CUIT": "30710411502",
+    "DIRECCION": "SANTIAGO DEL ESTERO 1571",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "123",
+    "razonSocial": "CORCOVADO VIAJES",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "AVENidA SAN MARTÍN 1057 P 23 D",
+    "SERVICIO": "TRANSPORTE AÉREO; TRANSPORTE URBANO DE PASAJEROS"
+  },
+  {
+    "id": "124",
+    "razonSocial": "CORDOBA SOMMIERS",
+    "CUIT": "337159702",
+    "DIRECCION": "ALEM 1693",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "125",
+    "razonSocial": "CORREO ANDREANI S.A.",
+    "CUIT": "33699685459",
+    "DIRECCION": "AV. LEANDRO N. ALEM 639",
+    "SERVICIO": "CORREOS"
+  },
+  {
+    "id": "126",
+    "razonSocial": "CREDI SHOP SA",
+    "CUIT": "30634736413",
+    "DIRECCION": "SAENZ AV 946 28",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "127",
+    "razonSocial": "CREDI-PLAT SA",
+    "CUIT": "30711517207",
+    "DIRECCION": "AV RIVADAVIA 6091 P 1 D A",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "128",
+    "razonSocial": "CREDIAR S.A (FEDERAR)",
+    "CUIT": "30710222734",
+    "DIRECCION": "AV 25 DE MAYO 1850",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "129",
+    "razonSocial": "CREDIFACIL",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "BELGRANO 3540",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "130",
+    "razonSocial": "CREDILOGROS COMPAÑIA FINANCIERA",
+    "CUIT": "30704936016",
+    "DIRECCION": "MITRE 280",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "131",
+    "razonSocial": "CREDITIA FidEICOMISO FINANCIERO",
+    "CUIT": "30712137378",
+    "DIRECCION": "25 DE MAYO 195 P 7 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS;EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "132",
+    "razonSocial": "CREDITOS AL RIO S.A. (POSTA)",
+    "CUIT": "30716004607",
+    "DIRECCION": "OLGA COSSETTINI - EDIFICIO YACHT VI - PUERTO MADERO 363",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "133",
+    "razonSocial": "CRONON TECNOLOGIA SRL",
+    "CUIT": "30643635050",
+    "DIRECCION": "AV. INGENIERO HUERGO 1437",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "134",
+    "razonSocial": "CRYPTOMARKET S.A",
+    "CUIT": "30715538063",
+    "DIRECCION": "ALSINA ADOLFO 1290 P 7 D A",
+    "SERVICIO": "EXCHANGE DE CRIPTOMONEDAS"
+  },
+  {
+    "id": "135",
+    "razonSocial": "CUOTITAS SA",
+    "CUIT": "30710831099",
+    "DIRECCION": "SUIPACHA 190 P 42 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "136",
+    "razonSocial": "CURELLICH IGNACIO JOSE",
+    "CUIT": "20374895959",
+    "DIRECCION": "ESTRADA 2581",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "137",
+    "razonSocial": "CÁMARA DEL COMERCIO AUTOMOTOR",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "URQUIZA 1564",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO;CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "138",
+    "razonSocial": "DABRA S.A. (DEXTER)",
+    "CUIT": "30638485733",
+    "DIRECCION": "URUGUAY 1037 P 7 D",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "139",
+    "razonSocial": "DAMVILLE S.A",
+    "CUIT": "30709273309",
+    "DIRECCION": "LA PAMPA 1512",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "140",
+    "razonSocial": "DANIELA ANDREA AGUILA (PYRMONT VIAJES)",
+    "CUIT": "27241601981",
+    "DIRECCION": "MAIPU 19 BIS",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "141",
+    "razonSocial": "DATTATEC.COM SRL",
+    "CUIT": "30710173652",
+    "DIRECCION": "CÓRDOBA 3753",
+    "SERVICIO": "INTERNET"
+  },
+  {
+    "id": "142",
+    "razonSocial": "DEL MILAGRO COOPERATIVA",
+    "CUIT": "30709579467",
+    "DIRECCION": "AV. BELGRANO 312",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "143",
+    "razonSocial": "DEPARTAMENTO EMPRESARIO MEDICINA INTEGRAL - D E M I",
+    "CUIT": "30518117218",
+    "DIRECCION": "SAN JUAN 2152",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "144",
+    "razonSocial": "DESPEGAR COM AR S.A.",
+    "CUIT": "30701307115",
+    "DIRECCION": "AV JUJUY 2013 P 1 D",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "145",
+    "razonSocial": "DIETRICH S.A.",
+    "CUIT": "30541849307",
+    "DIRECCION": "HONDURAS 4210",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "146",
+    "razonSocial": "DIRECTV ARGENTINA S.A.",
+    "CUIT": "30685889397",
+    "DIRECCION": "PARAGUAY 610 P 28 D",
+    "SERVICIO": "TV / CABLE"
+  },
+  {
+    "id": "147",
+    "razonSocial": "DORINKA S.R.L. (WALMART)",
+    "CUIT": "30678138300",
+    "DIRECCION": "BOLIVIA 5831",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "148",
+    "razonSocial": "DOWERS COMPANY S.A. DE CAPITALIZACION Y AHORRO",
+    "CUIT": "30689031494",
+    "DIRECCION": "AV. PASEO COLON 1013",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "149",
+    "razonSocial": "DREAM HOUSE S.R.L.",
+    "CUIT": "30716267713",
+    "DIRECCION": "12 DE OCTUBRE 631",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "150",
+    "razonSocial": "E DREAMS S.A.",
+    "CUIT": "30707146822",
+    "DIRECCION": "CERRITO 836",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "151",
+    "razonSocial": "E-TRAVEL SOLUTIONS S.R.L",
+    "CUIT": "30709219045",
+    "DIRECCION": "ACASSUSO 17 P 3 D B",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "152",
+    "razonSocial": "EASY ARGENTINA S.R.L.",
+    "CUIT": "30697308721",
+    "DIRECCION": "ALEM LEANDRO N. AV. 1050 P 5 D",
+    "SERVICIO": "SUPERMERCADO"
+  },
+  {
+    "id": "153",
+    "razonSocial": "EDELAP SA",
+    "CUIT": "30657877669",
+    "DIRECCION": "DIAGONAL 80 1001",
+    "SERVICIO": "SERVICIO PÚBLICO DOMICILIARIO - ELECTRICidAD"
+  },
+  {
+    "id": "154",
+    "razonSocial": "EDESUR S.A.",
+    "CUIT": "30655116512",
+    "DIRECCION": "SAN JOSÉ 140",
+    "SERVICIO": "SERVICIO PÚBLICO DOMICILIARIO - ELECTRICidAD"
+  },
+  {
+    "id": "155",
+    "razonSocial": "EFECTIVO SI (COMPAÑÍA FINANCIERA ARGENTINA S.A.)",
+    "CUIT": "30-53800640-4",
+    "DIRECCION": "AV. MITRE 755",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "156",
+    "razonSocial": "EL ALMACEN DEL CELIACO",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "SALTA 2949",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "157",
+    "razonSocial": "ELECTRONICA MEGATONE S.A.",
+    "CUIT": "30543659734",
+    "DIRECCION": "RUTA NACIONAL 168 473",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "158",
+    "razonSocial": "ELECTROOUTLET",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "159",
+    "razonSocial": "EMIRATES SUCURSAL ARGENTINA",
+    "CUIT": "30710512619",
+    "DIRECCION": "SUIPACHA 1111 P 25 D",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "160",
+    "razonSocial": "EMPRENDIMIENTO LA LUISINA S.R.L. (CRISTAL CASH)",
+    "CUIT": "30711421447",
+    "DIRECCION": "PLAZA ITALIA 131",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "161",
+    "razonSocial": "EMPRENDIMIENTOS TURISTICOS VACANCES S.A.",
+    "CUIT": "30698737049",
+    "DIRECCION": "ESMERALDA 1066 10 B",
+    "SERVICIO": "TIEMPO COMPARTidO"
+  },
+  {
+    "id": "162",
+    "razonSocial": "EMPRESA DISTRIBUidORA DE ENERGIA NORTE S.A. (EDEN S.A.)",
+    "CUIT": "30693834348",
+    "DIRECCION": "AV. SAVIO 703",
+    "SERVICIO": "SERVICIO PÚBLICO DOMICILIARIO - ELECTRICidAD"
+  },
+  {
+    "id": "163",
+    "razonSocial": "EMPRESA DISTRIBUidORA Y COMERCIALIZADORA NORTE SOCIEDAD ANONIMA (EDENOR S A)",
+    "CUIT": "30655116202",
+    "DIRECCION": "AV. DEL LIBERTADOR 6363",
+    "SERVICIO": "SERVICIO PÚBLICO DOMICILIARIO - ELECTRICidAD"
+  },
+  {
+    "id": "164",
+    "razonSocial": "EN TIEMPO Y FORMA S.R.L.",
+    "CUIT": "30715487531",
+    "DIRECCION": "GRAHAM BELL 972",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "165",
+    "razonSocial": "ENOVA S.A.",
+    "CUIT": "30715798790",
+    "DIRECCION": "RAMALLO 1633",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "166",
+    "razonSocial": "ESCOBAR AUTOMOTORES S.A.",
+    "CUIT": "30711061327",
+    "DIRECCION": "AV. FREYRE 2257",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "167",
+    "razonSocial": "ESCUELA MODELO BELLA VISTA SRL",
+    "CUIT": "33708698259",
+    "DIRECCION": "AV. SANTA FE 1226",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "168",
+    "razonSocial": "ESTUDIO ANGELONI",
+    "CUIT": "XXXXXXXXXXX",
+    "DIRECCION": "TALCAHUANO 38",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "169",
+    "razonSocial": "ETERCOR S.A",
+    "CUIT": "33569389009",
+    "DIRECCION": "DORREGO 1875",
+    "SERVICIO": ""
+  },
+  {
+    "id": "170",
+    "razonSocial": "EXI SA (GRUPO EXI)",
+    "CUIT": "30715893602",
+    "DIRECCION": "CABELLO 3966 P 2 D A",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "171",
+    "razonSocial": "EXPRESO RIVADAVIA SRL",
+    "CUIT": "30626009618",
+    "DIRECCION": "RUTA NACIONAL 176 9 KM 1285",
+    "SERVICIO": "TRANSPORTE AUTOMOTOR DE CARGAS"
+  },
+  {
+    "id": "172",
+    "razonSocial": "FADUA S.A.",
+    "CUIT": "30708348348",
+    "DIRECCION": "SAN LUIS 680",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "173",
+    "razonSocial": "FCA AUTOMOBILES ARGENTINA S A (FIAT)",
+    "CUIT": "30682450963",
+    "DIRECCION": "CARLOS M DELLA PAOLERA 297 P 25 D",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "174",
+    "razonSocial": "FCA SA DE AHORRO PARA FINES DETERMINADOS (FIAT PLAN)",
+    "CUIT": "30692239055",
+    "DIRECCION": "CARLOS M DELLA PAOLERA 297 P 25 D",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "175",
+    "razonSocial": "FIAT FLOW SOLUTIONS LTD",
+    "CUIT": "30717102831",
+    "DIRECCION": "MILAGRO 635",
+    "SERVICIO": ""
+  },
+  {
+    "id": "176",
+    "razonSocial": "FidEICOMISO DE ADMINISTRACIÓN PRIVADO BHSA",
+    "CUIT": "30709964190",
+    "DIRECCION": "AV. LEANDRO ALEM 465",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "177",
+    "razonSocial": "FidEICOMISO FINANCIERO PRIVADO ASSET RECOVERY 5",
+    "CUIT": "30712367713",
+    "DIRECCION": "TUCUMAN 141",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "178",
+    "razonSocial": "FidEICOMISO FINANCIERO PRIVADO YATASTO",
+    "CUIT": "30710042418",
+    "DIRECCION": "MITRE 699 P 6 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "179",
+    "razonSocial": "FidEICOMISO SE SOCIO",
+    "CUIT": "30715455397",
+    "DIRECCION": "RUGGIERI SILVIO L. 2746 P3 DB",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "180",
+    "razonSocial": "FidEN SA",
+    "CUIT": "30714953504",
+    "DIRECCION": "BOLIVAR 874 P 2 D",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "181",
+    "razonSocial": "FINANCOMP SA",
+    "CUIT": "30711425728",
+    "DIRECCION": "AV. OLAZÁBAL 1515 P 8 D 3",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "182",
+    "razonSocial": "FIRST DATA CONO SUR S.R.L. (MASTERCARD)",
+    "CUIT": "30522211563",
+    "DIRECCION": "PERU 143",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "183",
+    "razonSocial": "FLEX FidEICOMISO FINANCIERO",
+    "CUIT": "30716312263",
+    "DIRECCION": "MAIPU 1300",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "184",
+    "razonSocial": "FLYBONDI S.A.",
+    "CUIT": "30715300997",
+    "DIRECCION": "AV. DEL LIBERTADOR 6343",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "185",
+    "razonSocial": "FORD ARGENTINA SCA",
+    "CUIT": "30678519681",
+    "DIRECCION": "COLECTA ESTE 34903",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "186",
+    "razonSocial": "FORTE CAR S.A.",
+    "CUIT": "33708285809",
+    "DIRECCION": "BENITO DE MIGUEL 967",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "187",
+    "razonSocial": "FRANCISCO OSVALDO DIAZ SA",
+    "CUIT": "30570040487",
+    "DIRECCION": "AV. ALVAREZ THOMAS 1489",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "188",
+    "razonSocial": "FRANCISCO PESADO CASTRO S.A.",
+    "CUIT": "30535672403",
+    "DIRECCION": "MITRE 534",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "189",
+    "razonSocial": "FRAVEGA SACIEI",
+    "CUIT": "30526874249",
+    "DIRECCION": "CABA ----",
+    "SERVICIO": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "190",
+    "razonSocial": "FRIGORIFICO PALADINI S.A.",
+    "CUIT": "30503348728",
+    "DIRECCION": "JOSE PIAZZA 63",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "191",
+    "razonSocial": "FUNDACION IBEROAMERICANA DE ESTUDIOS SUPERIORES (UNIVERSidAD ABIERTA INTERAMERICANA - UAI)",
+    "CUIT": "30659414615",
+    "DIRECCION": "AV. SAN JUAN 960",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "192",
+    "razonSocial": "GALANTE D ANTONIO S.A.",
+    "CUIT": "30550132466",
+    "DIRECCION": "AV. MARQUEZ 1215",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "193",
+    "razonSocial": "GALICIA SEGUROS S.A.U.",
+    "CUIT": "30687145522",
+    "DIRECCION": "MAIPU 241",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "194",
+    "razonSocial": "GANDUGLIA WALTER NICOLAS (HADAS - SALON DE FIESTAS Y EVENTOS)",
+    "CUIT": "20325946106",
+    "DIRECCION": "URQUIZA 35",
+    "SERVICIO": "ORGANIZACIÓN DE EVENTOS"
+  },
+  {
+    "id": "195",
+    "razonSocial": "GARBARINO S.A.",
+    "CUIT": "30540088213",
+    "DIRECCION": "JUNCAL 1126 P 6 D",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "196",
+    "razonSocial": "GASTON EXEQUIEL MOYANO",
+    "CUIT": "20362402701",
+    "DIRECCION": "JERONIMO LUIS DE CABRERA 153",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "197",
+    "razonSocial": "GEMSA AUTOMOTORES S.A.",
+    "CUIT": "30675424574",
+    "DIRECCION": "AVDA. BENJAMIN ARAOZ 1205",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "198",
+    "razonSocial": "GERMED S.A. (LA PEQUEÑA FAMILIA)",
+    "CUIT": "30707808418",
+    "DIRECCION": "GANDINI 128",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "199",
+    "razonSocial": "GESTION DE PRESTAMOS Y COBRANZAS S.A.",
+    "CUIT": "33715043519",
+    "DIRECCION": "AV. CORRIENTES 1174",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "200",
+    "razonSocial": "GIGENA ANTONIO LEANDRO (TAPICERIA GIGENA)",
+    "CUIT": "20325395045",
+    "DIRECCION": "GABOTO 853",
+    "SERVICIO": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "201",
+    "razonSocial": "GIORGI AUTOMOTORES S.A.",
+    "CUIT": "30520231346",
+    "DIRECCION": "BV. AVELLANA 2045",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "202",
+    "razonSocial": "GIRE SA (RAPIPAGO)",
+    "CUIT": "30643990632",
+    "DIRECCION": "AV. CASEROS 3572",
+    "SERVICIO": "SERVICIOS FINANCIEROS; RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "203",
+    "razonSocial": "GIROLAMI DEPORTES S.R.L.",
+    "CUIT": "30712542558",
+    "DIRECCION": "DE LA NACION 363",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "204",
+    "razonSocial": "GOL LINHAS AEREAS S A",
+    "CUIT": "30710096194",
+    "DIRECCION": "CERRITO 1130",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "205",
+    "razonSocial": "GOLD COMERCIALIZADORA",
+    "CUIT": "30715639005",
+    "DIRECCION": "AV LIMA 605",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "206",
+    "razonSocial": "GONDWANA ECOSISTEMAS",
+    "CUIT": "30717081060",
+    "DIRECCION": "CHACO 433",
+    "SERVICIO": ""
+  },
+  {
+    "id": "207",
+    "razonSocial": "GONZALEZ AUTOMOVILES S.A.",
+    "CUIT": "30683247150",
+    "DIRECCION": "RUTA 12 KM. 5,5 Y CALLE 166, BARRIO VILLA POUJADE 0",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "208",
+    "razonSocial": "GOOGLE INC",
+    "CUIT": "xx",
+    "DIRECCION": "XX 111",
+    "SERVICIO": "INTERNET"
+  },
+  {
+    "id": "209",
+    "razonSocial": "GPAT COMPAÑÍA FINANCIERA S.A.U.",
+    "CUIT": "30678564822",
+    "DIRECCION": "PERÓN 466 P 2 D 00",
+    "SERVICIO": ""
+  },
+  {
+    "id": "210",
+    "razonSocial": "GRUPO ACPA S.A.S. (CHESTERFIELD INTERIORES)",
+    "CUIT": "33716739339",
+    "DIRECCION": "PINZON 709",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "211",
+    "razonSocial": "GRUPO HOGAR VETA",
+    "CUIT": "30716956381",
+    "DIRECCION": "VALENTIN ALSINA 890",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "212",
+    "razonSocial": "GRUPO HOME",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "213",
+    "razonSocial": "GRUPO SAN NICOLAS SRL",
+    "CUIT": "30708422343",
+    "DIRECCION": "BELGRANO 1436",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "214",
+    "razonSocial": "GRUPO SIMPA S.A. (GAMMA)",
+    "CUIT": "30628323603",
+    "DIRECCION": "AV. COLECTORA PANAMERICANA OESTE 1804",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "215",
+    "razonSocial": "HAIMOVICH S.A.",
+    "CUIT": "30690456717",
+    "DIRECCION": "ALMAFUERTE 702",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "216",
+    "razonSocial": "HEYMO MARIANO CESAR (INMOBILIARIA HEYMO)",
+    "CUIT": "20282766885",
+    "DIRECCION": "AV. FALCON 388",
+    "SERVICIO": "INMOBILIARIA"
+  },
+  {
+    "id": "217",
+    "razonSocial": "HidROTOR SRL",
+    "CUIT": "30679032492",
+    "DIRECCION": "COLECTORA OESTE RAMAL PILAR 3291",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "218",
+    "razonSocial": "HOGAR TOTAL S.A. (BRINGERI)",
+    "CUIT": "30710724381",
+    "DIRECCION": "RIVADAVIA 202",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "219",
+    "razonSocial": "HP INC ARGENTINA S.R.L.",
+    "CUIT": "30714809373",
+    "DIRECCION": "VEDIA 3616 P 7 D",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "220",
+    "razonSocial": "HSBC BANK ARGENTINA SA",
+    "CUIT": "33537186009",
+    "DIRECCION": "AV. BOUCHARD 557",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "221",
+    "razonSocial": "IBERIA LINEAS AEREAS DE ESPAÑA S.A. (IBERIA)",
+    "CUIT": "30711760551",
+    "DIRECCION": "PELLEGRINI 1163 P 3 D",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "222",
+    "razonSocial": "IBERO ASISTENCIA S.A.",
+    "CUIT": "30643315684",
+    "DIRECCION": "LAVALLE 344",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "223",
+    "razonSocial": "INC S.A. (CARREFOUR)",
+    "CUIT": "30687310434",
+    "DIRECCION": "BERUTI 2915",
+    "SERVICIO": "SUPERMERCADO"
+  },
+  {
+    "id": "224",
+    "razonSocial": "INDUSTRIAL AND COMMERCIAL BANK OF CHINA (ARGENTINA) SA",
+    "CUIT": "30709447846",
+    "DIRECCION": "FLORidA 99",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "225",
+    "razonSocial": "INFORMATICA FUEGUINA S.A. (POSITIVO BGH)",
+    "CUIT": "30711588910",
+    "DIRECCION": "BRASIL 731",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "226",
+    "razonSocial": "INSTITUTO AMERICANO",
+    "CUIT": "XXXXXXXXXXXX",
+    "DIRECCION": "DESCONOCidA 111",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "227",
+    "razonSocial": "INSTITUTO DE CAPACITACION Y ENSEÑANZA DOCENTE (ICED)",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "228",
+    "razonSocial": "INTERPLAN S.A. DE AHORRO PARA FINES DETERMINADOS (CHERY PLAN)",
+    "CUIT": "33612019059",
+    "DIRECCION": "BERNARDO DE YRIGOYEN 236",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "229",
+    "razonSocial": "IOMA",
+    "CUIT": "30-62824952-7",
+    "DIRECCION": "46 886",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "230",
+    "razonSocial": "IP-TEL SA (IPTEL)",
+    "CUIT": "33707827659",
+    "DIRECCION": "CHACABUCO 520",
+    "SERVICIO": "TELEFONIA FIJA;INTERNET"
+  },
+  {
+    "id": "231",
+    "razonSocial": "IRMA ROSANA PITOD (AUTOMOTORES ROMAR)",
+    "CUIT": "27243118374",
+    "DIRECCION": "AV. CARLOS CASARES 2178",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "232",
+    "razonSocial": "IRUÑA S.A.",
+    "CUIT": "30684504610",
+    "DIRECCION": "PERTICONE 975",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "233",
+    "razonSocial": "ITAL ROUEN S.A.",
+    "CUIT": "30708659734",
+    "DIRECCION": "JUANA MANSO 590",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "234",
+    "razonSocial": "IUDU COMPAÑIA FINANCIERA S.A. (CORDIAL COMPAÑIA FINANCIERA)",
+    "CUIT": "30701810852",
+    "DIRECCION": "J B LASALLE 653",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "235",
+    "razonSocial": "JETSMART AIRLINES S.A.",
+    "CUIT": "30715212966",
+    "DIRECCION": "SUIPACHA 1111",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "236",
+    "razonSocial": "JORGE MIGUEL VALERO MATUS",
+    "CUIT": "20361690088",
+    "DIRECCION": "SAN JUAN 696",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "237",
+    "razonSocial": "JOSE M ALLADIO E HIJOS S.A. (DREAN) (AURORA) (PATRIOT)",
+    "CUIT": "30502680478",
+    "DIRECCION": "AV. CORDOBA 325",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "238",
+    "razonSocial": "LA MERidIONAL COMPAÑIA ARGENTINA DE SEGUROS",
+    "CUIT": "30500051163",
+    "DIRECCION": "PERON JUAN TTE. GRAL. 646 P 4 D",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "239",
+    "razonSocial": "LA MUTUAL DEL GRUPO OROÑO",
+    "CUIT": "30715426524",
+    "DIRECCION": "BV. OROÑO 797",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "240",
+    "razonSocial": "LA SEGUNDA COOPERATIVA LTDA DE SEGUROS GENERALES",
+    "CUIT": "30500017704",
+    "DIRECCION": "JUAN MANUEL DE ROSAS 957",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "241",
+    "razonSocial": "LATAM AIRLINES GROUP S.A.",
+    "CUIT": "30609620729",
+    "DIRECCION": "AV. COSTANERA RAFAEL OBLIGADO 1221",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "242",
+    "razonSocial": "LE PARC S.A.",
+    "CUIT": "30700258552",
+    "DIRECCION": "RUTA 9 KM 554 0",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "243",
+    "razonSocial": "LEON ALPEROVICH DE TUCUMAN S.A.",
+    "CUIT": "30691782502",
+    "DIRECCION": "SAN LORENZO 254",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "244",
+    "razonSocial": "LEPIC S.A.",
+    "CUIT": "30715401858",
+    "DIRECCION": "MANUEL AUGUSTO MONTES DE OCA 1102",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "245",
+    "razonSocial": "LEVEL",
+    "CUIT": "0",
+    "DIRECCION": "0 0",
+    "SERVICIO": "TRANSPORTE AÉREO; OPERADOR TURISTICO"
+  },
+  {
+    "id": "246",
+    "razonSocial": "LG ELECTRONICS ARGENTINA S.A.",
+    "CUIT": "30707280480",
+    "DIRECCION": "JURAMENTO 1775",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "247",
+    "razonSocial": "LITORAL GAS S.A.",
+    "CUIT": "30657866330",
+    "DIRECCION": "ING. HECTOR THEDY 370",
+    "SERVICIO": "SERVICIO PUBLICO DOMICILIARIO - GAS"
+  },
+  {
+    "id": "248",
+    "razonSocial": "LNG OLIVIERI S.A.",
+    "CUIT": "30708035633",
+    "DIRECCION": "CASTILLO 1435",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "249",
+    "razonSocial": "LUFTHANSA LINEAS AEREAS ALEMANAS",
+    "CUIT": "30506881842",
+    "DIRECCION": "MARCELO T. DE ALVEAR 590",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "250",
+    "razonSocial": "LUMIERE AUTOMOVILES S.A.",
+    "CUIT": "30712504648",
+    "DIRECCION": "HIPOLITO YRIGOYEN 267",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "251",
+    "razonSocial": "LUXCAR S.A.",
+    "CUIT": "30686510006",
+    "DIRECCION": "AV. GAONA 5602",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "252",
+    "razonSocial": "MAIPU AUTOMOTORES S.A.",
+    "CUIT": "30590493429",
+    "DIRECCION": "AV. COLON 4051",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "253",
+    "razonSocial": "MAJOR CONTRACTOR GROUP SA",
+    "CUIT": "30710474989",
+    "DIRECCION": "LAVALLEJA 548 P 4 D B",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "254",
+    "razonSocial": "MARCELO CAPRidI AUTOMOTORES",
+    "CUIT": "30715742930",
+    "DIRECCION": "SAN MARTIN 1900",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "255",
+    "razonSocial": "MARSEILLE S.A.",
+    "CUIT": "30707314571",
+    "DIRECCION": "CORRIENTES 2068",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "256",
+    "razonSocial": "MAVISEQ S.R.L.",
+    "CUIT": "30715750887",
+    "DIRECCION": "MAIPU 393",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "257",
+    "razonSocial": "MAXICONSUMO S.A. (MOLTO)",
+    "CUIT": "30663005843",
+    "DIRECCION": "EMPEDRADO 2571",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "258",
+    "razonSocial": "MAYNAR AG S.A.",
+    "CUIT": "30687491307",
+    "DIRECCION": "AV. DEL LIBERTADOR 6946",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "259",
+    "razonSocial": "MD-TRANSPORTE Y LOGISTICA S.A.",
+    "CUIT": "30711731217",
+    "DIRECCION": "RECONQUISTA 365",
+    "SERVICIO": "TRANSPORTE AUTOMOTOR DE CARGAS"
+  },
+  {
+    "id": "260",
+    "razonSocial": "MEDICINA ESENCIAL S.A.",
+    "CUIT": "30698414460",
+    "DIRECCION": "BV. OROÑO 797",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "261",
+    "razonSocial": "MEDICUS S.A. DE ASISTENCIA MEDICA Y CIENTIFICA",
+    "CUIT": "30546771314",
+    "DIRECCION": "LARREA 877",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "262",
+    "razonSocial": "MEDIFE ASOCIACION CIVIL",
+    "CUIT": "30682737650",
+    "DIRECCION": "AV. ALBERDI 3541",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "263",
+    "razonSocial": "MERCADO DE LA CONSTRUCCION S.A.",
+    "CUIT": "30707804005",
+    "DIRECCION": "PRESidENTE PERON 931",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "264",
+    "razonSocial": "MERCADOLIBRE S.R.L.",
+    "CUIT": "30703088534",
+    "DIRECCION": "AV. CASEROS 3039 P 2 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS; RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "265",
+    "razonSocial": "METEORO EXPRESS TRASNPORTE LOGISTICA SRL (PISCINAS VARADERO)",
+    "CUIT": "30715340611",
+    "DIRECCION": "LOS OLMOS 402",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "266",
+    "razonSocial": "METROGAS SA",
+    "CUIT": "30657863676",
+    "DIRECCION": "GREGORIO ARÁOZ DE LAMADRid 1360",
+    "SERVICIO": "SERVICIO PUBLICO DOMICILIARIO - GAS"
+  },
+  {
+    "id": "267",
+    "razonSocial": "MIRIAN CELESTE PIMENTEL (VETA LIVING)",
+    "CUIT": "27282783199",
+    "DIRECCION": "JUAN RECARTE 2939",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "268",
+    "razonSocial": "MONI ONLINE SA",
+    "CUIT": "30712334610",
+    "DIRECCION": "RECONQUISTA 1088 P 9 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "269",
+    "razonSocial": "MONTANARI AUTOMOTORES S.A.",
+    "CUIT": "30707308989",
+    "DIRECCION": "AV. ILLIA 1658",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "270",
+    "razonSocial": "MONTEQUIN S.A.",
+    "CUIT": "30522623446",
+    "DIRECCION": "AV. GRAL. SAVIO 456",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "271",
+    "razonSocial": "MONTIRONI AUTOMOTORES SACIFIA",
+    "CUIT": "30543028556",
+    "DIRECCION": "SAN MARTIN ESQ LA PLATA 0",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "272",
+    "razonSocial": "MOT COR S.A.",
+    "CUIT": "30663381160",
+    "DIRECCION": "AV. SANTA ANA 6363",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "273",
+    "razonSocial": "MOTOROLA MOBILITY OF ARGENTINA S.A.",
+    "CUIT": "30711247986",
+    "DIRECCION": "AV. DEL LIBERTADOR 7208",
+    "SERVICIO": "TELEFONIA MOVIL"
+  },
+  {
+    "id": "274",
+    "razonSocial": "MOYANO GASTON EXEQUIEL (CORDOBA DUPLEX)",
+    "CUIT": "20362402701",
+    "DIRECCION": "JERÓNIMO LUIS DE CABRERA TORRE 2 1163 P 2 D B",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "275",
+    "razonSocial": "MOZIONE AUTOMOTORES",
+    "CUIT": "30716873206",
+    "DIRECCION": "COLECTORA PANAMERICANA OESTE 4201",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "276",
+    "razonSocial": "MR AUTOMOVILES SRL",
+    "CUIT": "30716826933",
+    "DIRECCION": "AV. DIRECTORIO 4099",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "277",
+    "razonSocial": "MUNDOLAPTOP_ARG",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "278",
+    "razonSocial": "MUSIMUNDO.COM S.A.",
+    "CUIT": "30707021957",
+    "DIRECCION": "AV. DEL CAMPO 1520",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO); COMERCIO LOCAL"
+  },
+  {
+    "id": "279",
+    "razonSocial": "MUTUAL DE SERVICIOS ASISTENCIALES DE MEDICINA INTERDISCIPLINARIA (MUTUAL SAMI)",
+    "CUIT": "30707511261",
+    "DIRECCION": "URQUIZA 141",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "280",
+    "razonSocial": "MUTUAL FEDERADA 25 DE JUNIO SOCIEDAD DE PROTECCION RECIPROCA (FEDERADA SALUD)",
+    "CUIT": "30541592608",
+    "DIRECCION": "MORENO 1143",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "281",
+    "razonSocial": "MYTRIP",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "282",
+    "razonSocial": "NALDO LOMBARDI SA",
+    "CUIT": "30697465983",
+    "DIRECCION": "ALBERDI 206",
+    "SERVICIO": "SERVICIOS FINANCIEROS; RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "283",
+    "razonSocial": "NEW SALES FORCE S.A.",
+    "CUIT": "30715042769",
+    "DIRECCION": "AV. PASEO COLON 1746",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "284",
+    "razonSocial": "NISSAN ARGENTINA PLAN S.A",
+    "CUIT": "30715839357",
+    "DIRECCION": "- -",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "285",
+    "razonSocial": "NITRO IMPORTS (MARIANO MARTIN MANSILLA)",
+    "CUIT": "20455361614",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "286",
+    "razonSocial": "NORWEGIAN AIR ARGENTINA S.A.U.",
+    "CUIT": "33715539999",
+    "DIRECCION": "SUIPACHA 1111 P 28 D",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "287",
+    "razonSocial": "NOVA HOUSES",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "288",
+    "razonSocial": "NOVATECH SOLUTIONS S.A.",
+    "CUIT": "33709014299",
+    "DIRECCION": "USPALLATA 2766",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "289",
+    "razonSocial": "NUEVA CHEVALLIER S.A.",
+    "CUIT": "30707215689",
+    "DIRECCION": "PEDRO DE LUJAN 2645",
+    "SERVICIO": "TRANSPORTE URBANO DE PASAJEROS"
+  },
+  {
+    "id": "290",
+    "razonSocial": "NUEVO BANCO DE SANTA FE SA",
+    "CUIT": "30692432661",
+    "DIRECCION": "TUCUMAN 2545",
+    "SERVICIO": "BANCOS"
+  },
+  {
+    "id": "291",
+    "razonSocial": "O.S.P.E OBRA SOCIAL DE PETROLEROS",
+    "CUIT": "30661876715",
+    "DIRECCION": "AV. N LEANDRO ALEM 692",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "292",
+    "razonSocial": "OBRA SOCIAL PARA LA ACTIVidAD DOCENTE (OSPLAD)",
+    "CUIT": "30546666189",
+    "DIRECCION": "TACUARI 345",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "293",
+    "razonSocial": "OBRA SOCIAL PROFESIONALES DEL TURF DE LA REPUBLICA ARGENTINA (OSPROTURA)",
+    "CUIT": "30707269223",
+    "DIRECCION": "PANAMA 950",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "294",
+    "razonSocial": "OBRA SOCIAL UNIÓN PERSONAL DE LA UNIÓN DEL PERSONAL CIVIL DE LA NACIÓN",
+    "CUIT": "30683032227",
+    "DIRECCION": "TUCUMÁN 949",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "295",
+    "razonSocial": "OLA S.A.",
+    "CUIT": "33680504569",
+    "DIRECCION": "MAIPU 1050",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "296",
+    "razonSocial": "ONESHOESSPORTS.COM.AR",
+    "CUIT": "0",
+    "DIRECCION": "0 0",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "297",
+    "razonSocial": "ORGANIZACION SUR S.A.",
+    "CUIT": "30516263721",
+    "DIRECCION": "AV. HIPOLITO YRIGOYEN 3185",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "298",
+    "razonSocial": "OSDE ORGANIZACION DE SERVICIOS DIRECTOS EMPRESARIOS",
+    "CUIT": "30546741253",
+    "DIRECCION": "AV. LEANDRO N. ALEM 1067",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "299",
+    "razonSocial": "OSUTHGRA",
+    "CUIT": "30531338657",
+    "DIRECCION": "AV. DE MAYO 930",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "300",
+    "razonSocial": "OUR RANCH",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "301",
+    "razonSocial": "PAMI (INSSJP INSTITUTO NACIONAL DE SERVICIOS SOCIALES PARA JUBILADOS)",
+    "CUIT": "30666074013",
+    "DIRECCION": "CORRIENTES 655",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "302",
+    "razonSocial": "PANAMER S.A.",
+    "CUIT": "30641803681",
+    "DIRECCION": "AV. DEL LIBERTADOR 3197",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "303",
+    "razonSocial": "PARANÁ SEGUROS",
+    "CUIT": "30500057102",
+    "DIRECCION": "MAIPU 215 P 6 D",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "304",
+    "razonSocial": "PARDO SA",
+    "CUIT": "30666774910",
+    "DIRECCION": "22 47",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "305",
+    "razonSocial": "PATAGONIA CRED S.A. (EFECTIVO AHORA)",
+    "CUIT": "30715167324",
+    "DIRECCION": "JURAMENTO 1475 P 5 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "306",
+    "razonSocial": "PERGAMINO AUTOMOTORES S.A.",
+    "CUIT": "33539214999",
+    "DIRECCION": "RUTA 8 KM 223 0",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "307",
+    "razonSocial": "PETRAGLIA AUTOMOTORES S.A.",
+    "CUIT": "30-61342688-0",
+    "DIRECCION": "ANCHORENA 1772 P 7 D C",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "308",
+    "razonSocial": "PEUGEOT CITROEN ARGENTINA SA",
+    "CUIT": "30504744538",
+    "DIRECCION": "AV. JD PERON 1001",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "309",
+    "razonSocial": "PISCINAS MANANTIALES",
+    "CUIT": "XXXX",
+    "DIRECCION": "XXX XXX",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "310",
+    "razonSocial": "PLAN OVALO S A DE AHORRO PARA FINES DETERMINADOS",
+    "CUIT": "30584042741",
+    "DIRECCION": "HENRY FORD 3295",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "311",
+    "razonSocial": "PLAN ROMBO S.A. DE AHORRO PARA FINES DETERMINADOS",
+    "CUIT": "30519901299",
+    "DIRECCION": "FRAY S. DE ORO 1744",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "312",
+    "razonSocial": "PORTSAid",
+    "CUIT": "30687725766",
+    "DIRECCION": "MITRE 3799",
+    "SERVICIO": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "313",
+    "razonSocial": "POWERTECOUTBOARDS S.A.",
+    "CUIT": "30503865455",
+    "DIRECCION": "CAMPICHUELO 260",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "314",
+    "razonSocial": "PRESTO YA",
+    "CUIT": "0",
+    "DIRECCION": "DESCONOCidO 000",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "315",
+    "razonSocial": "PREVER COOP DE VIVIENDA, CREDITO Y CONSUMO LTDA",
+    "CUIT": "33-70718533-9",
+    "DIRECCION": "LAVALLE 482 P 8 D A",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "316",
+    "razonSocial": "PRISMA MEDIOS DE PAGO S.A. (VISA)",
+    "CUIT": "30598910045",
+    "DIRECCION": "LAVARDEN 247",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "317",
+    "razonSocial": "PRONTO PAGO SA",
+    "CUIT": "30697467277",
+    "DIRECCION": "25 DE MAYO 293 P 7 D A",
+    "SERVICIO": "COMERCIO LOCAL;EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "318",
+    "razonSocial": "PROVINCIA SEGUROS SA",
+    "CUIT": "30527508165",
+    "DIRECCION": "CARLOS PELLEGRINI 71",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "319",
+    "razonSocial": "PSA FINANCE ARGENTINA COMPAÑÍA FINANCIERA S.A",
+    "CUIT": "30707847367",
+    "DIRECCION": "MAIPÚ 942",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "320",
+    "razonSocial": "QUALIA COMPAÑIA DE SEGUROS S.A.",
+    "CUIT": "30714496804",
+    "DIRECCION": "CERRITO CERRITO P 740 D",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "321",
+    "razonSocial": "QUINTANA NICOLAS FEDERICO (INDUMENTARIA NEW VISION)",
+    "CUIT": "20430346696",
+    "DIRECCION": "SALVIGNY 1443",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "322",
+    "razonSocial": "REMAX ARGENTINA",
+    "CUIT": "33970892523",
+    "DIRECCION": "CALLAO 1515",
+    "SERVICIO": "INMOBILIARIA"
+  },
+  {
+    "id": "323",
+    "razonSocial": "RENAULT ARGENTINA S.A.",
+    "CUIT": "30503317814",
+    "DIRECCION": "FRAY JUSTO SANTA MARÍA DE ORO 1744",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "324",
+    "razonSocial": "REUTEMANN AUTOMOTORES S.A.",
+    "CUIT": "30693653394",
+    "DIRECCION": "PARAGUAY 1134",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "325",
+    "razonSocial": "RIBEIRO S.A.C.I.F.A.E I.",
+    "CUIT": "30525966859",
+    "DIRECCION": "AV. CORRIENTES 4678",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "326",
+    "razonSocial": "RICCIUTI ANGEL JOSE (CAFUL LOMOS)",
+    "CUIT": "20206255197",
+    "DIRECCION": "GARIBALDI 360",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "327",
+    "razonSocial": "RIVEIRA FABIAN CLAUDIO (SOMMIER STORE)",
+    "CUIT": "20171976651",
+    "DIRECCION": "PASAJE SUDAMERICA 1579",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "328",
+    "razonSocial": "ROMA CONSTRUCCIONES SRL",
+    "CUIT": "30709223999",
+    "DIRECCION": "SGTO. CABRAL 2066",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "329",
+    "razonSocial": "ROYCAN SA",
+    "CUIT": "30709331368",
+    "DIRECCION": "FREFREQ 32423",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "330",
+    "razonSocial": "RUBIC S.A. (AUTOCITY)",
+    "CUIT": "30715985930",
+    "DIRECCION": "AV. SANTA ANA 6363",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "331",
+    "razonSocial": "RUTA 3 AUTOMOTORES S.A",
+    "CUIT": "30540127251",
+    "DIRECCION": "AV. RIVADAVIA 13162",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "332",
+    "razonSocial": "SALUD ROSARIO SA",
+    "CUIT": "30-68467524-5",
+    "DIRECCION": "JUJUY 1540",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "333",
+    "razonSocial": "SAMSUNG ELECTRONICS ARGENTINA SA",
+    "CUIT": "30-68412579-2",
+    "DIRECCION": "AV. BOUCHARD 710 P 7 D",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "334",
+    "razonSocial": "SAN NICOLAS INFORMATICA S.R.L.",
+    "CUIT": "30709480886",
+    "DIRECCION": "AV. SAVIO 65",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "335",
+    "razonSocial": "SAN NICOLAS MOTOS S.A.S.",
+    "CUIT": "30716058243",
+    "DIRECCION": "AV. PRESidENTE PERON 1347",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "336",
+    "razonSocial": "SAN NICOLAS TUR (DANIELA VERONICA MARTINEZ)",
+    "CUIT": "27261261192",
+    "DIRECCION": "DE LA NACION 242",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "337",
+    "razonSocial": "SANATORIO LAS LOMAS S.A.",
+    "CUIT": "30605114969",
+    "DIRECCION": "AV. DIEGO CARMAN 555",
+    "SERVICIO": "OBRA SOCIAL / MEDICINA PREPAGA;PRESTADORES DE SALUD (PROFESIONALES, CLINICAS)"
+  },
+  {
+    "id": "338",
+    "razonSocial": "SANCOR COOPERATIVAS UNidAS LIMITADA",
+    "CUIT": "30501677643",
+    "DIRECCION": "TTE. GRAL. RICHIERI 15",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "339",
+    "razonSocial": "SANCOR SEGUROS",
+    "CUIT": "30500049460",
+    "DIRECCION": "VER 111111",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "340",
+    "razonSocial": "SAUNA WAGEN SAN ISidRO S.A.",
+    "CUIT": "30711178364",
+    "DIRECCION": "AV. CENTENARIO 2613",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "341",
+    "razonSocial": "SE-SOCIO SOCIEDAD ANONIMA (SESOCIO)",
+    "CUIT": "30715238965",
+    "DIRECCION": "SILVIO RUGGIERI 2746 P 3 D B",
+    "SERVICIO": "COMERCIO LOCAL;EXCHANGE DE CRIPTOMONEDAS"
+  },
+  {
+    "id": "342",
+    "razonSocial": "SEGUROS BERNARDINO RIVADAVIA COOPERATIVA LIMITADA",
+    "CUIT": "30500050310",
+    "DIRECCION": "7 755",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "343",
+    "razonSocial": "SEGUROS SURA S.A.",
+    "CUIT": "30500000127",
+    "DIRECCION": ".CECILIA GRIERSON 255 P 1 D",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "344",
+    "razonSocial": "SEND MONEY S.A",
+    "CUIT": "XXXXXXXXX",
+    "DIRECCION": "MITRE 747",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "345",
+    "razonSocial": "SERVICETEC S.A.",
+    "CUIT": "30711025819",
+    "DIRECCION": "MAIPU 566 P 3 D F",
+    "SERVICIO": "SEGUROS"
+  },
+  {
+    "id": "346",
+    "razonSocial": "SidWAY S.A.",
+    "CUIT": "30649627572",
+    "DIRECCION": "AV. PASEO COLON 492",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "347",
+    "razonSocial": "SIMONE AUTOMOTORES S.A.",
+    "CUIT": "30691338866",
+    "DIRECCION": "RUTA 215 Y ALMAFUERTE 0",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "348",
+    "razonSocial": "SISTEMA DE VIVIENDAS TECNOHOGAR S.R.L.",
+    "CUIT": "30710834489",
+    "DIRECCION": "AV. MARCOS CIANI 3305",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "349",
+    "razonSocial": "SOCIAL PLAN SOLUCIONES INTEGRALES S.R.L.",
+    "CUIT": "30715740679",
+    "DIRECCION": "LA PINTA 1867",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "350",
+    "razonSocial": "SOCIEDAD ANONIMA LA NACION (CLUB LA NACION)",
+    "CUIT": "30500089624",
+    "DIRECCION": "ZEPITA 3251",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "351",
+    "razonSocial": "SOEME",
+    "CUIT": "30581759831",
+    "DIRECCION": "SALTA 534",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "352",
+    "razonSocial": "SOLANAS COUNTRY S.A.",
+    "CUIT": "33637802319",
+    "DIRECCION": "AV. DEL LIBERTADOR 5954",
+    "SERVICIO": "TIEMPO COMPARTidO"
+  },
+  {
+    "id": "353",
+    "razonSocial": "SOLUCIONES MULTIMEDIA S.A. (GURU)",
+    "CUIT": "30654118767",
+    "DIRECCION": "COLECTORA PANAMERICANA OESTE 1804",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "354",
+    "razonSocial": "SONIK SA",
+    "CUIT": "30709453250",
+    "DIRECCION": "ISLAS MALVINAS 3001",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "355",
+    "razonSocial": "SOUTH NET TURISMO S.A",
+    "CUIT": "30707210210",
+    "DIRECCION": "SANCHEZ DE LORIA 2395 P 4 D",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "356",
+    "razonSocial": "SOUTH-NET TURISMO S.A",
+    "CUIT": "30707210210",
+    "DIRECCION": "SÁNCHEZ DE LORIA 2395 P 4 D 0",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "357",
+    "razonSocial": "SWISS MEDICAL S A",
+    "CUIT": "30654855168",
+    "DIRECCION": "AV. LIBERTADOR 498 P 8 D",
+    "SERVICIO": "MEDICINA PREPAGA;OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "358",
+    "razonSocial": "SYMONDS S.A",
+    "CUIT": "30710114176",
+    "DIRECCION": "AV. CORRIENTES 5233",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "359",
+    "razonSocial": "SYPLASTIC",
+    "CUIT": "30326589212",
+    "DIRECCION": "SAN MARTIN 11",
+    "SERVICIO": "COMERCIO LOCAL"
+  },
+  {
+    "id": "360",
+    "razonSocial": "TARABORELLI AUTOMOBILE S.A.",
+    "CUIT": "30686523795",
+    "DIRECCION": "AV. SAN MARTÍN 3078",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "361",
+    "razonSocial": "TARJETA NARANJA SA",
+    "CUIT": "30685376344",
+    "DIRECCION": "LA TABLADA 451",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "362",
+    "razonSocial": "TARJETA TITANIO S.A.",
+    "CUIT": "30708379286",
+    "DIRECCION": "SAN MARTIN 853",
+    "SERVICIO": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "363",
+    "razonSocial": "TELECOM ARGENTINA S.A. (TELECOM-CABLEVISION-FIBERTEL-PERSONAL)",
+    "CUIT": "30639453738",
+    "DIRECCION": "AV. ALICIA MOREAU DE JUSTO 50",
+    "SERVICIO": "TELEFONIA MOVIL; TELEFONIA FIJA;INTERNET;TV / CABLE"
+  },
+  {
+    "id": "364",
+    "razonSocial": "TELEFONICA MOVILES ARGENTINA SA (MOVISTAR)",
+    "CUIT": "30678814357",
+    "DIRECCION": "AV. INGENIERO HUERGO 723",
+    "SERVICIO": "TELEFONIA MOVIL; TELEFONIA FIJA"
+  },
+  {
+    "id": "365",
+    "razonSocial": "TIJE S.A.",
+    "CUIT": "30707045228",
+    "DIRECCION": "SAN MARTÍN 640 P 6 D 00",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "366",
+    "razonSocial": "TOTAL SUPPORT SA",
+    "CUIT": "30709467200",
+    "DIRECCION": "CALLE 3 1045",
+    "SERVICIO": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "367",
+    "razonSocial": "TOULON SA",
+    "CUIT": "33715908099",
+    "DIRECCION": "HIPOLITO YRIGOYEN 8302",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "368",
+    "razonSocial": "TOYOTA PLAN ARGENTINA S.A.DE AHORRO PARA FINES DETERMINADOS",
+    "CUIT": "30714396958",
+    "DIRECCION": "AV. EDUARDO MADERO 1020 P 5 D",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "369",
+    "razonSocial": "TRANSATLANTICA COMPAÑIA FINANCIERA S.A. (REBA)",
+    "CUIT": "30628284357",
+    "DIRECCION": "MAIPU 272",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "370",
+    "razonSocial": "TURISMO RESPONSABLE S.A. (DESTINET)",
+    "CUIT": "30711460035",
+    "DIRECCION": "MAIPU 471",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "371",
+    "razonSocial": "TURISMOVISION S.A.",
+    "CUIT": "30710329180",
+    "DIRECCION": "LIMA 1125",
+    "SERVICIO": "TIEMPO COMPARTidO"
+  },
+  {
+    "id": "372",
+    "razonSocial": "TURQUISH AIRLINES INC",
+    "CUIT": "30712548890",
+    "DIRECCION": "CARLOS PELLEGRINI 635",
+    "SERVICIO": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "373",
+    "razonSocial": "UNILOGRO S. A. DE CAPITALIZACION Y AHORRO",
+    "CUIT": "33715162879",
+    "DIRECCION": "LAVALLE 1567",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "374",
+    "razonSocial": "UNITED AIRLINES INC",
+    "CUIT": "30707492925",
+    "DIRECCION": "MAIPU 46",
+    "SERVICIO": "FABRICACION AUTOMOTORES ;TRANSPORTE AÉREO"
+  },
+  {
+    "id": "375",
+    "razonSocial": "UNIVERSAL ASSISTANCE SA",
+    "CUIT": "30581466796",
+    "DIRECCION": "CORDOBA 820",
+    "SERVICIO": "OPERADOR TURISTICO;SEGUROS"
+  },
+  {
+    "id": "376",
+    "razonSocial": "UNIVERSidAD NACIONAL DE SANTIAGO DEL ESTERO",
+    "CUIT": "30586761966",
+    "DIRECCION": "AV. BELGRANO 1912",
+    "SERVICIO": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "377",
+    "razonSocial": "VENEZIA AUTO S.A.",
+    "CUIT": "30712099638",
+    "DIRECCION": "MORENO 955",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "378",
+    "razonSocial": "VERONA AUTOMOVILES S.A.",
+    "CUIT": "30714352837",
+    "DIRECCION": "TUCUMAN 612",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "379",
+    "razonSocial": "VIA BARILOCHE S.A. (VIA CARGO)",
+    "CUIT": "30643922157",
+    "DIRECCION": "VIAMONTE 965 P 1 D",
+    "SERVICIO": "TRANSPORTE AUTOMOTOR DE CARGAS"
+  },
+  {
+    "id": "380",
+    "razonSocial": "VIAGOGO",
+    "CUIT": "11111111",
+    "DIRECCION": "11 11",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "381",
+    "razonSocial": "VIAJES ONLINE S.R.L.",
+    "CUIT": "30711951306",
+    "DIRECCION": "SAN MARTIN 640",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "382",
+    "razonSocial": "VIAJES ONLINE SA (VOLALA)",
+    "CUIT": "30711951306",
+    "DIRECCION": "SAN MARTIN 640",
+    "SERVICIO": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "383",
+    "razonSocial": "VIVIENDAS DON PALACIOS S.R.L.",
+    "CUIT": "30711343098",
+    "DIRECCION": "AYACUCHO 6244",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "384",
+    "razonSocial": "VIVIENDAS REY DE REYES SAS",
+    "CUIT": "30716008793",
+    "DIRECCION": "RAFAEL NUÑEZ 5751",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "385",
+    "razonSocial": "VIVIENDAS SANTA FE SRL",
+    "CUIT": "30715904833",
+    "DIRECCION": "SAAVEDRA 1699",
+    "SERVICIO": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "386",
+    "razonSocial": "VOLKSWAGEN ARGENTINA S.A.",
+    "CUIT": "30-50401884-5",
+    "DIRECCION": "AV. DE LAS INDUSTRIAS 3101",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "387",
+    "razonSocial": "VOLKSWAGEN SA DE AHORRO PARA FINES DETERMINADOS",
+    "CUIT": "30561332688",
+    "DIRECCION": "MAIPÚ 267 P 11 D",
+    "SERVICIO": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "388",
+    "razonSocial": "WAGEN SA",
+    "CUIT": "30696503962",
+    "DIRECCION": "PANAMERICANA R PILAR 355",
+    "SERVICIO": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "389",
+    "razonSocial": "WENANCE SA (PRESTO HOY-LUKITAS-MANGO)",
+    "CUIT": "30708044985",
+    "DIRECCION": "VUELTA DE OBLIGADO 1947 P 3 D",
+    "SERVICIO": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "390",
+    "razonSocial": "WHIRLPOOL ARGENTINA SRL",
+    "CUIT": "30636344776",
+    "DIRECCION": "AV CROVARA 2550",
+    "SERVICIO": "RETAIL (BIENES DE CONSUMO MASIVO);COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "391",
+    "razonSocial": "ZANELLA HNOS. Y CIA. SACIFI",
+    "CUIT": "30502498572",
+    "DIRECCION": "JUAN ZANELLA 4437",
+    "SERVICIO": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "392",
+    "razonSocial": "ZURICH ARGENTINA COMPAÑÍA DE SEGUROS S.A",
+    "CUIT": "30500049770",
+    "DIRECCION": "CERRITO 1010",
+    "SERVICIO": "SEGUROS"
+  }
+]
