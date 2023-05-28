@@ -1,100 +1,90 @@
-import React from "react";
-import TitlePage from "@Components/TitlePage";
-import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import { useForm, Controller } from "react-hook-form";
 import Input from "@Components/Input";
-import { BsUpload } from "react-icons/bs";
 import { AiOutlineUpload } from "react-icons/ai";
+import companies from "@Assets/mocks/companies.json";
+import trials from "@Assets/mocks/typeOfTrial.json";
+import rubros from "@Assets/mocks/rubros.json";
+import tags from "@Assets/mocks/tags.json";
+import court from "@Assets/mocks/courts.json";
+import Select from "react-select";
+import CreatableSelect from "react-select/creatable";
 
 const UploadLegal = () => {
+  const [empresaValue, setEmpresaValue] = useState([]);
+  const [resetSelectKey, setResetSelectKey] = useState(0);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-
+    control,
+    reset,
+  } = useForm({ defaultValues: {} });
   const fieldsDefinidos = [
-    { label: "Actor/es", name: "actor", type: "text" },
-    { label: "Demandado/s", name: "demandado", type: "text" },
-  ];
-  const fieldsSelections = [
     {
-      label: "Tipo de juicio",
-      name: "tipo_juicio",
-      type: "select",
-      options: [
-        { value: 1, label: "Civil" },
-        { value: 2, label: "Penal" },
-        { value: 3, label: "Laboral" },
-      ],
-    },
-    {
-      label: "Causas del reclamo",
-      name: "causa_reclamo",
-      type: "select",
-      options: [
-        { value: 1, label: "Causa 1" },
-        { value: 2, label: "Causa 2" },
-        { value: 3, label: "Causa 3" },
-      ],
-    },
-    {
-      label: "Rubro",
-      name: "rubro",
-      type: "select",
-      options: [
-        { value: 1, label: "rubro 1" },
-        { value: 2, label: "rubro 2" },
-        { value: 3, label: "rubro 3" },
-      ],
-    },
-    {
-      label: "Empresa",
-      name: "empresa",
-      type: "select",
-      options: [
-        { value: 1, label: "Empresa 1" },
-        { value: 2, label: "Empresa 2" },
-        { value: 3, label: "Empresa 3" },
-      ],
-    },
-    {
-      label: "Tribunal",
-      name: "tribunal",
-      type: "select",
-      options: [
-        { value: 1, label: "tribunal 1" },
-        { value: 2, label: "tribunal 2" },
-        { value: 3, label: "tribunal 3" },
-      ],
+      label: "Actor",
+      name: "agent",
+      type: "text",
+      validation: "Complete Actor",
     },
   ];
-  const fieldsMontos = [
-    { label: "Daño punitivo", name: "daño_punitivo", type: "text" },
-    { label: "Daño Moral", name: "daño_moral", type: "text" },
-    { label: "Patrimonial", name: "patrimonial", type: "text" },
+  const fieldMontos = [
+    {
+      label: "Daño punitivo",
+      name: "punitive_damage",
+      type: "number",
+      validation: "Complete daño punitivo",
+    },
+    {
+      label: "Daño moral",
+      name: "moral_damage",
+      type: "number",
+      validation: "Complete daño moral",
+    },
+    {
+      label: "Patrimonial",
+      name: "patrimonial",
+      type: "number",
+      validation: "Complete monto patrimonial",
+    },
   ];
 
-  // onSubmit
   const submitData = (data) => {
-    console.log("submit");
-    console.log(data);
+    const formData = new FormData();
+    formData.append("sentence", data.sentence[0]);
+    formData.append("agent", data.agent);
+    formData.append("defendant", data.defendant);
+    formData.append("typeOf_trials", data.typeOf_trials);
+    formData.append("sector", data.sector);
+    formData.append("courthouse", data.courthouse);
+    formData.append("dateOf_sentences", data.dateOf_sentences);
+    formData.append("punitive_damage", data.punitive_damage);
+    formData.append("moral_damage", data.moral_damage);
+    formData.append("patrimonial", data.patrimonial);
+    formData.append("tags", data.tags);
+    formData.append("summary", data.summary);
+    console.log([...formData]);
+    reset();
+    setEmpresaValue([]);
+    setResetSelectKey((prevKey) => prevKey + 1);
   };
 
   return (
     <div className="h-full w-full">
-      <TitlePage title={`Subir fallo`} icon={<BsUpload />} sub />
-      <div className="py-5">
-        <span className="text-4xl font-bold text-title flex justify-center my-3">
-          Formulario de carga de fallo judicial
-        </span>
+      <div className="py-2 mt-5">
         <form
           onSubmit={handleSubmit(submitData)}
-          className="flex flex-col gap-y-2 mx-auto w-1/2"
+          className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto"
+          autoComplete=""
         >
+          <span className="md:text-4xl text-3xl font-bold text-title w-full md:mx-auto">
+            Formulario de carga de fallo judicial
+          </span>
           <Input
             type="file"
             register={register}
-            name="fallo"
+            name="sentence"
             label="Subir archivo (pdf del fallo *)"
             errors={errors}
           />
@@ -109,52 +99,273 @@ const UploadLegal = () => {
               label={field.label}
               register={register}
               errors={errors}
+              validation={field.validation}
             />
           ))}
-          {fieldsSelections.map((s) => (
+          <div className="flex flex-col gap-y-1 text-left cursor-pointer">
+            <label>Demandado</label>
+            <Controller
+              key={"empresa"}
+              name={"defendant"}
+              control={control}
+              defaultValue={[]}
+              rules={{
+                required: "Seleccione o agregue una empresa",
+              }}
+              render={({ field: { onChange, name } }) => (
+                <CreatableSelect
+                  key={resetSelectKey}
+                  className="border border-[#687073] rounded"
+                  options={companies.map((item) => ({
+                    value: parseInt(item.id),
+                    label: `${item.razonSocial} - ${item.CUIT}`,
+                  }))}
+                  onCreateOption={(inputValue) => {
+                    const newOption = { value: inputValue, label: inputValue };
+                    const newOptions = [...empresaValue, newOption];
+                    setEmpresaValue(newOptions);
+                    onChange(newOptions.map((option) => option.value));
+                  }}
+                  onChange={(selectedOptions) => {
+                    const selectedValues = selectedOptions.map(
+                      (option) => option.value
+                    );
+                    setEmpresaValue(selectedOptions);
+                    onChange(selectedValues);
+                  }}
+                  value={empresaValue}
+                  name={name}
+                  formatCreateLabel={(inputValue) => (
+                    <p>{`Añadir "${inputValue}"`}</p>
+                  )}
+                  placeholder="Seleccione una opción..."
+                  isMulti
+                  isClearable
+                  pageSize={3}
+                  noOptionsMessage={() => (
+                    <p>No hay elementos coincidentes para su búsqueda</p>
+                  )}
+                />
+              )}
+            />
+            {errors["defendant"] && (
+              <p className="text-sm text-red-500">
+                {errors["defendant"].message}
+              </p>
+            )}
+          </div>
+
+          <div className="flex flex-col gap-y-1 text-left cursor-pointer">
+            <label>Tipo de juicio</label>
+            <Controller
+              name="typeOf_trials"
+              control={control}
+              defaultValue={[]}
+              rules={{
+                required: "Seleccione tipo de juicio",
+              }}
+              render={({ field: { onChange, value, name } }) => (
+                <Select
+                  key={resetSelectKey}
+                  className="border border-[#687073] rounded"
+                  options={trials.map((item) => ({
+                    value: parseInt(item.id),
+                    label: item.description.toUpperCase(),
+                  }))}
+                  onChange={(selectedOption) => {
+                    const selectedValue = selectedOption
+                      ? selectedOption.value
+                      : null;
+                    onChange(selectedValue);
+                  }}
+                  value={trials.find((item) => item.value === value)}
+                  name={name}
+                  defaultValue={[]}
+                  placeholder="Seleccione una opción..."
+                  noOptionsMessage={() => (
+                    <p>No hay elementos coincidentes para su búsqueda</p>
+                  )}
+                />
+              )}
+            />
+            {errors.typeOf_trials && (
+              <p className="text-sm text-red-500">
+                {errors.typeOf_trials.message}
+              </p>
+            )}
+          </div>
+
+          {/* Campo de selección - Rubro */}
+          <div className="flex flex-col gap-y-1 text-left cursor-pointer">
+            <label>Rubro</label>
+            <Controller
+              name="sector"
+              control={control}
+              defaultValue={[]}
+              rules={{
+                required: "Seleccione un rubro",
+              }}
+              render={({ field: { onChange, value, name } }) => (
+                <Select
+                  key={resetSelectKey}
+                  className="border border-[#687073] rounded"
+                  options={rubros.map((item) => ({
+                    value: parseInt(item.id),
+                    label: item.rubro,
+                  }))}
+                  onChange={(selectedOption) => {
+                    const selectedValue = selectedOption
+                      ? selectedOption.value
+                      : null;
+                    onChange(selectedValue);
+                  }}
+                  value={rubros.find((item) => item.value === value)}
+                  name={name}
+                  defaultValue={[]}
+                  placeholder="Seleccione una opción..."
+                  noOptionsMessage={() => (
+                    <p>No hay elementos coincidentes para su búsqueda</p>
+                  )}
+                />
+              )}
+            />
+            {errors.sector && (
+              <p className="text-sm text-red-500">{errors.sector.message}</p>
+            )}
+          </div>
+
+          {/* Campo de selección - Datos del tribunal/juzgado */}
+          <div className="flex flex-col gap-y-1 text-left cursor-pointer">
+            <label>Datos del tribunal/juzgado</label>
+            <Controller
+              name="courthouse"
+              control={control}
+              defaultValue={[]}
+              rules={{
+                required: "Seleccione tribunal/juzgado",
+              }}
+              render={({ field: { onChange, value, name } }) => (
+                <Select
+                  key={resetSelectKey}
+                  className="border border-[#687073] rounded"
+                  options={court.map((item) => ({
+                    value: item.id,
+                    label: item.nombre,
+                  }))}
+                  onChange={(selectedOption) => {
+                    const selectedValue = selectedOption
+                      ? selectedOption.value
+                      : null;
+                    onChange(selectedValue);
+                  }}
+                  value={court.find((item) => item.value === value)}
+                  name={name}
+                  placeholder="Seleccione una opción..."
+                  defaultValue={[]}
+                  noOptionsMessage={() => (
+                    <p>No hay elementos coincidentes para su búsqueda</p>
+                  )}
+                />
+              )}
+            />
+            {errors.courthouse && (
+              <p className="text-sm text-red-500">
+                {errors.courthouse.message}
+              </p>
+            )}
+          </div>
+
+          <Input
+            type="date"
+            register={register}
+            name="dateOf_sentences"
+            label="Fecha del fallo"
+            errors={errors}
+            validation={"Complete la fecha del fallo"}
+            pointer
+          />
+
+          <span className="text-xl font-semibold text-title mt-3">Montos</span>
+          {fieldMontos.map((field) => (
             <Input
-              key={s.name}
-              type={s.type}
-              name={s.name}
-              options={s.options}
-              label={s.label}
+              key={field.name}
+              type={field.type}
+              name={field.name}
+              label={field.label}
               register={register}
               errors={errors}
+              validation={field.validation}
             />
           ))}
           <span className="text-xl font-semibold text-title mt-3">
-            Datos del Tribunal
+            Resumen del caso
           </span>
-          {fieldsMontos.map((item) => (
-            <Input
-              key={item.name}
-              name={item.name}
-              label={item.label}
-              register={register}
-              errors={errors}
-              type={"text"}
+          <div className="flex flex-col gap-y-1 text-left cursor-pointer">
+            <label>{"Etiquetas relacionadas al fallo"}</label>
+            <Controller
+              name="tags"
+              control={control}
+              defaultValue={[]}
+              rules={{
+                required: "Seleccione etiquetas relacionadas",
+              }}
+              render={({ field: { onChange, value, name } }) => {
+                const selectedOptions = value.map((selectedValue) => {
+                  const tag = tags.find((item) => item.id === selectedValue);
+                  return {
+                    value: tag.id,
+                    label: tag.description,
+                  };
+                });
+                return (
+                  <Select
+                    key={resetSelectKey}
+                    className="border border-[#687073] rounded"
+                    options={tags.map((item) => ({
+                      value: item.id,
+                      label: item.description,
+                    }))}
+                    isMulti
+                    onChange={(selectedOptions) => {
+                      const selectedValues = selectedOptions.map((option) =>
+                        option.value.toString()
+                      );
+                      onChange(selectedValues);
+                    }}
+                    value={selectedOptions}
+                    name={name}
+                    placeholder="Seleccione una opción..."
+                    isClearable
+                    noOptionsMessage={() => (
+                      <p>No hay elementos coincidentes para su búsqueda</p>
+                    )}
+                  />
+                );
+              }}
             />
-          ))}
-          <div className="flex flex-col">
-            <label>Resumen del caso</label>
+            {errors.tags && (
+              <p className="text-sm text-red-500">{errors.tags.message}</p>
+            )}
+          </div>
+          <div className="flex flex-col gap-y-1">
+            <label htmlFor="summary">Resumen</label>
             <textarea
-              className={`border border-[#687073] pl-1 py-2.5 rounded-md outline-none ${
-                errors["summary"] && "border-red-500"
-              }`}
+              className={`border border-[#687073] pl-1 py-2.5 rounded-md outline-none`}
               {...register("summary", {
                 required: true,
-                maxLength: 100,
+                maxLength: 300,
               })}
+              name="summary"
             ></textarea>
 
             {errors["summary"] && errors["summary"].type === "required" && (
               <p className="text-sm text-red-500">
-                Debe completar el campo para continuar
+                Debe completar un resumen del fallo
               </p>
             )}
             {errors["summary"] && errors["summary"].type === "maxLength" && (
               <p className="text-sm text-red-500">
-                Máximo de caracteres alcanzado: 100
+                Máximo de caracteres alcanzado: 300
               </p>
             )}
           </div>
