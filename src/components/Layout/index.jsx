@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 
 const Layout = () => {
   return (
-    <div className="h-screen">
+    <div className="h-full w-full">
       <NavBar />
       <Outlet />
     </div>
