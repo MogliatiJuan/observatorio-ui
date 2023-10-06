@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Input from "@Components/Input";
 import { AiOutlineUpload } from "react-icons/ai";
@@ -7,6 +7,7 @@ import trials from "@Assets/mocks/typeOfTrial.json";
 import rubros from "@Assets/mocks/rubros.json";
 import tags from "@Assets/mocks/tags.json";
 import court from "@Assets/mocks/courts.json";
+import claims from "@Assets/mocks/claims.json";
 import Select from "react-select";
 import CreatableSelect from "react-select/creatable";
 
@@ -52,18 +53,19 @@ const UploadLegal = () => {
 
   const submitData = (data) => {
     const formData = new FormData();
-    formData.append("sentence", data.sentence[0]);
-    formData.append("agent", data.agent);
-    formData.append("defendant", data.defendant);
-    formData.append("typeOf_trials", data.typeOf_trials);
-    formData.append("sector", data.sector);
-    formData.append("courthouse", data.courthouse);
-    formData.append("dateOf_sentences", data.dateOf_sentences);
-    formData.append("punitive_damage", data.punitive_damage);
-    formData.append("moral_damage", data.moral_damage);
+    formData.append("fallo", data.sentence[0]);
+    formData.append("actor", data.agent);
+    formData.append("demandado", data.defendant);
+    formData.append("tipo_juicio", data.typeOf_trials);
+    formData.append("causas", data.claims);
+    formData.append("rubro", data.sector);
+    formData.append("id_juzgado", data.courthouse);
+    formData.append("fecha_fallo", data.dateOf_sentences);
+    formData.append("faño_punitivo", data.punitive_damage);
+    formData.append("daño_moral", data.moral_damage);
     formData.append("patrimonial", data.patrimonial);
-    formData.append("tags", data.tags);
-    formData.append("summary", data.summary);
+    formData.append("etiquetas", data.tags);
+    formData.append("resumen", data.summary);
     console.log([...formData]);
     reset();
     setEmpresaValue([]);
@@ -76,8 +78,7 @@ const UploadLegal = () => {
         <form
           onSubmit={handleSubmit(submitData)}
           className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto"
-          autoComplete=""
-        >
+          autoComplete="">
           <span className="md:text-4xl text-3xl font-bold text-title w-full md:mx-auto">
             Formulario de carga de fallo judicial
           </span>
@@ -195,7 +196,44 @@ const UploadLegal = () => {
             )}
           </div>
 
-          {/* Campo de selección - Rubro */}
+          <div className="flex flex-col gap-y-1 text-left cursor-pointer">
+            <label>Causas del reclamo</label>
+            <Controller
+              name="claims"
+              control={control}
+              defaultValue={[]}
+              rules={{
+                required: "Seleccione causas del reclamo",
+              }}
+              render={({ field: { onChange, value, name } }) => (
+                <Select
+                  key={resetSelectKey}
+                  className="border border-[#687073] rounded"
+                  options={claims.map((item) => ({
+                    value: parseInt(item.id),
+                    label: item.description,
+                  }))}
+                  onChange={(selectedOption) => {
+                    const selectedValue = selectedOption
+                      ? selectedOption.value
+                      : null;
+                    onChange(selectedValue);
+                  }}
+                  value={claims.find((item) => item.value === value)}
+                  name={name}
+                  defaultValue={[]}
+                  placeholder="Seleccione una opción..."
+                  noOptionsMessage={() => (
+                    <p>No hay elementos coincidentes para su búsqueda</p>
+                  )}
+                />
+              )}
+            />
+            {errors.claims && (
+              <p className="text-sm text-red-500">{errors.claims.message}</p>
+            )}
+          </div>
+
           <div className="flex flex-col gap-y-1 text-left cursor-pointer">
             <label>Rubro</label>
             <Controller
@@ -234,9 +272,8 @@ const UploadLegal = () => {
             )}
           </div>
 
-          {/* Campo de selección - Datos del tribunal/juzgado */}
           <div className="flex flex-col gap-y-1 text-left cursor-pointer">
-            <label>Datos del tribunal/juzgado</label>
+            <label>Datos del tribunal</label>
             <Controller
               name="courthouse"
               control={control}
@@ -355,8 +392,7 @@ const UploadLegal = () => {
                 required: true,
                 maxLength: 300,
               })}
-              name="summary"
-            ></textarea>
+              name="summary"></textarea>
 
             {errors["summary"] && errors["summary"].type === "required" && (
               <p className="text-sm text-red-500">
@@ -371,8 +407,7 @@ const UploadLegal = () => {
           </div>
           <button
             type="submit"
-            className="w-24 h-12 bg-button flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover"
-          >
+            className="w-24 h-12 bg-button flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover">
             {"Cargar"} <AiOutlineUpload />
           </button>
         </form>

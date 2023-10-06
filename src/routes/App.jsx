@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "@Components";
-import { Home, Upload } from "@Pages";
+import { Home, Upload, LegalForm } from "@Pages";
 
 const App = () => {
   return (
@@ -10,6 +10,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="*" element={<Home />} />
           <Route path="/cargafallo" element={<Upload />} />
+          <Route path="/fallo-formulario" element={<LegalForm />} />
           <Route
             path="/buscarFallo"
             element={<span>Buscador de fallos</span>}
