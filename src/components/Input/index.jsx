@@ -14,6 +14,8 @@ const Input = ({
   disabled = false,
   setValue,
   control,
+  isMulti = false,
+  onchange,
 }) => {
   // Estilos comunes
   const commonStyles = {
@@ -47,7 +49,9 @@ const Input = ({
           render={({ field }) => (
             <Select
               {...field}
-              disabled={disabled}
+              isSearchable={true}
+              isMulti={isMulti}
+              isDisabled={disabled}
               options={options}
               placeholder={placeholder || label}
               noOptionsMessage={() => noOptionsMessage || "No hay opciones"}
@@ -65,6 +69,7 @@ const Input = ({
                 }),
               }}
               onChange={(selectedOption) => {
+                onchange && onchange(selectedOption);
                 setValue(name, selectedOption);
               }}
             />
