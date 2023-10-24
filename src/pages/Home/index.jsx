@@ -6,16 +6,15 @@ import Button from "@Components/Button";
 
 const Home = () => {
   return (
-    <div className="h-outlet w-full">
+    <div className="h-full w-full">
       <div
         style={{
-          height: "100%",
+          height: "30vh",
           backgroundImage: `url(${headerBanner})`,
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="flex flex-col items-end justify-end"
-      >
+        className="flex flex-col items-end justify-end">
         <div className="bg-navbar p-4 mb-10" style={{ width: "80%" }}>
           <span className="text-white text-4xl font-bold">
             OBSERVATORIO DE FALLOS DE CONSUMO
