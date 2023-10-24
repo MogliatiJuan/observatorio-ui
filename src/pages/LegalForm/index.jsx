@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { axiosFallos } from "@Api/index.js";
 import { Input } from "@Components";
-import corregirCodificacion from "@Utils";
+import corregirCodificacion from "@Utils/corregirCodificacion";
+import MySwal from "@Utils/swal";
+import formUploaded from "@Assets/formUploaded.png";
+import formErrorUpload from "@Assets/formErrorUpload.png";
 
 function UploadForm() {
   const [loading, setLoading] = useState(true);
@@ -15,6 +17,7 @@ function UploadForm() {
   const [provinciasState, setProvinciasState] = useState([]);
   const [etiquetasState, setEtiquetasState] = useState([]);
 
+  //crear estados para cada select dependiente
   const [ciudadesState, setCiudadesState] = useState([]);
   const [tribunalesState, setTribunalesState] = useState([]);
 
@@ -24,6 +27,7 @@ function UploadForm() {
     watch,
     setValue,
     control,
+    reset,
     formState: { errors },
   } = useForm();
 
@@ -44,8 +48,7 @@ function UploadForm() {
         axiosFallos.get("/api/datos/provincias"),
         axiosFallos.get("/api/datos/etiquetas"),
       ]);
-
-      setEmpresasState(empresasResponse.data.data);
+      setEmpresasState(empresasResponse.data);
       setTiposJuicioState(tiposJuicioResponse.data);
       setCausasState(causasResponse.data);
       setRubrosState(rubrosResponse.data);
@@ -107,7 +110,7 @@ function UploadForm() {
       noOptionsMessage: "No hay un tipo de juicio coincidente",
     },
     {
-      name: "causasdelreclamo",
+      name: "causas",
       label: "Causas del reclamo",
       type: "select",
       options: causasState?.map((causa) => ({
@@ -170,7 +173,7 @@ function UploadForm() {
   };
   const handleChangeCiudad = async (selectedOption) => {
     try {
-      setValue("tribunal", null);
+      setValue("idTribunal", null);
       setTribunalesState([]);
       const response = await axiosFallos.get(
         `/api/datos/juzgados?idCiudad=${selectedOption.value}`
@@ -181,14 +184,54 @@ function UploadForm() {
     }
   };
 
+  const submitForm = async (data) => {
+    setLoading(true);
+    const { tribunalCiudad, tribunalProvincia, ...newData } = data;
+    const formData = new FormData();
+    formData.append("file", data.file[0]);
+    Object.keys(newData).forEach((key) => {
+      if (key !== "file") {
+        if (Array.isArray(newData[key])) {
+          newData[key].forEach((value) => {
+            formData.append(key, parseInt(value.value));
+          });
+        } else if (typeof newData[key] === "object" && newData[key].value) {
+          formData.append(key, parseInt(newData[key].value));
+        } else {
+          formData.append(key, newData[key]);
+        }
+      }
+    });
+    try {
+      const response = await axiosFallos.post("/api/fallo", formData);
+      MySwal.fire({
+        html: `<div class="flex flex-col gap-y-2">
+        <img src=${formUploaded} alt="imagen de subida exitosa" />
+        <span class="text-lg font-semibold text-title">El fallo fue cargado con éxito>enlace</a></span>
+        </div>`,
+        confirmButtonText: "Aceptar",
+      });
+    } catch (error) {
+      console.error(error);
+      MySwal.fire({
+        html: `<div class="flex flex-col gap-y-2">
+        <img src=${formErrorUpload} alt="imagen de subida fallida" />
+        <span class="text-lg font-semibold text-title">Hubo un error al cargar el fallo. Intente nuevamente</span>
+        </div>`,
+        confirmButtonText: "Aceptar",
+      });
+    } finally {
+      setLoading(false);
+      reset();
+    }
+  };
+
   if (!loading) {
     return (
       <div className="p-4 h-full w-full">
         <form
           className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto"
-          onSubmit={handleSubmit((data) => {
-            console.log(data);
-          })}>
+          onSubmit={handleSubmit(submitForm)}>
           <span className="md:text-4xl md:text-left text-3xl text-center font-bold text-title w-full md:mx-auto uppercase">
             Carga de fallo judicial
           </span>
@@ -264,7 +307,7 @@ function UploadForm() {
             control={control}
           />
           <Input
-            name="tribunal"
+            name="idTribunal"
             type="select"
             label="Tribunal"
             validation="Debe seleccionar un tribunal"
@@ -284,7 +327,7 @@ function UploadForm() {
           <span className="text-xl font-semibold text-title mt-3">Montos</span>
           <Input
             label="Daño Punitivo"
-            name="dañoPunitivo"
+            name="punitivo"
             type="number"
             placeholder="Daño Punitivo"
             register={register}
@@ -292,7 +335,7 @@ function UploadForm() {
           />
           <Input
             label="Daño Moral"
-            name="dañoMoral"
+            name="moral"
             type="number"
             placeholder="Daño Moral"
             register={register}
@@ -300,7 +343,7 @@ function UploadForm() {
           />
           <Input
             label="Patrimonial"
-            name="montoPatrimonial"
+            name="patrimonial"
             type="number"
             placeholder="Monto Patrimonial"
             register={register}
@@ -328,21 +371,21 @@ function UploadForm() {
             isMulti={true}
           />
           <div className="flex flex-col gap-y-1">
-            <label htmlFor="summary">Resumen</label>
+            <label htmlFor="resumen">Resumen</label>
             <textarea
               className={`border border-[#687073] pl-1 py-2.5 rounded-md outline-none`}
-              {...register("summary", {
+              {...register("resumen", {
                 required: true,
                 maxLength: 300,
               })}
-              name="summary"></textarea>
+              name="resumen"></textarea>
 
-            {errors["summary"] && errors["summary"].type === "required" && (
+            {errors["resumen"] && errors["resumen"].type === "required" && (
               <p className="text-sm text-red-500">
                 Debe completar un resumen del fallo
               </p>
             )}
-            {errors["summary"] && errors["summary"].type === "maxLength" && (
+            {errors["resumen"] && errors["resumen"].type === "maxLength" && (
               <p className="text-sm text-red-500">
                 Máximo de caracteres alcanzado: 300
               </p>
@@ -359,9 +402,9 @@ function UploadForm() {
   }
 
   return (
-    <div className="text-center">
-      <p>Cargando...</p>
-      {/* Puedes usar un spinner o una animación de carga aquí */}
+    <div className="flex items-center justify-center h-screen">
+      <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-r-2 border-b-2 border-navbar"></div>
+      <p className="ml-3">Cargando...</p>
     </div>
   );
 }
