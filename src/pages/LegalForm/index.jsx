@@ -207,7 +207,7 @@ function UploadForm() {
       MySwal.fire({
         html: `<div class="flex flex-col gap-y-2">
         <img src=${formUploaded} alt="imagen de subida exitosa" />
-        <span class="text-lg font-semibold text-title">El fallo fue cargado con éxito>enlace</a></span>
+        <span class="text-lg font-semibold text-title">El fallo fue cargado con éxito</span>
         </div>`,
         confirmButtonText: "Aceptar",
       });
