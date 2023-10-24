@@ -1,4 +1,4 @@
-export const corregirCodificacion = (texto) => {
+const corregirCodificacion = (texto) => {
   const textoCorregido = texto
     .replace(/Ã¡/g, "á")
     .replace(/Ã©/g, "é")
@@ -17,3 +17,5 @@ export const corregirCodificacion = (texto) => {
 
   return textoCorregido;
 };
+
+export default corregirCodificacion;

@@ -5,7 +5,7 @@ import { VscFilterFilled } from "react-icons/vsc";
 import Input from "@Components/Input";
 import VerdictsContext from "../../context/VerdictsContext";
 import { axiosFallos } from "../../api";
-import { corregirCodificacion } from "@Utils";
+import corregirCodificacion from "@Utils/corregirCodificacion";
 import { RenderData } from "../../components";
 
 const BrowserVerdicts = () => {
@@ -250,8 +250,7 @@ const BrowserVerdicts = () => {
         <div className="flex justify-center gap-x-8">
           <button
             type="submit"
-            className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]"
-          >
+            className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]">
             {"Buscar"}
             <span>
               <AiOutlineSearch />
@@ -260,8 +259,7 @@ const BrowserVerdicts = () => {
           <button
             type="button"
             className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]"
-            onClick={handleCleanForm}
-          >
+            onClick={handleCleanForm}>
             {"Limpiar fallos"}
             <span>
               <VscFilterFilled />

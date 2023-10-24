@@ -5,7 +5,7 @@ import { CgShapeHalfCircle } from "react-icons/cg";
 import { TbBuildingFactory2 } from "react-icons/tb";
 import { PulseLoader } from "react-spinners";
 import { axiosFallos } from "../../api";
-import { corregirCodificacion } from "../../utils";
+import corregirCodificacion from "@Utils/corregirCodificacion";
 
 const DetailView = () => {
   const { id = null } = useParams();
@@ -42,7 +42,7 @@ const DetailView = () => {
           <p className="flex justify-center">No se encontraron resultados</p>
         </>
       ) : (
-        <div className="h-outlet w-[95%] mx-auto lg:w-11/12">
+        <div className="min-h-outlet max-h-full w-[95%] mx-auto lg:w-11/12">
           <h1 className="text-3xl items-center w-max pt-4 flex gap-x-2 lg:text-4xl text-title font-bold">
             <Link to="/buscador">
               <MdOutlineArrowBack />
