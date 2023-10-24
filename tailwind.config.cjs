@@ -40,6 +40,8 @@ module.exports = {
         button: "#0477AD",
         buttonHover: "#0A5477",
         navbar: "#434B69",
+        verdictsPrimary: "#b6c5da",
+        verdictsSecondary: "#e6ebf3",
       },
     },
   },

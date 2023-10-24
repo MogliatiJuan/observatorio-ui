@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Layout } from "@Components";
-import { Home, LegalForm } from "@Pages";
+import { Layout, DetailView } from "@Components";
+import { Home, LegalForm, Browser } from "@Pages";
 
 const App = () => {
   return (
@@ -10,10 +10,8 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="*" element={<Home />} />
           <Route path="/cargafallo" element={<LegalForm />} />
-          <Route
-            path="/buscarFallo"
-            element={<span>Buscador de fallos</span>}
-          />
+          <Route path="/buscador" element={<Browser />} />
+          <Route path="/buscador/detalle/:id" element={<DetailView />} />
         </Route>
       </Routes>
     </BrowserRouter>
