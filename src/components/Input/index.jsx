@@ -16,12 +16,15 @@ const Input = ({
   control,
   isMulti = false,
   onchange,
+  className,
 }) => {
   // Estilos comunes
   const commonStyles = {
     borderRadius: "0.375rem",
     borderColor: "#687073",
   };
+
+  const browserStyle = "w-full px-3 py-1 xl:w-1/4 xl:p-0";
 
   if (type === "file") {
     return (
@@ -40,7 +43,13 @@ const Input = ({
     );
   } else if (type === "select") {
     return (
-      <div className="flex flex-col gap-y-1 text-left">
+      <div
+        className={
+          className === "browser"
+            ? browserStyle
+            : "flex flex-col gap-y-1 text-left"
+        }
+      >
         {label && <label htmlFor={name}>{label}</label>}
         <Controller
           name={name}
@@ -50,6 +59,7 @@ const Input = ({
             <Select
               {...field}
               isSearchable={true}
+              isClearable={true}
               isMulti={isMulti}
               isDisabled={disabled}
               options={options}
@@ -82,7 +92,13 @@ const Input = ({
     );
   } else {
     return (
-      <div className="flex flex-col gap-y-1 text-left">
+      <div
+        className={
+          className === "browser"
+            ? browserStyle
+            : "flex flex-col gap-y-1 text-left"
+        }
+      >
         {label && <label htmlFor={name}>{label}</label>}
         <input
           type={type}

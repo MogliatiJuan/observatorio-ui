@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Select from "react-select";
 import { useForm } from "react-hook-form";
 import { axiosFallos } from "@Api/index.js";
 import { Input } from "@Components";
-import corregirCodificacion from "@Utils";
+import { corregirCodificacion } from "@Utils";
 
 function UploadForm() {
   const [loading, setLoading] = useState(true);
@@ -188,7 +187,8 @@ function UploadForm() {
           className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto"
           onSubmit={handleSubmit((data) => {
             console.log(data);
-          })}>
+          })}
+        >
           <span className="md:text-4xl md:text-left text-3xl text-center font-bold text-title w-full md:mx-auto uppercase">
             Carga de fallo judicial
           </span>
@@ -335,7 +335,8 @@ function UploadForm() {
                 required: true,
                 maxLength: 300,
               })}
-              name="summary"></textarea>
+              name="summary"
+            ></textarea>
 
             {errors["summary"] && errors["summary"].type === "required" && (
               <p className="text-sm text-red-500">
@@ -350,7 +351,8 @@ function UploadForm() {
           </div>
           <button
             type="submit"
-            className="w-24 h-12 bg-button  p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover">
+            className="w-24 h-12 bg-button  p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover"
+          >
             {"CARGAR"}
           </button>
         </form>
