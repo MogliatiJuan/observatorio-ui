@@ -1,2 +1,5 @@
 import axios from "axios";
-//comentario de prueba
+
+export const axiosFallos = axios.create({
+  baseURL: "http://localhost:8080",
+});

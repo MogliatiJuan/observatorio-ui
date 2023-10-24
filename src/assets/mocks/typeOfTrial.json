@@ -1,0 +1,17 @@
+[
+  { "id": 1, "description": "sumario" },
+  { "id": 2, "description": "sumarísimo" },
+  { "id": 3, "description": "ordinario" },
+  { "id": 4, "description": "amparo" },
+  { "id": 5, "description": "ejecucion prendaria" },
+  { "id": 6, "description": "secuestro prendario" },
+  { "id": 7, "description": "juicio ejecutivo" },
+  { "id": 8, "description": "ejecucion de sentencia" },
+  { "id": 9, "description": "divorcio" },
+  { "id": 10, "description": "laboral" },
+  { "id": 11, "description": "penal" },
+  { "id": 12, "description": "comercial" },
+  { "id": 13, "description": "administrativo" },
+  { "id": 14, "description": "arbitraje" },
+  { "id": 15, "description": "mediación" }
+]
