@@ -1,188 +1,285 @@
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
-import Input from "@Components/Input";
 import { AiOutlineSearch } from "react-icons/ai";
+import { VscFilterFilled } from "react-icons/vsc";
+import Input from "@Components/Input";
+import VerdictsContext from "../../context/VerdictsContext";
 import { axiosFallos } from "../../api";
-import { useEffect, useState } from "react";
+import { corregirCodificacion } from "@Utils";
+import { RenderData } from "../../components";
 
 const BrowserVerdicts = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
     control,
     setValue,
+    reset,
+    formState: { isSubmitSuccessful },
   } = useForm();
 
-  const [verdict, setVerdict] = useState(null);
-  const [factories, setFactories] = useState("");
-  const [rubros, setRubros] = useState("");
-  const [typeTrials, setTipeTryals] = useState("");
-  const [claims, setClaims] = useState("");
-  const [provinces, setProvinces] = useState("");
-  const [cities, setCities] = useState("");
-  const [tribunals, setTribunals] = useState("");
+  const { verdict, setVerdict } = useContext(VerdictsContext);
+
+  const [factories, setFactories] = useState([]);
+  const [rubros, setRubros] = useState([]);
+  const [typeTrials, setTipeTryals] = useState([]);
+  const [claims, setClaims] = useState([]);
+  const [provinces, setProvinces] = useState([]);
+  const [cities, setCities] = useState([]);
+  const [tribunals, setTribunals] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [filter, setFilter] = useState({});
 
   useEffect(() => {
-    const apiCalls = [
-      axiosFallos.get("/api/datos/empresas"),
-      axiosFallos.get("api/datos/rubros"),
-      axiosFallos.get("/api/datos/tipojuicio"),
-      axiosFallos.get("/api/datos/reclamos"),
-      axiosFallos.get("/api/datos/provincias"),
-      axiosFallos.get("/api/datos/juzgados"),
-    ];
-    Promise.all(apiCalls)
-      .then((res) => {
+    async function fetchData() {
+      try {
         const [
           factoriesResponse,
           rubroResponse,
           typeTrialResponse,
           claimsResponse,
           provincesResponse,
-          tribunalsResponse,
-        ] = res;
+          tagsResponse,
+        ] = await Promise.all([
+          axiosFallos.get("/api/datos/empresas"),
+          axiosFallos.get("api/datos/rubros"),
+          axiosFallos.get("/api/datos/tipojuicio"),
+          axiosFallos.get("/api/datos/reclamos"),
+          axiosFallos.get("/api/datos/provincias"),
+          axiosFallos.get("/api/datos/etiquetas"),
+        ]);
 
         setFactories(factoriesResponse.data);
         setRubros(rubroResponse.data);
         setTipeTryals(typeTrialResponse.data);
         setClaims(claimsResponse.data);
         setProvinces(provincesResponse.data);
-        setTribunals(tribunalsResponse);
-      })
-      .catch((error) => {
+        setTags(tagsResponse.data);
+      } catch (error) {
         console.error(error);
-      });
-  }, []);
-
-  const submitData = async (data) => {
-    const filteredObj = {};
-
-    for (const key in data) {
-      if (data[key] !== "") {
-        filteredObj[key] = data[key];
       }
     }
-    const result = await axiosFallos.get("/api/fallo/", {
-      params: filteredObj,
-    });
 
-    setVerdict(result.data);
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (isSubmitSuccessful) reset();
+  }, [isSubmitSuccessful, reset]);
+
+  const submitData = async (data) => {
+    try {
+      setVerdict([]);
+      const filteredObj = {};
+
+      for (const key in data) {
+        if (data[key] !== undefined && data[key] !== "" && data[key] !== null) {
+          filteredObj[key] = Array.isArray(data[key])
+            ? data[key].map((value) => value.value)
+            : data[key];
+        }
+      }
+
+      const result = await axiosFallos.get("/api/fallo/", {
+        params: filteredObj,
+      });
+
+      setFilter(filteredObj);
+      setVerdict(result.data);
+    } catch (error) {
+      console.error(error);
+    }
   };
+
+  const provincesSelected = watch("idProvincia");
+  const citiesSelected = watch("idCiudad");
 
   const handleSubmitProvince = async (selectedProvince) => {
-    const citiesResponse = await axiosFallos.get(
-      `/api/datos/ciudades?idProvincia=${selectedProvince}`
-    );
-    setCities(citiesResponse.data);
+    try {
+      setValue("idCiudad", null);
+      if (selectedProvince !== null) {
+        const citiesResponse = await axiosFallos.get(
+          `/api/datos/ciudades?idProvincia=${selectedProvince.value}`
+        );
+        setCities(citiesResponse.data);
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-  const browserFields = [
-    { label: "Actor", name: "agent", type: "text" },
-    {
-      label: "Demandado",
-      name: "demandado",
-      type: "select",
-      options: factories,
-    },
-    { label: "Rubro", name: "rubro", type: "select", options: rubros },
-    {
-      label: "Tipo de Juicio",
-      name: "tipoJuicio",
-      type: "select",
-      options: typeTrials,
-    },
-    { label: "Causas", name: "causas", type: "select", options: claims },
-    {
-      label: "Provincia",
-      name: "idProvincia",
-      type: "select",
-      options: provinces,
-    },
-    { label: "Ciudad", name: "idCiudad", type: "select", options: cities },
-    { label: "Tribunal", name: "idTribunal", type: "text" },
-    { label: "Fecha", name: "fecha", type: "date" },
-  ];
+  const handleSubmitCity = async (selectedCity) => {
+    try {
+      setValue("idTribunal", null);
+      if (selectedCity !== null) {
+        const tribunalsResponse = await axiosFallos.get(
+          `/api/datos/juzgados?idCiudad=${selectedCity.value}`
+        );
+        setTribunals(tribunalsResponse.data);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const handleCleanForm = () => {
+    reset();
+    setVerdict(null);
+  };
+
+  const browserFields = useMemo(
+    () => [
+      { label: "Actor", name: "actor", type: "text" },
+      {
+        label: "Demandado",
+        name: "demandado",
+        type: "select",
+        options: factories,
+        isMulti: true,
+      },
+      { label: "Rubro", name: "rubro", type: "select", options: rubros },
+      {
+        label: "Tipo de Juicio",
+        name: "tipoJuicio",
+        type: "select",
+        options: typeTrials,
+      },
+      { label: "Causas", name: "causas", type: "select", options: claims },
+      { label: "Fecha", name: "fecha", type: "date" },
+      {
+        label: "Etiquetas",
+        name: "etiquetas",
+        type: "select",
+        options: tags,
+        isMulti: true,
+      },
+    ],
+    [factories, typeTrials, tags, rubros, claims]
+  );
 
   return (
     <div className="h-full w-full">
-      <form onSubmit={handleSubmit(submitData)} className="w-1/4 m-auto pt-4">
-        {browserFields.map((field) => (
+      <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0">
+        Buscador de Fallos Judiciales
+      </h1>
+      <form onSubmit={handleSubmit(submitData)}>
+        <div className="flex flex-col xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-3 xl:justify-center xl:pt-1">
+          {browserFields.map((field) => (
+            <Input
+              key={field.name}
+              label={field.label}
+              name={field.name}
+              options={
+                field.options &&
+                field.options.map((opt) => ({
+                  value: parseInt(opt.id),
+                  label:
+                    opt.razon_social ||
+                    opt.rubro ||
+                    opt.description ||
+                    opt.nombre,
+                }))
+              }
+              isMulti={field.isMulti}
+              type={field.type}
+              control={control}
+              setValue={setValue}
+              register={register}
+              errors={errors}
+              className="browser"
+            />
+          ))}
           <Input
-            key={field.name}
-            label={field.label}
-            name={field.name}
+            label="Provincia"
+            name="idProvincia"
+            type="select"
             options={
-              field.options &&
-              field.options.map((opt) => ({
-                value: parseInt(opt.id),
-                label:
-                  opt.razon_social ||
-                  opt.rubro ||
-                  opt.description ||
-                  opt.nombre,
+              provinces &&
+              provinces.map((prov) => ({
+                value: parseInt(prov.id),
+                label: prov.nombre,
               }))
             }
-            type={field.type}
+            onchange={handleSubmitProvince}
             control={control}
             setValue={setValue}
             register={register}
             errors={errors}
-            onChange={(selectedProvince) => {
-              if (field.name === "idProvincia") {
-                handleSubmitProvince(selectedProvince);
-              }
-            }}
+            className="browser"
           />
-        ))}
-        <button
-          type="submit"
-          className="w-24 h-12 bg-button flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover"
-        >
-          {"Buscar"}
-          <span>
-            <AiOutlineSearch />
-          </span>
-        </button>{" "}
+          <Input
+            label="Ciudad"
+            name="idCiudad"
+            type="select"
+            control={control}
+            setValue={setValue}
+            register={register}
+            disabled={!provincesSelected}
+            onchange={handleSubmitCity}
+            options={
+              cities &&
+              cities.map((city) => ({
+                value: parseInt(city.id),
+                label: corregirCodificacion(city.nombre),
+              }))
+            }
+            errors={errors}
+            className="browser"
+          />
+          <Input
+            label="Tribunal"
+            name="idTribunal"
+            type="select"
+            control={control}
+            setValue={setValue}
+            register={register}
+            disabled={!citiesSelected}
+            options={
+              tribunals &&
+              tribunals.map((trib) => ({
+                value: parseInt(trib.id),
+                label: corregirCodificacion(trib.nombre),
+              }))
+            }
+            errors={errors}
+            className="browser"
+          />
+        </div>
+        <div className="flex justify-center gap-x-8">
+          <button
+            type="submit"
+            className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]"
+          >
+            {"Buscar"}
+            <span>
+              <AiOutlineSearch />
+            </span>
+          </button>
+          <button
+            type="button"
+            className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]"
+            onClick={handleCleanForm}
+          >
+            {"Limpiar fallos"}
+            <span>
+              <VscFilterFilled />
+            </span>
+          </button>
+        </div>
       </form>
       <hr className="w-5/6 m-auto"></hr>
-      <div>
-        {verdict === null ? (
-          <>
-            <img src="/fallo.png" className="m-auto w-1/6" />
-            <p className="flex justify-center">
-              Aún no se ha buscado ningún fallo
-            </p>
-          </>
-        ) : (
-          <div>
-            {verdict.flatMap((res) => (
-              <div>
-                <p>Expte: {res.nroExpediente}</p>
-                <p>Demandante: {res.actor}</p>
-                <p>
-                  Demandado:{" "}
-                  {res.demandado.flatMap((dem) => (
-                    <span>
-                      {dem.razon_social} - {dem.cuit}
-                    </span>
-                  ))}
-                </p>
-                <p>Juicio: {res.tipoJuicio}</p>
-                <p>Causas: {res.causas}</p>
-                <p>Juzgado: {res.juzgado}</p>
-                <p>Rubro: {res.rubro}</p>
-                <p>Fecha: {res.fecha}</p>
-                <p>
-                  Etiquetas:{" "}
-                  {res.etiquetas.flatMap((tag) => (
-                    <span>{tag}</span>
-                  ))}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
+      {verdict !== null ? (
+        <RenderData data={verdict} filter={filter} />
+      ) : (
+        <>
+          <img src="/fallo.png" className="mx-auto w-1/3 lg:w-1/4" />
+          <p className="mb-2 flex justify-center">
+            Aún no se ha buscado ningún fallo
+          </p>
+        </>
+      )}
     </div>
   );
 };
