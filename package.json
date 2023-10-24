@@ -1,7 +1,7 @@
 {
   "name": "observatorio-ui",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
@@ -18,7 +18,9 @@
     "react-icons": "^4.7.1",
     "react-loader-spinner": "^5.4.5",
     "react-router-dom": "^6.4.2",
-    "react-select": "^5.7.2"
+    "react-select": "^5.7.2",
+    "react-spinners": "^0.13.8",
+    "sass": "^1.69.4"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
