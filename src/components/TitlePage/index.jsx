@@ -3,7 +3,7 @@ import React from "react";
 function TitlePage({ title, sub, icon }) {
   return (
     <div
-      className={`bg-slate-800 flex items-center justify-center text-center  ${
+      className={`bg-navbar flex items-center justify-center text-center  ${
         sub ? "h-2/6" : "h-1/2"
       } ${icon && "gap-x-5"}`}
     >

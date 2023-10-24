@@ -30,14 +30,18 @@ module.exports = {
         "13/20": "65%",
         "7/20": "35%",
       },
-      backgroundImage: { home: "url('src/assets/backgroundObs.jpg')" },
+      backgroundImage: {
+        homeback: "url('/src/assets/justicecourtsite.png')",
+        otherHomeBg: "url('src/assets/justicecourtsite(2).png')",
+      },
       colors: {
         subtitle: "#00685B",
         title: "#3E4345",
         button: "#0477AD",
         buttonHover: "#0A5477",
+        navbar: "#434B69",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

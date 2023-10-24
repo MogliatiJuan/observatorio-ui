@@ -1,0 +1,287 @@
+[
+  {
+    "id": 1,
+    "description": "AUMENTOS ILEGÍTIMOS"
+  },
+  {
+    "id": 2,
+    "description": "AUSENCIA DE PRECIOS EN CONTRATACION DE PASAJES (PRACTICA ABUSIVA)"
+  },
+  {
+    "id": 3,
+    "description": "BAJA DE LA LÍNEA SIN CAUSA"
+  },
+  {
+    "id": 4,
+    "description": "BLOQUEO DE CUENTA"
+  },
+  {
+    "id": 5,
+    "description": "CANCELACIÓN CUOTAS DE EQUIPO COMPRADO POR CONTRAFACTURA"
+  },
+  {
+    "id": 6,
+    "description": "CARGO POR GESTION DE COBRANZA (CLÁUSULA ABUSIVA)"
+  },
+  {
+    "id": 7,
+    "description": "CARGO POR IMPRESIÓN DE PASAJE (CLAUSULA ABUSIVA)"
+  },
+  {
+    "id": 8,
+    "description": "CLAUSULA “NO SHOW” (CLAUSULA ABUSIVA)"
+  },
+  {
+    "id": 9,
+    "description": "CLÁUSULA ABUSIVA"
+  },
+  {
+    "id": 10,
+    "description": "CLÁUSULA ABUSIVA - GESTIÓN COBRANZA"
+  },
+  {
+    "id": 11,
+    "description": "COBERTURA INSUFICIENTE"
+  },
+  {
+    "id": 12,
+    "description": "COBRANZAS VIOLATORIAS AL TRATO DIGNO"
+  },
+  {
+    "id": 13,
+    "description": "COBRO DE HONORARIOS ABUSIVOS/SIN CAUSA"
+  },
+  {
+    "id": 14,
+    "description": "COBRO DIFERENCIALES POR EDAD"
+  },
+  {
+    "id": 15,
+    "description": "COBRO ERRÓNEO/SIN CAUSA DE CUOTAS"
+  },
+  {
+    "id": 16,
+    "description": "COBRO EXPENSAS INCAUSADAS (PRACTICA ABUSIVA)"
+  },
+  {
+    "id": 17,
+    "description": "COBRO INDEBIDO DE TARIFAS INTERNACIONALES (ROAMING)"
+  },
+  {
+    "id": 18,
+    "description": "CONCESION ABUSIVA DE CRÉDITO"
+  },
+  {
+    "id": 19,
+    "description": "CONSULTA POR LIQUIDACION PLANES DE AHORRO"
+  },
+  {
+    "id": 20,
+    "description": "CONSULTA SIMPLE"
+  },
+  {
+    "id": 21,
+    "description": "CONSUMOS DESCONOCIDOS POR ROBO O DUPLICACIÓN DE TARJETA"
+  },
+  {
+    "id": 22,
+    "description": "CORREO ELECTRONICO EN WEB (INCUMPLIMIENTO)"
+  },
+  {
+    "id": 23,
+    "description": "CORTE/SUSPENSIÓN DEL SERVICIO POR FALTA DE PAGO"
+  },
+  {
+    "id": 24,
+    "description": "DAÑO DE LA COSA MIENTRAS ES TRANSPORTADA"
+  },
+
+  { "id": 25, "description": "DAÑOS EN ARTEFACTOS" },
+  { "id": 26, "description": "DAÑOS EN EQUIPAJE" },
+  { "id": 27, "description": "DAÑOS Y PERJUICIOS" },
+  {
+    "id": 28,
+    "description": "DEBITO ILEGAL SOBRE INGRESO FAMILIAR DE EMERGENCIA (IFE)"
+  },
+  { "id": 29, "description": "DEBITO NO AUTORIZADO EN CUENTA BANCARIA" },
+  { "id": 30, "description": "DEBITO SIN CAUSA/ILEGAL" },
+  { "id": 31, "description": "DEFICIENTE ATENCIÓN AL CLIENTE" },
+  { "id": 32, "description": "DEMORA EN INSTALACIÓN" },
+  { "id": 33, "description": "DEMORA EN LA ENTREGA DE LA UNIDAD" },
+  { "id": 34, "description": "DEMORA EN PAGO DE LIQUIDACIÓN" },
+  { "id": 35, "description": "DEMORA EN REPARACIÓN DEL SERVICIO" },
+  { "id": 36, "description": "DEMORA EN SALIDA" },
+  { "id": 37, "description": "DEMORA EN TRASLADO DE LÍNEA" },
+  {
+    "id": 38,
+    "description": "DENEGACION DE ALTA DE SERVICIO POR DEUDA ANTERIOR"
+  },
+  { "id": 39, "description": "DERECHO AL OLVIDO" },
+  {
+    "id": 40,
+    "description": "DÉBITO DE DINERO NO EXTRAÍDO DEL CAJERO AUTOMÁTICO"
+  },
+  { "id": 41, "description": "ENGAÑO EN ETAPA PRECONTRACTUAL" },
+  { "id": 42, "description": "ERROR DE FACTURACIÓN" },
+  {
+    "id": 43,
+    "description": "ERROR EN INFORMACIÓN PROPORCIONADA A BASES DE DATOS"
+  },
+  { "id": 44, "description": "ERROR EN SISTEMA DE DÉBITO AUTOMÁTICO" },
+  { "id": 45, "description": "ESTAFA ELECTRONICA - PHISHING" },
+  {
+    "id": 46,
+    "description": "EXIGENCIA DE PAGO POR DIFERENCIA DE TARIFA IMPROCEDENTE"
+  },
+  { "id": 47, "description": "FALTA DE ENVIO FACTURA EN PAPEL" },
+  {
+    "id": 48,
+    "description": "FALTA DE NOTIFICACIÓN POR CAMBIO DEL “BIEN-TIPO”"
+  },
+  { "id": 49, "description": "FALTA DE PAGO FONDO DE MULTAS" },
+  { "id": 50, "description": "FALTA DE PAGO INTERESES POR DEMORA EN ENTREGA" },
+  {
+    "id": 51,
+    "description": "FALTA DE RECONOCIMIENTO AL DERECHO DE ARREPENTIMIENTO"
+  },
+  { "id": 52, "description": "FALTA INFORMACION DATOS EN WEB" },
+  { "id": 53, "description": "GASTOS DE ENTREGA SIN CAUSA O DESMEDIDOS" },
+  {
+    "id": 54,
+    "description": "IMPOSICIÓN DE CARGOS NO CONTRATADOS (SMS PREMIUM)"
+  },
+  {
+    "id": 55,
+    "description": "IMPOSICIÓN DE CONSUMOS NO REALIZADOS"
+  },
+  {
+    "id": 56,
+    "description": "IMPOSICIÓN DE SEGUROS NO CONTRATADOS EN PRÉSTAMOS"
+  },
+  {
+    "id": 57,
+    "description": "IMPOSICIÓN DE SEGUROS NO CONTRATADOS EN TARJETAS"
+  },
+  {
+    "id": 58,
+    "description": "INCUMPLIMIENTO DE ACUERDO CONCILIATORIO"
+  },
+  {
+    "id": 59,
+    "description": "INCUMPLIMIENTO DE CONTRATO"
+  },
+  {
+    "id": 60,
+    "description": "INCUMPLIMIENTO DE ENTREGA DE LA UNIDAD"
+  },
+  {
+    "id": 61,
+    "description": "INCUMPLIMIENTO DE GARANTÍA"
+  },
+  {
+    "id": 62,
+    "description": "INCUMPLIMIENTO DE GARANTÍA EXTENDIDA"
+  },
+  {
+    "id": 63,
+    "description": "INCUMPLIMIENTO DE LIQUIDACION COMPLEMENTARIA"
+  },
+  {
+    "id": 64,
+    "description": "INCUMPLIMIENTO DE OFERTA"
+  },
+  {
+    "id": 65,
+    "description": "INCUMPLIMIENTO DE PEDIDO DE STOP DEBIT"
+  },
+  {
+    "id": 66,
+    "description": "INCUMPLIMIENTO DEL DERECHO DE INFORMACION"
+  },
+  {
+    "id": 67,
+    "description": "INCUMPLIMIENTO DEL REGISTRO NO LLAME"
+  },
+  {
+    "id": 68,
+    "description": "INCUMPLIMIENTO DOLOSO DE CONTRATO - FRAUDE (ESTAFA)"
+  },
+  {
+    "id": 69,
+    "description": "INCUMPLIMIENTO ENTREGA LIBRE DEUDA"
+  },
+  {
+    "id": 70,
+    "description": "INCUMPLIMIENTO PAGO LIQUIDACION FINAL"
+  },
+  {
+    "id": 71,
+    "description": "INCUMPLIMIENTO PEDIDO DE BAJA DE PRODUCTO/SERVICIO"
+  },
+  {
+    "id": 72,
+    "description": "INCUMPLIMIENTO PROMESA DE VENDEDOR"
+  },
+  {
+    "id": 73,
+    "description": "INCUMPLIMIENTO REEMBOLSO/REPROGRAMACION POR PANDEMIA"
+  },
+  {
+    "id": 74,
+    "description": "INEXISTENCIA DE CONTRATO (FRAUDE)"
+  },
+  {
+    "id": 75,
+    "description": "INSTALACIONES PELIGROSAS"
+  },
+  {
+    "id": 76,
+    "description": "INTERESES ILEGALES"
+  },
+  {
+    "id": 77,
+    "description": "LECTURA DE CONSUMO ERRÓNEA"
+  },
+  {
+    "id": 78,
+    "description": "LESIONES AL PASAJERO"
+  },
+  {
+    "id": 79,
+    "description": "LIQUIDACIÓN ERRÓNEA DE HABERES"
+  },
+  {
+    "id": 80,
+    "description": "MORA AUTOMÁTICA - RECLAMO TOTAL DE LA DEUDA ABUSIVO"
+  },
+  { "id": 81, "description": "NO RECONOCIMIENTO DE CESION DE DERECHOS" },
+  {
+    "id": 82,
+    "description": "NULIDAD POR INCUMPLIMIENTO DE DERECHO DE INFORMACIÓN ART. 37 LDC"
+  },
+  { "id": 83, "description": "PENALIDAD POR BAJA ANTICIPADA" },
+  { "id": 84, "description": "PRESTACIÓN DEL SERVICIO DEFECTUOSA" },
+  { "id": 85, "description": "PREVENCION DE DAÑOS" },
+  { "id": 86, "description": "PRÁCTICA ABUSIVA" },
+  { "id": 87, "description": "PUBLICIDAD ENGAÑOSA" },
+  { "id": 88, "description": "PUBLICIDAD ENGAÑOSA" },
+  { "id": 89, "description": "PÉRDIDA DE EQUIPAJE" },
+  { "id": 90, "description": "RECHAZO COBERTURA" },
+  { "id": 91, "description": "RECLAMO ILEGÍTIMO POR DEUDA PRESCRIPTA" },
+  { "id": 92, "description": "RECLAMO POR DEUDA EN EXCESO" },
+  { "id": 93, "description": "RECLAMO POR DEUDA INEXISTENTE" },
+  {
+    "id": 94,
+    "description": "RETENCIONES DESCUENTOS IMPROCEDENTES EN LIQUIDACION FINAL"
+  },
+  { "id": 95, "description": "SECUESTRO PRENDARIO" },
+  {
+    "id": 96,
+    "description": "SECUESTRO PRENDARIO - FALTA DE INFORMACION POST REMATE"
+  },
+  { "id": 97, "description": "SOBREENDEUDAMIENTO" },
+  { "id": 98, "description": "SOBREPRECIO EN SEGURO" },
+  { "id": 99, "description": "SOLICITUD DE INFORMACIÓN (ART. 14 LDP)" },
+  { "id": 100, "description": "SOLICITUD DE RECTIFICACIÓN DE DATO (ART. 16)" },
+  { "id": 101, "description": "VIOLACIÓN A TRATO DIGNO" }
+]

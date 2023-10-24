@@ -1,0 +1,1729 @@
+[
+  {
+    "id": "1",
+    "description": "ABUSO DEL DERECHO"
+  },
+  {
+    "id": "2",
+    "description": "ACCION COLECTIVA"
+  },
+  {
+    "id": "3",
+    "description": "ACCIDENTE DE TRÁNSITO"
+  },
+  {
+    "id": "4",
+    "description": "ACCIÓN DE AMPARO"
+  },
+  {
+    "id": "5",
+    "description": "ACOSO POR COBRANZAS"
+  },
+  {
+    "id": "6",
+    "description": "ACTO INTERRUPTIVO"
+  },
+  {
+    "id": "7",
+    "description": "ACTUACIÓN DE OFICIO"
+  },
+  {
+    "id": "8",
+    "description": "ACTUALIZACIÓN MONETARIA"
+  },
+  {
+    "id": "9",
+    "description": "ACUERDO COLECTIVO"
+  },
+  {
+    "id": "10",
+    "description": "ACUERDO CONCILIATORIO   "
+  },
+  {
+    "id": "11",
+    "description": "ACUERDO CONCILIATORIO INCUMPLIDO"
+  },
+  {
+    "id": "12",
+    "description": "ACUMULACIÓN DE PROCESOS "
+  },
+  {
+    "id": "13",
+    "description": "ADMINISTRADOR DE PLAN DE AHORRO"
+  },
+  {
+    "id": "14",
+    "description": "AGENCIA DE VIAJE"
+  },
+  {
+    "id": "15",
+    "description": "AGRAVACIÓN DEL DAÑO"
+  },
+  {
+    "id": "16",
+    "description": "ALEGATO  "
+  },
+  {
+    "id": "17",
+    "description": "ALEGATOS"
+  },
+  {
+    "id": "18",
+    "description": "APELACIÓN"
+  },
+  {
+    "id": "19",
+    "description": "ASOCIACIONES DE CONSUMIDORES"
+  },
+  {
+    "id": "20",
+    "description": "ATENCIÓN AL CLIENTE"
+  },
+  {
+    "id": "21",
+    "description": "AUDIENCIA "
+  },
+  {
+    "id": "22",
+    "description": "AUDIENCIA DE PRUEBAS "
+  },
+  {
+    "id": "23",
+    "description": "AUDIENCIA DE VISTA DE CAUSA"
+  },
+  {
+    "id": "24",
+    "description": "AUDIENCIA PRELIMINAR"
+  },
+  {
+    "id": "25",
+    "description": "AUMENTOS ILEGÍTIMOS"
+  },
+  {
+    "id": "26",
+    "description": "AUSENCIA DE PRECIOS EN CONTRATACION DE PASAJES (PRACTICA ABUSIVA)"
+  },
+  {
+    "id": "27",
+    "description": "BAJA DE LA LÍNEA SIN CAUSA"
+  },
+  {
+    "id": "28",
+    "description": "BAJA DE PRODUCTO/SERVICIO"
+  },
+  {
+    "id": "29",
+    "description": "BAJA TENSION"
+  },
+  {
+    "id": "30",
+    "description": "BANCOS"
+  },
+  {
+    "id": "31",
+    "description": "BANCO CENTRAL DE LA REPÚBLICA ARGENTINA"
+  },
+  {
+    "id": "32",
+    "description": "BASE DE DATOS"
+  },
+  {
+    "id": "33",
+    "description": "BASE DE DATOS DE DEUDORES MOROSOS"
+  },
+  {
+    "id": "34",
+    "description": "BENEFICIO DE JUSTICIA GRATUITA"
+  },
+  {
+    "id": "35",
+    "description": "BENEFICIO DE LITIGAR SIN GASTOS"
+  },
+  {
+    "id": "36",
+    "description": "BLOQUEO DE CUENTA"
+  },
+  {
+    "id": "37",
+    "description": "BOLETO DE COMPRAVENTA"
+  },
+  {
+    "id": "38",
+    "description": "BOLETÍN OFICIAL"
+  },
+  {
+    "id": "39",
+    "description": "BUENA FE"
+  },
+  {
+    "id": "40",
+    "description": "CADUCIDAD "
+  },
+  {
+    "id": "41",
+    "description": "CADUCIDAD DE INSTANCIA"
+  },
+  {
+    "id": "42",
+    "description": "CADUCIDAD DE LA MEDIACIÓN"
+  },
+  {
+    "id": "43",
+    "description": "CADUCIDAD DE LA PRUEBA"
+  },
+  {
+    "id": "44",
+    "description": "CAJERO AUTOMÁTICO"
+  },
+  {
+    "id": "45",
+    "description": "CANCELACIÓN CUOTAS DE EQUIPO COMPRADO POR CONTRAFACTURA"
+  },
+  {
+    "id": "46",
+    "description": "CARGO POR GESTION DE COBRANZA (CLÁUSULA ABUSIVA)"
+  },
+  {
+    "id": "47",
+    "description": "CARGO POR IMPRESIÓN DE PASAJE (CLAUSULA ABUSIVA)"
+  },
+  {
+    "id": "48",
+    "description": "CARTA DOCUMENTO"
+  },
+  {
+    "id": "49",
+    "description": "CERTIFICACIÓN DE FIRMA"
+  },
+  {
+    "id": "50",
+    "description": "CLAUSULA “NO SHOW” (CLAUSULA ABUSIVA)"
+  },
+  {
+    "id": "51",
+    "description": "CLÁUSULA ABUSIVA"
+  },
+  {
+    "id": "52",
+    "description": "CLÁUSULA ABUSIVA - GESTIÓN COBRANZA"
+  },
+  {
+    "id": "53",
+    "description": "CLÁUSULA INEFICAZ"
+  },
+  {
+    "id": "54",
+    "description": "COBERTURA DEL SEGURO"
+  },
+  {
+    "id": "55",
+    "description": "COBERTURA INSUFICIENTE"
+  },
+  {
+    "id": "56",
+    "description": "COBERTURA MÉDICA"
+  },
+  {
+    "id": "57",
+    "description": "COBRANZAS VIOLATORIAS AL TRATO DIGNO"
+  },
+  {
+    "id": "58",
+    "description": "COBRO DE EXPENSAS   "
+  },
+  {
+    "id": "59",
+    "description": "COBRO DE HONORARIOS   "
+  },
+  {
+    "id": "60",
+    "description": "COBRO DE HONORARIOS ABUSIVOS/SIN CAUSA"
+  },
+  {
+    "id": "61",
+    "description": "COBRO DIFERENCIALES POR EDAD"
+  },
+  {
+    "id": "62",
+    "description": "COBRO ERRÓNEO/SIN CAUSA DE CUOTAS"
+  },
+  {
+    "id": "63",
+    "description": "COBRO EXPENSAS INCAUSADAS (PRACTICA ABUSIVA)"
+  },
+  {
+    "id": "64",
+    "description": "COBRO INDEBIDO    "
+  },
+  {
+    "id": "65",
+    "description": "COBRO INDEBIDO DE TARIFAS INTERNACIONALES (ROAMING)"
+  },
+  {
+    "id": "66",
+    "description": "CÓDIGO CIVIL Y COMERCIAL"
+  },
+  {
+    "id": "67",
+    "description": "COEFICIENTE DE ACTUALIZACIÓN"
+  },
+  {
+    "id": "68",
+    "description": "COMERCIO LOCAL"
+  },
+  {
+    "id": "69",
+    "description": "COMERCIO INTERNACIONAL"
+  },
+  {
+    "id": "70",
+    "description": "COMPETENCIA"
+  },
+  {
+    "id": "71",
+    "description": "COMPETENCIA EN RAZÓN DEL DOMICILIO"
+  },
+  {
+    "id": "72",
+    "description": "COMPETENCIA EN RAZÓN DEL TERRITORIO"
+  },
+  {
+    "id": "73",
+    "description": "COMPETENCIA FEDERAL"
+  },
+  {
+    "id": "74",
+    "description": "COMPETENCIA ORDINARIA"
+  },
+  {
+    "id": "75",
+    "description": "COMPRAVENTA   "
+  },
+  {
+    "id": "76",
+    "description": "COMPRAVENTA DE BIEN USADO"
+  },
+  {
+    "id": "77",
+    "description": "COMPRAVENTA DE COSAS MUEBLES"
+  },
+  {
+    "id": "78",
+    "description": "CÓMPUTO DE LA PRESCRIPCIÓN"
+  },
+  {
+    "id": "79",
+    "description": "CONCESION ABUSIVA DE CRÉDITO"
+  },
+  {
+    "id": "80",
+    "description": "CONCESIONARIO AUTOMOTOR"
+  },
+  {
+    "id": "81",
+    "description": "CONCILIACIÓN"
+  },
+  {
+    "id": "82",
+    "description": "CONCURSO PREVENTIVO"
+  },
+  {
+    "id": "83",
+    "description": "CONCURSO PREVENTIVO DE CONSUMIDOR"
+  },
+  {
+    "id": "84",
+    "description": "CONDICIONES DE LA OFERTA"
+  },
+  {
+    "id": "85",
+    "description": "CONDUCTA PROCESAL"
+  },
+  {
+    "id": "86",
+    "description": "CONFLICTO DE COMPETENCIA"
+  },
+  {
+    "id": "87",
+    "description": "CONFLICTO NEGATIVO DE COMPETENCIA"
+  },
+  {
+    "id": "88",
+    "description": "CONFLICTO POSITIVO DE COMPETENCIA"
+  },
+  {
+    "id": "89",
+    "description": "CONSENTIMIENTO"
+  },
+  {
+    "id": "90",
+    "description": "CONSTITUCIÓN NACIONAL"
+  },
+  {
+    "id": "91",
+    "description": "CONSTRUCCION DE BIENES INMUEBLES"
+  },
+  {
+    "id": "92",
+    "description": "CONSULTA POR LIQUIDACION PLANES DE AHORRO"
+  },
+  {
+    "id": "93",
+    "description": "CONSULTA SIMPLE"
+  },
+  {
+    "id": "94",
+    "description": "CONSUMO PROTEGIDO"
+  },
+  {
+    "id": "95",
+    "description": "CONSUMOS DESCONOCIDOS POR ROBO O DUPLICACIÓN DE TARJETA"
+  },
+  {
+    "id": "96",
+    "description": "CONSUMIDOR"
+  },
+  {
+    "id": "97",
+    "description": "CONSUMIDOR FINANCIERO"
+  },
+  {
+    "id": "98",
+    "description": "CONSUMIDOR HIPERVULNERABLE"
+  },
+  {
+    "id": "99",
+    "description": "CONSTANCIA DE PAGO"
+  },
+  {
+    "id": "100",
+    "description": "CONSTITUCIONALIDAD"
+  },
+  {
+    "id": "101",
+    "description": "CONTRACAUTELA"
+  },
+  {
+    "id": "102",
+    "description": "CONTRATO"
+  },
+  {
+    "id": "103",
+    "description": "CONTRATO ABUSIVO"
+  },
+  {
+    "id": "104",
+    "description": "CONTRATO DE ADHESIÓN"
+  },
+  {
+    "id": "105",
+    "description": "CONTRATO EN FORMULARIO"
+  },
+  {
+    "id": "106",
+    "description": "CONTESTACIÓN DE DEMANDA"
+  },
+  {
+    "id": "107",
+    "description": "CORREO"
+  },
+  {
+    "id": "108",
+    "description": "CORREO ELECTRÓNICO  "
+  },
+  {
+    "id": "109",
+    "description": "CORREO ELECTRONICO EN WEB (INCUMPLIMIENTO)"
+  },
+  {
+    "id": "110",
+    "description": "CORTE/SUSPENSIÓN DEL SERVICIO POR FALTA DE PAGO"
+  },
+  {
+    "id": "111",
+    "description": "CORTE SUPREMA DE JUSTICIA DE LA NACIÓN"
+  },
+  {
+    "id": "112",
+    "description": "COSA JUZGADA  "
+  },
+  {
+    "id": "113",
+    "description": "COSA JUZGADA FRAUDULENTA"
+  },
+  {
+    "id": "114",
+    "description": "CUESTIÓN PREJUDICIAL"
+  },
+  {
+    "id": "115",
+    "description": "CULPA  "
+  },
+  {
+    "id": "116",
+    "description": "CULPA GRAVE"
+  },
+  {
+    "id": "117",
+    "description": "CUPONES DE DESCUENTO"
+  },
+  {
+    "id": "118",
+    "description": "CRÉDITO BANCARIO"
+  },
+  {
+    "id": "119",
+    "description": "CRÉDITO HIPOTECARIO"
+  },
+  {
+    "id": "120",
+    "description": "CRÉDITO PERSONAL "
+  },
+  {
+    "id": "121",
+    "description": "CRÉDITO PRENDARIO"
+  },
+  {
+    "id": "122",
+    "description": "CRIPTOMONEDAS"
+  },
+  {
+    "id": "123",
+    "description": "DAÑO DE LA COSA MIENTRAS ES TRANSPORTADA"
+  },
+  {
+    "id": "124",
+    "description": "DAÑO EXTRAPATRIMONIAL"
+  },
+  {
+    "id": "125",
+    "description": "DAÑO MORAL"
+  },
+  {
+    "id": "126",
+    "description": "DAÑO MORATORIO"
+  },
+  {
+    "id": "127",
+    "description": "DAÑO PATRIMONIAL"
+  },
+  {
+    "id": "128",
+    "description": "DAÑO PUNITIVO"
+  },
+  {
+    "id": "129",
+    "description": "DAÑOS EN ARTEFACTOS"
+  },
+  {
+    "id": "130",
+    "description": "DAÑOS EN EQUIPAJE"
+  },
+  {
+    "id": "131",
+    "description": "DAÑOS Y PERJUICIOS"
+  },
+  {
+    "id": "132",
+    "description": "DEBER DE INFORMACIÓN"
+  },
+  {
+    "id": "133",
+    "description": "DÉBITO DE DINERO NO EXTRAÍDO DEL CAJERO AUTOMÁTICO"
+  },
+  {
+    "id": "134",
+    "description": "DEBITO ILEGAL SOBRE INGRESO FAMILIAR DE EMERGENCIA (IFE)"
+  },
+  {
+    "id": "135",
+    "description": "DEBITO NO AUTORIZADO EN CUENTA BANCARIA"
+  },
+  {
+    "id": "136",
+    "description": "DEBITO SIN CAUSA/ILEGAL"
+  },
+  {
+    "id": "137",
+    "description": "DECLARACIÓN DE INCOMPETENCIA"
+  },
+  {
+    "id": "138",
+    "description": "DEFICIENTE ATENCIÓN AL CLIENTE"
+  },
+  {
+    "id": "139",
+    "description": "DELITO"
+  },
+  {
+    "id": "140",
+    "description": "DELITO PENAL"
+  },
+  {
+    "id": "141",
+    "description": "DEMORA EN INSTALACIÓN"
+  },
+  {
+    "id": "142",
+    "description": "DEMORA EN LA ENTREGA DE UNIDAD"
+  },
+  {
+    "id": "143",
+    "description": "DEMORA EN PAGO DE LIQUIDACIÓN"
+  },
+  {
+    "id": "144",
+    "description": "DEMORA EN REPARACIÓN DEL SERVICIO"
+  },
+  {
+    "id": "145",
+    "description": "DEMORA EN SALIDA"
+  },
+  {
+    "id": "146",
+    "description": "DEMORA EN TRASLADO DE LÍNEA"
+  },
+  {
+    "id": "147",
+    "description": "DENEGACIÓN DE ALTA DE SERVICIO   "
+  },
+  {
+    "id": "148",
+    "description": "DENEGACION DE ALTA DE SERVICIO POR DEUDA ANTERIOR"
+  },
+  {
+    "id": "149",
+    "description": "DERECHO AMBIENTAL"
+  },
+  {
+    "id": "150",
+    "description": "DERECHO A LA INFORMACIÓN "
+  },
+  {
+    "id": "151",
+    "description": "DERECHO A LA SALUD"
+  },
+  {
+    "id": "152",
+    "description": "DERECHO A LA VIVIENDA"
+  },
+  {
+    "id": "153",
+    "description": "DERECHO AL OLVIDO"
+  },
+  {
+    "id": "154",
+    "description": "DERECHO DE ARREPENTIMIENTO"
+  },
+  {
+    "id": "155",
+    "description": "DERECHOS DEL CONSUMIDOR"
+  },
+  {
+    "id": "156",
+    "description": "DESISTIMIENTO"
+  },
+  {
+    "id": "157",
+    "description": "DICTAMEN FISCAL "
+  },
+  {
+    "id": "158",
+    "description": "DICTAMEN PERICIAL "
+  },
+  {
+    "id": "159",
+    "description": "DILIGENCIA PRELIMINAR"
+  },
+  {
+    "id": "160",
+    "description": "DOCTRINA DE LA CORTE SUPREMA"
+  },
+  {
+    "id": "161",
+    "description": "DOMICILIO"
+  },
+  {
+    "id": "162",
+    "description": "DOMICILIO DEL CONSUMIDOR"
+  },
+  {
+    "id": "163",
+    "description": "DOMICILIO REAL"
+  },
+  {
+    "id": "164",
+    "description": "DOMICILIO LEGAL"
+  },
+  {
+    "id": "165",
+    "description": "DOMICILIO CONSTITUIDO"
+  },
+  {
+    "id": "166",
+    "description": "DOMICILIO CONTRACTUAL "
+  },
+  {
+    "id": "167",
+    "description": "DOLO"
+  },
+  {
+    "id": "168",
+    "description": "EDICTOS"
+  },
+  {
+    "id": "169",
+    "description": "ESTACIONAMIENTO"
+  },
+  {
+    "id": "170",
+    "description": "EFECTOS DEL PAGO"
+  },
+  {
+    "id": "171",
+    "description": "EFECTO CANCELATORIO DEL PAGO"
+  },
+  {
+    "id": "172",
+    "description": "EFECTOS DE LA PUBLICIDAD"
+  },
+  {
+    "id": "173",
+    "description": "EJECUCIÓN DE SENTENCIA"
+  },
+  {
+    "id": "174",
+    "description": "EJECUCIÓN HIPOTECARIA"
+  },
+  {
+    "id": "175",
+    "description": "EJECUCIÓN PRENDARIA"
+  },
+  {
+    "id": "176",
+    "description": "EMPRESA DE COBRANZAS"
+  },
+  {
+    "id": "177",
+    "description": "ENGAÑO EN ETAPA PRECONTRACTUAL"
+  },
+  {
+    "id": "178",
+    "description": "ENTIDAD EDUCATIVA"
+  },
+  {
+    "id": "179",
+    "description": "ENTIDAD FINANCIERA"
+  },
+  {
+    "id": "180",
+    "description": "ENTREGA DE LA COSA "
+  },
+  {
+    "id": "181",
+    "description": "ENTREGA DE LA UNIDAD"
+  },
+  {
+    "id": "182",
+    "description": "ERROR"
+  },
+  {
+    "id": "183",
+    "description": "ERROR ESENCIAL "
+  },
+  {
+    "id": "184",
+    "description": "ERROR DE HECHO"
+  },
+  {
+    "id": "185",
+    "description": "ERROR DE FACTURACIÓN"
+  },
+  {
+    "id": "186",
+    "description": "ERROR EN INFORMACIÓN PROPORCIONADA A BASES DE DATOS"
+  },
+  {
+    "id": "187",
+    "description": "ERROR EN SISTEMA DE DÉBITO AUTOMÁTICO"
+  },
+  {
+    "id": "188",
+    "description": "ESTAFA ELECTRONICA - PHISHING"
+  },
+  {
+    "id": "189",
+    "description": "EXCEPCIÓN DE DEFECTO LEGAL"
+  },
+  {
+    "id": "190",
+    "description": "EXCEPCIÓN DE COMPENSACIÓN"
+  },
+  {
+    "id": "191",
+    "description": "EXCEPCION DE FALTA DE LEGITIMACION ACTIVA"
+  },
+  {
+    "id": "192",
+    "description": "EXCEPCION DE FALTA DE LEGITIMACION PASIVA"
+  },
+  {
+    "id": "193",
+    "description": "EXCEPCION DE INCOMPETENCIA"
+  },
+  {
+    "id": "194",
+    "description": "EXCEPCIÓN DE PAGO"
+  },
+  {
+    "id": "195",
+    "description": "EXCEPCIÓN DE PRESCRIPCIÓN"
+  },
+  {
+    "id": "196",
+    "description": "EXCHANGE DE CRIPTOMONEDAS"
+  },
+  {
+    "id": "197",
+    "description": "EXIGENCIA DE PAGO POR DIFERENCIA DE TARIFA IMPROCEDENTE"
+  },
+  {
+    "id": "198",
+    "description": "FABRICACION AUTOMOTORES"
+  },
+  {
+    "id": "199",
+    "description": "FACTOR DE ATRIBUCIÓN DE RESPONSABILIDAD"
+  },
+  {
+    "id": "200",
+    "description": "FALTA DE ENVIO FACTURA EN PAPEL"
+  },
+  {
+    "id": "201",
+    "description": "FALTA DE LEGITIMACIÓN ACTIVA"
+  },
+  {
+    "id": "202",
+    "description": "FALTA DE LEGITIMACIÓN PASIVA"
+  },
+  {
+    "id": "203",
+    "description": "FALTA DE NOTIFICACIÓN POR CAMBIO DEL “BIEN-TIPO”"
+  },
+  {
+    "id": "204",
+    "description": "FALTA DE PAGO FONDO DE MULTAS"
+  },
+  {
+    "id": "205",
+    "description": "FALTA DE PAGO INTERESES POR DEMORA EN ENTREGA"
+  },
+  {
+    "id": "206",
+    "description": "FALTA DE RECONOCIMIENTO AL DERECHO DE ARREPENTIMIENTO"
+  },
+  {
+    "id": "207",
+    "description": "FALTA INFORMACION DATOS EN WEB"
+  },
+  {
+    "id": "208",
+    "description": "FIDEICOMISO INMOBILIARIO"
+  },
+  {
+    "id": "209",
+    "description": "FIRMA"
+  },
+  {
+    "id": "210",
+    "description": "FIRMA DIGITAL"
+  },
+  {
+    "id": "211",
+    "description": "FIRMA OLÓGRAFA"
+  },
+  {
+    "id": "212",
+    "description": "FRAUDE  "
+  },
+  {
+    "id": "213",
+    "description": "FRAUDE (ESTAFA)"
+  },
+  {
+    "id": "214",
+    "description": "GARANTÍA"
+  },
+  {
+    "id": "215",
+    "description": "GARANTÍA EXTENDIDA"
+  },
+  {
+    "id": "216",
+    "description": "GASTOS DE ENTREGA"
+  },
+  {
+    "id": "217",
+    "description": "GRADUACIÓN DE LA SANCIÓN"
+  },
+  {
+    "id": "218",
+    "description": "HABEAS DATA"
+  },
+  {
+    "id": "219",
+    "description": "HABER NETO"
+  },
+  {
+    "id": "220",
+    "description": "HIPERMERCADO"
+  },
+  {
+    "id": "221",
+    "description": "HONORARIOS "
+  },
+  {
+    "id": "222",
+    "description": "HONORARIOS DEL ABOGADO"
+  },
+  {
+    "id": "223",
+    "description": "HOSTIGAMIENTO "
+  },
+  {
+    "id": "224",
+    "description": "INCONSTITUCIONALIDAD"
+  },
+  {
+    "id": "225",
+    "description": "INTERRUPCIÓN DE LA PRESCRIPCIÓN"
+  },
+  {
+    "id": "226",
+    "description": "INTIMACIÓN"
+  },
+  {
+    "id": "227",
+    "description": "INTIMACIÓN DE PAGO"
+  },
+  {
+    "id": "228",
+    "description": "CARGOS NO CONTRATADOS "
+  },
+  {
+    "id": "229",
+    "description": "SMS PREMIUM"
+  },
+  {
+    "id": "230",
+    "description": "CONSUMO NO REALIZADO"
+  },
+  {
+    "id": "231",
+    "description": "IMPOSICIÓN DE SEGUROS NO CONTRATADOS EN PRÉSTAMOS"
+  },
+  {
+    "id": "232",
+    "description": "IMPOSICIÓN DE SEGUROS NO CONTRATADOS EN TARJETAS"
+  },
+  {
+    "id": "233",
+    "description": "CADUCIDAD"
+  },
+  {
+    "id": "234",
+    "description": "COSA JUZGADA"
+  },
+  {
+    "id": "235",
+    "description": "INCIDENTE DE EXTENSION DE RESPONSABILIDAD DE SOCIOS/DIRECTIVOS"
+  },
+  {
+    "id": "236",
+    "description": "NULIDAD"
+  },
+  {
+    "id": "237",
+    "description": "INCUMPLIMIENTO"
+  },
+  {
+    "id": "238",
+    "description": "INCUMPLIMIENTO CONTRACTUAL"
+  },
+  {
+    "id": "239",
+    "description": "INCUMPLIMIENTO DE OFERTA"
+  },
+  {
+    "id": "240",
+    "description": "INCUMPLIMIENTO DEL DERECHO DE INFORMACION"
+  },
+  {
+    "id": "241",
+    "description": "INCUMPLIMIENTO PAGO LIQUIDACION FINAL"
+  },
+  {
+    "id": "242",
+    "description": "INDICIOS"
+  },
+  {
+    "id": "243",
+    "description": "INEXISTENCIA DE CONTRATO (FRAUDE)"
+  },
+  {
+    "id": "244",
+    "description": "INFORMES CREDITICIOS"
+  },
+  {
+    "id": "245",
+    "description": "INMOBILIARIA"
+  },
+  {
+    "id": "246",
+    "description": "INSTALACIONES PELIGROSAS"
+  },
+  {
+    "id": "247",
+    "description": "INTENTO DE ENGAÑO"
+  },
+  {
+    "id": "248",
+    "description": "INTERESES  "
+  },
+  {
+    "id": "249",
+    "description": "INTERESES ILEGALES"
+  },
+  {
+    "id": "250",
+    "description": "INTERMEDIARIO"
+  },
+  {
+    "id": "251",
+    "description": "INTERNET"
+  },
+  {
+    "id": "252",
+    "description": "JUICIO EJECUTIVO"
+  },
+  {
+    "id": "253",
+    "description": "JUICIO ORDINARIO"
+  },
+  {
+    "id": "254",
+    "description": "JUICIO SUMARÍSIMO"
+  },
+  {
+    "id": "255",
+    "description": "LABORATORIO"
+  },
+  {
+    "id": "256",
+    "description": "LEALTAD COMERCIAL"
+  },
+  {
+    "id": "257",
+    "description": "LECTURA DE CONSUMO ERRÓNEA"
+  },
+  {
+    "id": "258",
+    "description": "LEGITIMACIÓN ACTIVA"
+  },
+  {
+    "id": "259",
+    "description": "LEGITIMACIÓN PASIVA"
+  },
+  {
+    "id": "260",
+    "description": "LESIONES AL PASAJERO"
+  },
+  {
+    "id": "261",
+    "description": "LEY APLICABLE"
+  },
+  {
+    "id": "262",
+    "description": "LEY DE DEFENSA DEL CONSUMIDOR"
+  },
+  {
+    "id": "263",
+    "description": "LEY DE DEFENSA DE LA COMPETENCIA"
+  },
+  {
+    "id": "264",
+    "description": "LEY NACIONAL"
+  },
+  {
+    "id": "265",
+    "description": "LEY PROVINCIAL"
+  },
+  {
+    "id": "266",
+    "description": "LIBRE DEUDA"
+  },
+  {
+    "id": "267",
+    "description": "LIQUIDACION COMPLEMENTARIA"
+  },
+  {
+    "id": "268",
+    "description": "HABER NETO"
+  },
+  {
+    "id": "269",
+    "description": "LIQUIDACIÓN HABER NETO"
+  },
+  {
+    "id": "270",
+    "description": "LÍNEA AÉREA"
+  },
+  {
+    "id": "271",
+    "description": "LITISPENDENCIA"
+  },
+  {
+    "id": "272",
+    "description": "LOCACIÓN"
+  },
+  {
+    "id": "273",
+    "description": "MALA FE  "
+  },
+  {
+    "id": "274",
+    "description": "MALA FE PROCESAL"
+  },
+  {
+    "id": "275",
+    "description": "MALA PRAXIS"
+  },
+  {
+    "id": "276",
+    "description": "MEDIACION"
+  },
+  {
+    "id": "277",
+    "description": "MEDICAMENTOS"
+  },
+  {
+    "id": "278",
+    "description": "MEDIDA AUTOSATISFACTIVA"
+  },
+  {
+    "id": "279",
+    "description": "MEDIDAS CAUTELARES"
+  },
+  {
+    "id": "280",
+    "description": "RECLAMO TOTAL DE LA DEUDA ABUSIVO"
+  },
+  {
+    "id": "281",
+    "description": "MINISTERIO PÚBLICO FISCAL"
+  },
+  {
+    "id": "282",
+    "description": "MONEDA EXTRANJERA"
+  },
+  {
+    "id": "283",
+    "description": "MORA   "
+  },
+  {
+    "id": "284",
+    "description": "MORA AUTOMÁTICA "
+  },
+  {
+    "id": "285",
+    "description": "MULTA   "
+  },
+  {
+    "id": "286",
+    "description": "MULTA CIVIL "
+  },
+  {
+    "id": "287",
+    "description": "CESION DE DERECHOS"
+  },
+  {
+    "id": "288",
+    "description": "NULIDAD    "
+  },
+  {
+    "id": "289",
+    "description": "NULIDAD POR INCUMPLIMIENTO DE DERECHO DE INFORMACIÓN ART. 37 LDC"
+  },
+  {
+    "id": "290",
+    "description": "OBLIGACIONES"
+  },
+  {
+    "id": "291",
+    "description": "OBLIGACIÓN EN MONEDA EXTRANJERA"
+  },
+  {
+    "id": "292",
+    "description": "OBRA SOCIAL / MEDICINA PREPAGA"
+  },
+  {
+    "id": "293",
+    "description": "OFERTA"
+  },
+  {
+    "id": "294",
+    "description": "OPERACIÓN FINANCIERA PARA CONSUMO"
+  },
+  {
+    "id": "295",
+    "description": "OPERADOR TURISTICO"
+  },
+  {
+    "id": "296",
+    "description": "ORGANIZACIÓN DE EVENTOS"
+  },
+  {
+    "id": "297",
+    "description": "PAGARÉ"
+  },
+  {
+    "id": "298",
+    "description": "PAGARÉ DE CONSUMO"
+  },
+  {
+    "id": "299",
+    "description": "PAGO"
+  },
+  {
+    "id": "300",
+    "description": "PAGO INDEBIDO"
+  },
+  {
+    "id": "301",
+    "description": "PAGO PARCIAL"
+  },
+  {
+    "id": "302",
+    "description": "PASAJERO"
+  },
+  {
+    "id": "303",
+    "description": "PELIGRO EN LA DEMORA"
+  },
+  {
+    "id": "304",
+    "description": "PENALIDAD  "
+  },
+  {
+    "id": "305",
+    "description": "PENALIDAD POR BAJA ANTICIPADA"
+  },
+  {
+    "id": "306",
+    "description": "PÉRDIDA DE EQUIPAJE"
+  },
+  {
+    "id": "307",
+    "description": "PERFECCIONAMIENTO DE CONTRATO"
+  },
+  {
+    "id": "308",
+    "description": "PERICIA"
+  },
+  {
+    "id": "309",
+    "description": "PERICIA CONTABLE"
+  },
+  {
+    "id": "310",
+    "description": "PERICIA INFORMÁTICA"
+  },
+  {
+    "id": "311",
+    "description": "PERICIA CALIGRÁFICA"
+  },
+  {
+    "id": "312",
+    "description": "PERICIA MECÁNICA"
+  },
+  {
+    "id": "313",
+    "description": "PERITO"
+  },
+  {
+    "id": "314",
+    "description": "PERITO CONTABLE"
+  },
+  {
+    "id": "315",
+    "description": "PERITO INFORMÁTICO"
+  },
+  {
+    "id": "316",
+    "description": "PERITO MECÁNICO"
+  },
+  {
+    "id": "317",
+    "description": "PLAN DE AHORRO"
+  },
+  {
+    "id": "318",
+    "description": "PLAZO DE CADUCIDAD"
+  },
+  {
+    "id": "319",
+    "description": "PLAZO DE PRESCRIPCIÓN"
+  },
+  {
+    "id": "320",
+    "description": "PRÁCTICA ABUSIVA"
+  },
+  {
+    "id": "321",
+    "description": "PRESCRIPCIÓN  "
+  },
+  {
+    "id": "322",
+    "description": "PRESCRIPCIÓN ANUAL"
+  },
+  {
+    "id": "323",
+    "description": "PRESCRIPCÍON TRIENAL"
+  },
+  {
+    "id": "324",
+    "description": "PRESCRIPCIÓN QUINQUENAL"
+  },
+  {
+    "id": "325",
+    "description": "PRESTACIÓN DEL SERVICIO"
+  },
+  {
+    "id": "326",
+    "description": "PRESTADORES DE SALUD (PROFESIONALES, CLINICAS)"
+  },
+  {
+    "id": "327",
+    "description": "PRESUNCIONES "
+  },
+  {
+    "id": "328",
+    "description": "PRESUNCION PROBATORIA"
+  },
+  {
+    "id": "329",
+    "description": "PRESUPUESTOS DE LA RESPONSABILIDAD"
+  },
+  {
+    "id": "330",
+    "description": "PREVENCION DE DAÑOS"
+  },
+  {
+    "id": "331",
+    "description": "PROCESO SUMARIO"
+  },
+  {
+    "id": "332",
+    "description": "PROCESO SUMARÍSIMO"
+  },
+  {
+    "id": "333",
+    "description": "PRODUCTOR DE SEGURO"
+  },
+  {
+    "id": "334",
+    "description": "PROMESA DE VENDEDOR"
+  },
+  {
+    "id": "335",
+    "description": "PROTECCIÓN AL CONSUMIDOR"
+  },
+  {
+    "id": "336",
+    "description": "PROVEEDOR"
+  },
+  {
+    "id": "337",
+    "description": "PROYECTO DE LEY"
+  },
+  {
+    "id": "338",
+    "description": "PRUEBA"
+  },
+  {
+    "id": "339",
+    "description": "PRUEBA ANTICIPADA"
+  },
+  {
+    "id": "340",
+    "description": "PRUEBA DE INFORMES"
+  },
+  {
+    "id": "341",
+    "description": "PRUEBA DOCUMENTAL"
+  },
+  {
+    "id": "342",
+    "description": "PRUEBA PERICIAL"
+  },
+  {
+    "id": "343",
+    "description": "PRUEBA TESTIMONIAL"
+  },
+  {
+    "id": "344",
+    "description": "PUBLICIDAD"
+  },
+  {
+    "id": "345",
+    "description": "PUBLICIDAD ENGAÑOSA"
+  },
+  {
+    "id": "346",
+    "description": "PUBLICIDAD ILEGAL"
+  },
+  {
+    "id": "347",
+    "description": "RECHAZO DE COBERTURA"
+  },
+  {
+    "id": "348",
+    "description": "RECLAMO ILEGÍTIMO POR DEUDA PRESCRIPTA"
+  },
+  {
+    "id": "349",
+    "description": "RECLAMO POR DEUDA EN EXCESO"
+  },
+  {
+    "id": "350",
+    "description": "RECLAMO POR DEUDA INEXISTENTE"
+  },
+  {
+    "id": "351",
+    "description": "RECONOCIMIENTO DE DEUDA"
+  },
+  {
+    "id": "352",
+    "description": "RECURSO DE ACLARATORIA"
+  },
+  {
+    "id": "353",
+    "description": "RECURSO DE REVOCATORIA"
+  },
+  {
+    "id": "354",
+    "description": "RECURSO DE APELACIÓN"
+  },
+  {
+    "id": "355",
+    "description": "RECURSO DE INCONSTITUCIONALIDAD"
+  },
+  {
+    "id": "356",
+    "description": "RECURSO EXTRAORDINARIO "
+  },
+  {
+    "id": "357",
+    "description": "RECUSACIÓN"
+  },
+  {
+    "id": "358",
+    "description": "REINTEGRO"
+  },
+  {
+    "id": "359",
+    "description": "REEMBOLSO  "
+  },
+  {
+    "id": "360",
+    "description": "REEMBOLSO DE SUMAS DE DINERO"
+  },
+  {
+    "id": "361",
+    "description": "REEMBOLSO/REPROGRAMACION POR PANDEMIA"
+  },
+  {
+    "id": "362",
+    "description": "REGISTRO NO LLAME"
+  },
+  {
+    "id": "363",
+    "description": "REGULACIÓN DE HONORARIOS"
+  },
+  {
+    "id": "364",
+    "description": "RELACIÓN DE CONSUMO"
+  },
+  {
+    "id": "365",
+    "description": "REPRESENTACIÓN PROCESAL"
+  },
+  {
+    "id": "366",
+    "description": "REPRESENTATIVIDAD ADECUADA"
+  },
+  {
+    "id": "367",
+    "description": "RESCISIÓN DE CONTRATO"
+  },
+  {
+    "id": "368",
+    "description": "RESPONSABILIDAD CIVIL"
+  },
+  {
+    "id": "369",
+    "description": "RESPONSABILIDAD CONTRACTUAL"
+  },
+  {
+    "id": "370",
+    "description": "RESPONSABILIDAD PRECONTRACTUAL"
+  },
+  {
+    "id": "371",
+    "description": "RESPONSABILIDAD POR DAÑOS"
+  },
+  {
+    "id": "372",
+    "description": "RESPONSABILIDAD PROFESIONAL"
+  },
+  {
+    "id": "373",
+    "description": "RESPONSABILIDAD SOLIDARIA"
+  },
+  {
+    "id": "374",
+    "description": "RETAIL (BIENES DE CONSUMO MASIVO)"
+  },
+  {
+    "id": "375",
+    "description": "DESCUENTOS IMPROCEDENTES "
+  },
+  {
+    "id": "376",
+    "description": "SANCIÓN"
+  },
+  {
+    "id": "377",
+    "description": "SECUESTRO PRENDARIO"
+  },
+  {
+    "id": "378"
+  },
+  {
+    "id": "379",
+    "description": "SEGUROS"
+  },
+  {
+    "id": "380",
+    "description": "SENTENCIA  "
+  },
+  {
+    "id": "381",
+    "description": "SENTENCIA INCUMPLIDA"
+  },
+  {
+    "id": "382",
+    "description": "SERVICIO PÚBLICO  "
+  },
+  {
+    "id": "383",
+    "description": "SERVICIO PÚBLICO DOMICILIARIO   "
+  },
+  {
+    "id": "384",
+    "description": "AGUA"
+  },
+  {
+    "id": "385",
+    "description": "ELECTRICIDAD"
+  },
+  {
+    "id": "386",
+    "description": "GAS"
+  },
+  {
+    "id": "387",
+    "description": "SERVICIOS EDUCATIVOS"
+  },
+  {
+    "id": "388",
+    "description": "SERVICIOS FINANCIEROS"
+  },
+  {
+    "id": "389",
+    "description": "SHOPPING"
+  },
+  {
+    "id": "390",
+    "description": "SOBREENDEUDAMIENTO"
+  },
+  {
+    "id": "391",
+    "description": "SOBREPRECIO   "
+  },
+  {
+    "id": "392",
+    "description": "SOBREPRECIO EN SEGURO"
+  },
+  {
+    "id": "393",
+    "description": "SOCIEDAD EXTRANJERA"
+  },
+  {
+    "id": "394",
+    "description": "SOLICITUD DE ADHESIÓN"
+  },
+  {
+    "id": "395",
+    "description": "SOLICITUD DE INFORMACIÓN (ART. 14 LDP)"
+  },
+  {
+    "id": "396",
+    "description": "SOLICITUD DE RECTIFICACIÓN DE DATO (ART. 16)"
+  },
+  {
+    "id": "397",
+    "description": "STOP DEBIT"
+  },
+  {
+    "id": "398",
+    "description": "SUPERMERCADO"
+  },
+  {
+    "id": "399",
+    "description": "SUSPENSIÓN DE LA PRESCRIPCIÓN"
+  },
+  {
+    "id": "400",
+    "description": "TARJETA DE CREDITO"
+  },
+  {
+    "id": "401",
+    "description": "TASA DE INTERÉS"
+  },
+  {
+    "id": "402",
+    "description": "TASA DE INTERÉS ACTIVA"
+  },
+  {
+    "id": "403",
+    "description": "TASA DE INTERÉS PASIVA"
+  },
+  {
+    "id": "404",
+    "description": "TELEFONÍA"
+  },
+  {
+    "id": "405",
+    "description": "TELEFONIA FIJA"
+  },
+  {
+    "id": "406",
+    "description": "TELEFONIA MOVIL"
+  },
+  {
+    "id": "407",
+    "description": "TEMERIDAD Y MALICIA"
+  },
+  {
+    "id": "408",
+    "description": "TESTIGO"
+  },
+  {
+    "id": "409",
+    "description": "TESTIGO INHÁBIL"
+  },
+  {
+    "id": "410",
+    "description": "TIEMPO COMPARTIDO"
+  },
+  {
+    "id": "411",
+    "description": "TÍTULO VALOR"
+  },
+  {
+    "id": "412",
+    "description": "TRANSPORTE"
+  },
+  {
+    "id": "413",
+    "description": "TRANSPORTE AÉREO"
+  },
+  {
+    "id": "414",
+    "description": "TRANSPORTE AUTOMOTOR DE CARGAS"
+  },
+  {
+    "id": "415",
+    "description": "TRANSPORTE URBANO DE PASAJEROS"
+  },
+  {
+    "id": "416",
+    "description": "TRATADOS INTERNACIONALES"
+  },
+  {
+    "id": "417",
+    "description": "TRATO DIGNO"
+  },
+  {
+    "id": "418",
+    "description": "TUTELA JUDICIAL EFECTIVA"
+  },
+  {
+    "id": "419",
+    "description": "TELEVISION POR CABLE"
+  },
+  {
+    "id": "420",
+    "description": "TELEVISION "
+  },
+  {
+    "id": "421",
+    "description": "VALORACIÓN DE LA PRUEBA"
+  },
+  {
+    "id": "422",
+    "description": "VENTA DOMICILIARIA"
+  },
+  {
+    "id": "423",
+    "description": "VENTA POR CORRESPONDENCIA"
+  },
+  {
+    "id": "424",
+    "description": "VEROSIMILITUD DEL DERECHO"
+  },
+  {
+    "id": "425",
+    "description": "VICIOS DEL ACTO JURÍDICO"
+  },
+  {
+    "id": "426",
+    "description": "VICIO DE LESIÓN"
+  },
+  {
+    "id": "427",
+    "description": "VICIOS DEL CONSENTIMIENTO"
+  },
+  {
+    "id": "428",
+    "description": "VICIOS REDHIBITORIOS"
+  },
+  {
+    "id": "429",
+    "description": "VICIOS OCULTOS"
+  },
+  {
+    "id": "430",
+    "description": "VISTA FISCAL"
+  },
+  {
+    "id": "431",
+    "description": "VIVIENDA"
+  },
+  {
+    "id": "432",
+    "description": "VIVIENDA PREFABRICADA"
+  }
+]

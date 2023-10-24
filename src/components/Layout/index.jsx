@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 const Layout = () => {
   return (
-    <div className="h-screen">
+    <div className="h-full w-full">
       <NavBar />
       <Outlet />
       <Footer />
