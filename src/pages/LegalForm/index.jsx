@@ -211,6 +211,7 @@ function UploadForm() {
         </div>`,
         confirmButtonText: "Aceptar",
       });
+      reset();
     } catch (error) {
       console.error(error);
       MySwal.fire({
@@ -222,7 +223,6 @@ function UploadForm() {
       });
     } finally {
       setLoading(false);
-      reset();
     }
   };
 
