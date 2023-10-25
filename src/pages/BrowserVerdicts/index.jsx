@@ -13,11 +13,10 @@ const BrowserVerdicts = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
+    formState: { errors, isSubmitting },
     control,
     setValue,
     reset,
-    formState: { isSubmitSuccessful },
   } = useForm();
 
   const { verdict, setVerdict } = useContext(VerdictsContext);
@@ -64,10 +63,6 @@ const BrowserVerdicts = () => {
 
     fetchData();
   }, []);
-
-  useEffect(() => {
-    if (isSubmitSuccessful) reset();
-  }, [isSubmitSuccessful, reset]);
 
   const submitData = async (data) => {
     try {
@@ -126,6 +121,10 @@ const BrowserVerdicts = () => {
 
   const handleCleanForm = () => {
     reset();
+    setValue("demandado", "");
+    setValue("rubro", "");
+    setValue("causas", "");
+    setValue("etiquetas", "");
     setVerdict(null);
   };
 
@@ -160,9 +159,9 @@ const BrowserVerdicts = () => {
   );
 
   return (
-    <div className={`${verdict ? "h-full" : "h-outlet"} w-full`}>
-      <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0">
-        Buscador de Fallos Judiciales
+    <div className="h-full w-full p-4">
+      <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0 lg:text-4xl">
+        BUSCADOR DE FALLOS JUDICIALES
       </h1>
       <form onSubmit={handleSubmit(submitData)}>
         <div className="flex flex-col xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-3 xl:justify-center xl:pt-1">
@@ -249,8 +248,10 @@ const BrowserVerdicts = () => {
         </div>
         <div className="flex justify-center gap-x-8">
           <button
+            disabled={isSubmitting}
             type="submit"
-            className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]">
+            className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
+          >
             {"Buscar"}
             <span>
               <AiOutlineSearch />
@@ -258,8 +259,9 @@ const BrowserVerdicts = () => {
           </button>
           <button
             type="button"
-            className="h-12 bg-[#5a689b] flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-[#434b69]"
-            onClick={handleCleanForm}>
+            className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
+            onClick={handleCleanForm}
+          >
             {"Limpiar fallos"}
             <span>
               <VscFilterFilled />
@@ -268,15 +270,26 @@ const BrowserVerdicts = () => {
         </div>
       </form>
       <hr className="w-5/6 m-auto"></hr>
-      {verdict !== null ? (
-        <RenderData data={verdict} filter={filter} />
-      ) : (
+      {verdict == null ? (
         <>
           <img src="/fallo.png" className="mx-auto w-1/3 lg:w-1/5" />
           <p className="flex justify-center">
             Aún no se ha buscado ningún fallo
           </p>
         </>
+      ) : verdict.data && verdict.data.length === 0 ? (
+        <>
+          <img
+            className="w-1/4 mx-auto"
+            src="/notFoundVerdicts.png"
+            title="notFoundVerdicts"
+          ></img>
+          <p className="flex justify-center mb-2">
+            No se encontraron resultados
+          </p>
+        </>
+      ) : (
+        <RenderData data={verdict} filter={filter} />
       )}
     </div>
   );
