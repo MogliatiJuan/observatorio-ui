@@ -7,9 +7,7 @@ const NavBar = () => {
   const Links = [
     { name: "Página Principal", path: "/principal", id: 1 },
     { name: "Subir Fallo", path: "/cargafallo", id: 2 },
-    { name: "Fallos", path: "/fallos", id: 3 },
     { name: "Buscador", path: "/buscador", id: 4 },
-    { name: "Ingresar", path: "/logIn", id: 5 },
   ];
   const [open, setOpen] = useState(false);
   return (

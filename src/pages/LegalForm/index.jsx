@@ -231,7 +231,8 @@ function UploadForm() {
       <div className="p-4 h-full w-full">
         <form
           className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto"
-          onSubmit={handleSubmit(submitForm)}>
+          onSubmit={handleSubmit(submitForm)}
+        >
           <span className="md:text-4xl md:text-left text-3xl text-center font-bold text-title w-full md:mx-auto uppercase">
             Carga de fallo judicial
           </span>
@@ -378,7 +379,8 @@ function UploadForm() {
                 required: true,
                 maxLength: 300,
               })}
-              name="resumen"></textarea>
+              name="resumen"
+            ></textarea>
 
             {errors["resumen"] && errors["resumen"].type === "required" && (
               <p className="text-sm text-red-500">
@@ -393,7 +395,8 @@ function UploadForm() {
           </div>
           <button
             type="submit"
-            className="w-24 h-12 bg-button  p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-buttonHover">
+            className="w-24 h-12 bg-general  p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-hoverGeneral"
+          >
             {"CARGAR"}
           </button>
         </form>
