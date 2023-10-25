@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 const Context = React.createContext({});
 
 export function VerdictsContextProvider({ children }) {
   const [verdict, setVerdict] = useState(null);
-  return (
-    <Context.Provider value={{ verdict, setVerdict }}>
-      {children}
-    </Context.Provider>
+
+  const contextValue = useMemo(
+    () => ({ verdict, setVerdict }),
+    [verdict, setVerdict]
   );
+
+  return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 }
 
 export default Context;

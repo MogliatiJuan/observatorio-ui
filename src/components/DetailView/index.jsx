@@ -34,7 +34,7 @@ const DetailView = () => {
       ) : detail.length === 0 ? (
         <>
           <img
-            className="w-1/4 mx-auto"
+            className="w-1/5 mx-auto"
             src="/notFoundVerdicts.png"
             title="notFoundVerdicts"
             alt="No se encontraron resultados"
@@ -42,7 +42,10 @@ const DetailView = () => {
           <p className="flex justify-center">No se encontraron resultados</p>
         </>
       ) : (
-        <div className="min-h-outlet max-h-full w-[95%] mx-auto lg:w-11/12">
+        <div
+          className={`${
+            detail ? "h-full mb-3" : "h-outlet "
+          } w-[95%] mx-auto lg:w-11/12`}>
           <h1 className="text-3xl items-center w-max pt-4 flex gap-x-2 lg:text-4xl text-title font-bold">
             <Link to="/buscador">
               <MdOutlineArrowBack />

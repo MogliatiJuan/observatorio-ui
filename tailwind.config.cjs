@@ -42,6 +42,8 @@ module.exports = {
         navbar: "#434B69",
         verdictsPrimary: "#b6c5da",
         verdictsSecondary: "#e6ebf3",
+        general: "#5a689b",
+        hoverGeneral: "#434b69",
       },
     },
   },
