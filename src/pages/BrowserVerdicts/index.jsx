@@ -78,7 +78,7 @@ const BrowserVerdicts = () => {
         if (data[key] !== undefined && data[key] !== "" && data[key] !== null) {
           filteredObj[key] = Array.isArray(data[key])
             ? data[key].map((value) => value.value)
-            : data[key];
+            : data[key].value;
         }
       }
 
@@ -160,7 +160,7 @@ const BrowserVerdicts = () => {
   );
 
   return (
-    <div className="h-full w-full">
+    <div className={`${verdict ? "h-full" : "h-outlet"} w-full`}>
       <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0">
         Buscador de Fallos Judiciales
       </h1>
@@ -272,8 +272,8 @@ const BrowserVerdicts = () => {
         <RenderData data={verdict} filter={filter} />
       ) : (
         <>
-          <img src="/fallo.png" className="mx-auto w-1/3 lg:w-1/4" />
-          <p className="mb-2 flex justify-center">
+          <img src="/fallo.png" className="mx-auto w-1/3 lg:w-1/5" />
+          <p className="flex justify-center">
             Aún no se ha buscado ningún fallo
           </p>
         </>

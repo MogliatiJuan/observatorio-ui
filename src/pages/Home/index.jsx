@@ -6,7 +6,7 @@ import Button from "@Components/Button";
 
 const Home = () => {
   return (
-    <div className="h-full w-full">
+    <div className="h-outlet w-full">
       <div
         style={{
           height: "30vh",
