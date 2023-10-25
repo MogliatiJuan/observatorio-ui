@@ -6,7 +6,7 @@ import Button from "@Components/Button";
 
 const Home = () => {
   return (
-    <div className="h-full w-full">
+    <div className="h-outlet w-full">
       <div
         style={{
           height: "30vh",
@@ -14,7 +14,8 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="flex flex-col items-end justify-end">
+        className="flex flex-col items-end justify-end"
+      >
         <div className="bg-navbar p-4 mb-10" style={{ width: "80%" }}>
           <span className="text-white text-4xl font-bold">
             OBSERVATORIO DE FALLOS DE CONSUMO
@@ -28,7 +29,7 @@ const Home = () => {
           className="hidden xl:block"
         />
         <div className="w-full md:w-1/2 flex flex-col gap-y-5 justify-center items-center">
-          <h1 className="text-subtitle text-3xl sm:text-4xl text-justify whitespace-nowrap">
+          <h1 className="text-title font-semibold text-3xl sm:text-4xl text-justify whitespace-nowrap">
             ¿Qué es el observatorio?
           </h1>
           <span className="text-black text-base sm:text-xl">
@@ -40,7 +41,7 @@ const Home = () => {
       </div>
       <div>
         <div className="w-1/2 mx-auto">
-          <Link to={"/buscarFallo"}>
+          <Link to={"/buscador"}>
             <Button children={"Buscar Fallos"} />
           </Link>
         </div>
