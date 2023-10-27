@@ -3,9 +3,14 @@ import { useForm } from "react-hook-form";
 import { AiOutlineSearch } from "react-icons/ai";
 import { VscFilterFilled } from "react-icons/vsc";
 import Input from "@Components/Input";
+import corregirCodificacion from "@Utils/corregirCodificacion";
+import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
+import reload from "@Assets/reload.png";
+import fallo from "@Assets/fallo.png";
+import noData from "@Assets/noData.png";
+import MySwal from "@Utils/swal";
 import VerdictsContext from "../../context/VerdictsContext";
 import { axiosFallos } from "../../api";
-import corregirCodificacion from "@Utils/corregirCodificacion";
 import { RenderData } from "../../components";
 
 const BrowserVerdicts = () => {
@@ -58,6 +63,13 @@ const BrowserVerdicts = () => {
         setTags(tagsResponse.data);
       } catch (error) {
         console.error(error);
+        MySwal.fire({
+          html: `<div class="flex flex-col gap-y-2">
+              <img src=${reload} alt="recarga de pagina" />
+              <span class="text-lg font-semibold text-title">Hubo un error al obtener los datos del formulario. Intente nuevamente</span>
+              </div>`,
+          confirmButtonText: "Aceptar",
+        });
       }
     }
 
@@ -84,6 +96,13 @@ const BrowserVerdicts = () => {
       setFilter(filteredObj);
       setVerdict(result.data);
     } catch (error) {
+      MySwal.fire({
+        html: `<div class="flex flex-col gap-y-2">
+                <img src=${noData} alt="recarga de pagina" />
+                <span class="text-lg font-semibold text-title">Hubo un error al obtener los resultados del buscador. Intente nuevamente</span>
+                </div>`,
+        confirmButtonText: "Aceptar",
+      });
       console.error(error);
     }
   };
@@ -138,7 +157,13 @@ const BrowserVerdicts = () => {
         options: factories,
         isMulti: true,
       },
-      { label: "Rubro", name: "rubro", type: "select", options: rubros },
+      {
+        label: "Rubro",
+        name: "rubro",
+        type: "select",
+        options: rubros,
+        isMulti: true,
+      },
       {
         label: "Tipo de Juicio",
         name: "tipoJuicio",
@@ -250,8 +275,7 @@ const BrowserVerdicts = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
-          >
+            className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral">
             {"Buscar"}
             <span>
               <AiOutlineSearch />
@@ -260,8 +284,7 @@ const BrowserVerdicts = () => {
           <button
             type="button"
             className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
-            onClick={handleCleanForm}
-          >
+            onClick={handleCleanForm}>
             {"Limpiar fallos"}
             <span>
               <VscFilterFilled />
@@ -272,7 +295,7 @@ const BrowserVerdicts = () => {
       <hr className="w-5/6 m-auto"></hr>
       {verdict == null ? (
         <>
-          <img src="/fallo.png" className="mx-auto w-1/3 lg:w-1/5" />
+          <img src={fallo} className="mx-auto w-1/3 lg:w-1/5" />
           <p className="flex justify-center">
             Aún no se ha buscado ningún fallo
           </p>
@@ -281,9 +304,8 @@ const BrowserVerdicts = () => {
         <>
           <img
             className="w-1/4 mx-auto"
-            src="/notFoundVerdicts.png"
-            title="notFoundVerdicts"
-          ></img>
+            src={notFoundVerdicts}
+            title="notFoundVerdicts"></img>
           <p className="flex justify-center mb-2">
             No se encontraron resultados
           </p>
