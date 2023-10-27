@@ -6,6 +6,9 @@ import { TbBuildingFactory2 } from "react-icons/tb";
 import { PulseLoader } from "react-spinners";
 import { axiosFallos } from "../../api";
 import corregirCodificacion from "@Utils/corregirCodificacion";
+import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
+import errorDetailView from "@Assets/errorDetailView.png";
+import MySwal from "@Utils/swal";
 
 const DetailView = () => {
   const { id = null } = useParams();
@@ -18,9 +21,16 @@ const DetailView = () => {
         setDetail(apiData.data);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error(error);
+        MySwal.fire({
+          html: `<div class="flex flex-col gap-y-2">
+            <img src=${errorDetailView} alt="carga detalle fallido" />
+            <span class="text-lg font-semibold text-title">Hubo un error al cargar el detalle del fallo. Intente nuevamente</span>
+            </div>`,
+          confirmButtonText: "Aceptar",
+        });
       });
-  }, [id]);
+  }, []);
 
   const getIconClass = (file) =>
     file?.split(".")[1].toLowerCase() === "pdf" ? "pdf" : "image";
@@ -35,7 +45,7 @@ const DetailView = () => {
         <>
           <img
             className="w-1/5 mx-auto"
-            src="/notFoundVerdicts.png"
+            src={notFoundVerdicts}
             title="notFoundVerdicts"
             alt="No se encontraron resultados"
           />
@@ -81,7 +91,7 @@ const DetailView = () => {
             )}
 
             {detail.demandado.map((ente) => (
-              <div className="flex items-baseline pl-2">
+              <div key={ente.cuit} className="flex items-baseline pl-2">
                 <span>
                   <TbBuildingFactory2 />
                 </span>
@@ -124,12 +134,14 @@ const DetailView = () => {
               </>
             )}
 
-            {detail.rubro && (
-              <>
-                <h3 className={`text-2xl text-title font-semibold`}>Rubro</h3>
-                <p className="pl-2">{detail.rubro}</p>
-              </>
+            {detail.rubro.length > 0 && (
+              <h3 className={`text-2xl text-title font-semibold`}>Rubro</h3>
             )}
+            {detail.rubro.map((rub) => (
+              <p className="pl-2" key={rub}>
+                {rub}
+              </p>
+            ))}
 
             {(detail.punitivo || detail.moral || detail.patrimonial) && (
               <>
@@ -173,6 +185,7 @@ const DetailView = () => {
                   />
                 ) : (
                   <img
+                    key={file.file}
                     src={file.url}
                     alt={file.file}
                     className="w-11/12 object-contain lg:w-2/5 lg:h-72"
