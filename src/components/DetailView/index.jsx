@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MdOutlineArrowBack, MdScatterPlot } from "react-icons/md";
-import { CgShapeHalfCircle } from "react-icons/cg";
+import { CgShapeHalfCircle, CgArrowsExpandUpRight } from "react-icons/cg";
 import { TbBuildingFactory2 } from "react-icons/tb";
 import { PulseLoader } from "react-spinners";
+import { FaFilePdf } from "react-icons/fa";
 import { axiosFallos } from "../../api";
 import corregirCodificacion from "@Utils/corregirCodificacion";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
@@ -19,18 +20,60 @@ const DetailView = () => {
       .get(`/api/fallo/${id}`)
       .then((apiData) => {
         setDetail(apiData.data);
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       })
       .catch((error) => {
         console.error(error);
         MySwal.fire({
+          showCancelButton: true,
+          showConfirmButton: true,
           html: `<div class="flex flex-col gap-y-2">
             <img src=${errorDetailView} alt="carga detalle fallido" />
             <span class="text-lg font-semibold text-title">Hubo un error al cargar el detalle del fallo. Intente nuevamente</span>
             </div>`,
-          confirmButtonText: "Aceptar",
+          cancelButtonText: "Cancelar",
+          confirmButtonText: "Ver detalle de error",
+        }).then((res) => {
+          if (res.isConfirmed) {
+            MySwal.fire({
+              title: "Detalle del Error",
+              text: `${error?.response?.data.status} - ${
+                error?.response?.data?.error || error?.response?.data?.code
+              } - ${error?.response?.data?.message} ${
+                error?.response?.data?.details !== null
+                  ? `- ${error?.response?.data?.details}`
+                  : ""
+              }`,
+              showConfirmButton: true,
+              confirmButtonText: "Aceptar",
+            });
+          }
         });
       });
-  }, []);
+  }, [id]);
+
+  const openModal = (file) => {
+    MySwal.fire({
+      title: `<a href=${file.url} target="_blank" className="h-fit">Visualizar en pantalla completa ➚</a>`,
+      html: (
+        <div className="w-full h-full mx-auto">
+          <iframe
+            key={file.file}
+            src={file.url}
+            title={file.file}
+            className="lg:w-full lg:h-full"
+          />
+        </div>
+      ),
+      customClass: {
+        popup: "w-[80vw] h-[90vh]",
+        title: "h-fit",
+        htmlContainer: "h-[45rem]",
+      },
+      showConfirmButton: false,
+      showCloseButton: true,
+    });
+  };
 
   const getIconClass = (file) =>
     file?.split(".")[1].toLowerCase() === "pdf" ? "pdf" : "image";
@@ -121,7 +164,10 @@ const DetailView = () => {
             {detail.juzgado && (
               <>
                 <h3 className={`text-2xl text-title font-semibold`}>Juzgado</h3>
-                <p className="pl-2">{corregirCodificacion(detail.juzgado)}</p>
+                <p className="pl-2">
+                  {detail.Provincia} - {detail.Ciudad} -{" "}
+                  {corregirCodificacion(detail.juzgado)}
+                </p>
               </>
             )}
 
@@ -174,15 +220,15 @@ const DetailView = () => {
                 Archivos adjuntos
               </h3>
             )}
-            <div className="w-full mx-auto h-full flex flex-col gap-y-3 items-center justify-evenly lg:flex-row lg:flex-wrap lg:w-11/12 lg:gap-0 ">
+            <div className="w-full ml-2 mx-auto h-full flex flex-col gap-y-3 lg:flex-row lg:flex-wrap lg:w-full lg:gap-0 lg:gap-x-6">
               {detail.files.map((file) =>
                 getIconClass(file.file) === "pdf" ? (
-                  <iframe
+                  <button
+                    className="flex items-baseline"
                     key={file.file}
-                    src={file.url}
-                    title={file.file}
-                    className="w-2/5 lg:h-96"
-                  />
+                    onClick={() => openModal(file)}>
+                    <FaFilePdf className="h-8 w-8" />
+                  </button>
                 ) : (
                   <img
                     key={file.file}
