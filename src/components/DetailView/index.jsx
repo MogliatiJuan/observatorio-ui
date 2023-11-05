@@ -54,21 +54,21 @@ const DetailView = () => {
 
   const openModal = (file) => {
     MySwal.fire({
-      title: `<a href=${file.url} target="_blank" className="h-fit">Visualizar en pantalla completa ➚</a>`,
+      title: `<a href=${file.url} target="_blank">Visualizar en pantalla completa ➚</a>`,
       html: (
         <div className="w-full h-full mx-auto">
           <iframe
             key={file.file}
             src={file.url}
             title={file.file}
-            className="lg:w-full lg:h-full"
+            className="h-[25rem] lg:w-full lg:h-full"
           />
         </div>
       ),
       customClass: {
-        popup: "w-[80vw] h-[90vh]",
-        title: "h-fit",
-        htmlContainer: "h-[45rem]",
+        popup: "w-[90vw] h-[70vh] lg:w-[80vw] lg:h-[90vh]",
+        title: "h-fit text-xl lg:text-4xl",
+        htmlContainer: "h-[25rem] lg:h-[45rem]",
       },
       showConfirmButton: false,
       showCloseButton: true,

@@ -13,6 +13,7 @@ const corregirCodificacion = (texto) => {
     .replace(/ã/g, "í")
     .replace(/í¡/g, "á")
     .replace(/í³/g, "ó")
+    .replace(/âª/g, "ª")
     .replace(/Nâ°/g, "N°");
 
   return textoCorregido;
