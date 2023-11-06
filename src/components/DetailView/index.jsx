@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { MdOutlineArrowBack, MdScatterPlot } from "react-icons/md";
-import { CgShapeHalfCircle, CgArrowsExpandUpRight } from "react-icons/cg";
+import { CgShapeHalfCircle } from "react-icons/cg";
 import { TbBuildingFactory2 } from "react-icons/tb";
-import { PulseLoader } from "react-spinners";
 import { FaFilePdf } from "react-icons/fa";
 import { axiosFallos } from "../../api";
 import corregirCodificacion from "@Utils/corregirCodificacion";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
 import errorDetailView from "@Assets/errorDetailView.png";
 import MySwal from "@Utils/swal";
+import Spinner from "../Loader";
 
 const DetailView = () => {
   const { id = null } = useParams();
@@ -61,14 +61,14 @@ const DetailView = () => {
             key={file.file}
             src={file.url}
             title={file.file}
-            className="h-[25rem] lg:w-full lg:h-full"
+            className="h-[25rem] md:h-full md:w-full lg:w-full lg:h-full"
           />
         </div>
       ),
       customClass: {
-        popup: "w-[90vw] h-[70vh] lg:w-[80vw] lg:h-[90vh]",
+        popup: "w-[90vw] h-[70vh] md:h-[80vh] lg:w-[80vw] lg:h-[90vh]",
         title: "h-fit text-xl lg:text-4xl",
-        htmlContainer: "h-[25rem] lg:h-[45rem]",
+        htmlContainer: "h-[25rem] md:h-[40rem] lg:h-[45rem]",
       },
       showConfirmButton: false,
       showCloseButton: true,
@@ -81,8 +81,8 @@ const DetailView = () => {
   return (
     <>
       {detail == null ? (
-        <div className="flex justify-center items-center h-outlet">
-          <PulseLoader className="w-max p-5" color="#434b69" />
+        <div className="h-outlet flex justify-center">
+          <Spinner />
         </div>
       ) : detail.length === 0 ? (
         <>
