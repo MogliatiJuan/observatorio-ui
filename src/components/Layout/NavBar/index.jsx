@@ -15,7 +15,7 @@ const NavBar = () => {
     setOpen(false);
   };
   return (
-    <div className="shadow-md w-full bg-navbar">
+    <header className="shadow-md w-full bg-navbar">
       <div className="flex items-center justify-between py-4 md:px-10 px-7 h-20">
         <div>
           <Link
@@ -47,7 +47,7 @@ const NavBar = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </header>
   );
 };
 

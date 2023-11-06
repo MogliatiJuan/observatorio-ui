@@ -1,5 +1,31 @@
-const Pagination = ({ nPages, currentPage, setCurrentPage, updateData }) => {
-  const pageNumbers = [...Array(nPages + 1).keys()].slice(1);
+const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
+  const siblingCount = 1;
+  const pageNumbers = [];
+
+  // Define un rango de páginas para mostrar dependiendo de la página actual
+  let startPage = Math.max(1, currentPage - siblingCount);
+  let endPage = Math.min(currentPage + siblingCount, nPages);
+
+  // Agrega puntos suspensivos y la primera página si no es la primera página
+  if (startPage > 1) {
+    pageNumbers.push(1);
+    if (startPage > 2) {
+      pageNumbers.push("...");
+    }
+  }
+
+  // Agrega las páginas intermedias
+  for (let i = startPage; i <= endPage; i++) {
+    pageNumbers.push(i);
+  }
+
+  // Agrega puntos suspensivos y la última página si no es la última página
+  if (endPage < nPages) {
+    if (endPage + 1 !== nPages) {
+      pageNumbers.push("...");
+    }
+    pageNumbers.push(nPages);
+  }
 
   const goToPrevPage = () => {
     if (currentPage !== 1) {
@@ -19,34 +45,40 @@ const Pagination = ({ nPages, currentPage, setCurrentPage, updateData }) => {
         <li>
           <a
             className={`text-title ${
-              currentPage === 1 ? "disabled" : "active cursor-pointer"
+              currentPage === startPage
+                ? "disabled opacity-50"
+                : "active cursor-pointer"
             }`}
-            onClick={goToPrevPage}
-          >
+            onClick={goToPrevPage}>
             Anterior
           </a>
         </li>
-
-        {pageNumbers.map((pgNumber) => (
+        {pageNumbers.map((pgNumber, index) => (
           <li
-            key={pgNumber}
+            key={index}
             className={`text-title ${
-              currentPage == pgNumber ? "active" : "opacity-50 cursor-pointer"
-            } `}
-          >
-            <a onClick={() => setCurrentPage(pgNumber)}>{pgNumber}</a>
+              currentPage == pgNumber
+                ? "active"
+                : pgNumber === "..."
+                ? "opacity-50"
+                : "opacity-50 cursor-pointer"
+            } `}>
+            {pgNumber === "..." ? (
+              <span>{pgNumber}</span>
+            ) : (
+              <a onClick={() => setCurrentPage(pgNumber)}>{pgNumber}</a>
+            )}
           </li>
         ))}
 
         <li>
           <a
             className={`text-title ${
-              currentPage === nPages
+              currentPage === endPage
                 ? "disabled opacity-50"
                 : "active cursor-pointer"
             }`}
-            onClick={goToNextPage}
-          >
+            onClick={goToNextPage}>
             Siguiente
           </a>
         </li>

@@ -1,10 +1,9 @@
-import { useContext, useEffect, useMemo, useState } from "react";
+import { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineSearch } from "react-icons/ai";
 import { VscFilterFilled } from "react-icons/vsc";
 import Input from "@Components/Input";
 import corregirCodificacion from "@Utils/corregirCodificacion";
-import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
 import reload from "@Assets/reload.png";
 import fallo from "@Assets/fallo.png";
 import noData from "@Assets/noData.png";
@@ -12,6 +11,7 @@ import MySwal from "@Utils/swal";
 import VerdictsContext from "../../context/VerdictsContext";
 import { axiosFallos } from "../../api";
 import { RenderData } from "../../components";
+import Spinner from "../../components/Loader";
 
 const BrowserVerdicts = () => {
   const {
@@ -35,8 +35,11 @@ const BrowserVerdicts = () => {
   const [tribunals, setTribunals] = useState([]);
   const [tags, setTags] = useState([]);
   const [filter, setFilter] = useState({});
+  const [loadingForm, setLoadingForm] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoadingForm(true);
     async function fetchData() {
       try {
         const [
@@ -64,12 +67,32 @@ const BrowserVerdicts = () => {
       } catch (error) {
         console.error(error);
         MySwal.fire({
+          showCancelButton: true,
+          showConfirmButton: true,
           html: `<div class="flex flex-col gap-y-2">
               <img src=${reload} alt="recarga de pagina" />
               <span class="text-lg font-semibold text-title">Hubo un error al obtener los datos del formulario. Intente nuevamente</span>
               </div>`,
-          confirmButtonText: "Aceptar",
+          cancelButtonText: "Cancelar",
+          confirmButtonText: "Ver detalle de error",
+        }).then((res) => {
+          if (res.isConfirmed) {
+            MySwal.fire({
+              title: "Detalle del Error",
+              text: `${error?.response?.data.status} - ${
+                error?.response?.data?.error || error?.response?.data?.code
+              } - ${error?.response?.data?.message} ${
+                error?.response?.data?.details !== null
+                  ? `- ${error?.response?.data?.details}`
+                  : ""
+              }`,
+              showConfirmButton: true,
+              confirmButtonText: "Aceptar",
+            });
+          }
         });
+      } finally {
+        setLoadingForm(false);
       }
     }
 
@@ -77,9 +100,12 @@ const BrowserVerdicts = () => {
   }, []);
 
   const submitData = async (data) => {
+    setLoading(true);
     try {
       setVerdict([]);
       const filteredObj = {};
+      filteredObj.page = 1;
+      filteredObj.offset = 10;
 
       for (const key in data) {
         if (data[key] !== undefined && data[key] !== "" && data[key] !== null) {
@@ -97,13 +123,33 @@ const BrowserVerdicts = () => {
       setVerdict(result.data);
     } catch (error) {
       MySwal.fire({
+        showCancelButton: true,
+        showConfirmButton: true,
         html: `<div class="flex flex-col gap-y-2">
-                <img src=${noData} alt="recarga de pagina" />
-                <span class="text-lg font-semibold text-title">Hubo un error al obtener los resultados del buscador. Intente nuevamente</span>
-                </div>`,
-        confirmButtonText: "Aceptar",
+                  <img src=${noData} alt="recarga de pagina" />
+                  <span class="text-lg font-semibold text-title">Hubo un error al obtener los resultados del buscador. Intente nuevamente</span>
+                  </div>`,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Ver detalle de error",
+      }).then((res) => {
+        if (res.isConfirmed) {
+          MySwal.fire({
+            title: "Detalle del Error",
+            text: `${error?.response?.data.status} - ${
+              error?.response?.data?.error || error?.response?.data?.code
+            } - ${error?.response?.data?.message} ${
+              error?.response?.data?.details !== null
+                ? `- ${error?.response?.data?.details}`
+                : ""
+            }`,
+            showConfirmButton: true,
+            confirmButtonText: "Aceptar",
+          });
+        }
       });
       console.error(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -120,6 +166,31 @@ const BrowserVerdicts = () => {
         setCities(citiesResponse.data);
       }
     } catch (error) {
+      MySwal.fire({
+        showCancelButton: true,
+        showConfirmButton: true,
+        html: `<div class="flex flex-col gap-y-2">
+                      <img src=${noData} alt="recarga de pagina" />
+                      <span class="text-lg font-semibold text-title">Hubo un error al obtener los resultados de las provincias. Intente nuevamente</span>
+                      </div>`,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Ver detalle de error",
+      }).then((res) => {
+        if (res.isConfirmed) {
+          MySwal.fire({
+            title: "Detalle del Error",
+            text: `${error?.response?.data.status} - ${
+              error?.response?.data?.error || error?.response?.data?.code
+            } - ${error?.response?.data?.message} ${
+              error?.response?.data?.details !== null
+                ? `- ${error?.response?.data?.details}`
+                : ""
+            }`,
+            showConfirmButton: true,
+            confirmButtonText: "Aceptar",
+          });
+        }
+      });
       console.error(error);
     }
   };
@@ -134,6 +205,31 @@ const BrowserVerdicts = () => {
         setTribunals(tribunalsResponse.data);
       }
     } catch (error) {
+      MySwal.fire({
+        showCancelButton: true,
+        showConfirmButton: true,
+        html: `<div class="flex flex-col gap-y-2">
+                      <img src=${noData} alt="recarga de pagina" />
+                      <span class="text-lg font-semibold text-title">Hubo un error al obtener los resultados de las ciudades. Intente nuevamente</span>
+                      </div>`,
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Ver detalle de error",
+      }).then((res) => {
+        if (res.isConfirmed) {
+          MySwal.fire({
+            title: "Detalle del Error",
+            text: `${error?.response?.data.status} - ${
+              error?.response?.data?.error || error?.response?.data?.code
+            } - ${error?.response?.data?.message} ${
+              error?.response?.data?.details !== null
+                ? `- ${error?.response?.data?.details}`
+                : ""
+            }`,
+            showConfirmButton: true,
+            confirmButtonText: "Aceptar",
+          });
+        }
+      });
       console.error(error);
     }
   };
@@ -145,6 +241,7 @@ const BrowserVerdicts = () => {
     setValue("causas", "");
     setValue("etiquetas", "");
     setVerdict(null);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
   const browserFields = useMemo(
@@ -183,8 +280,18 @@ const BrowserVerdicts = () => {
     [factories, typeTrials, tags, rubros, claims]
   );
 
+  if (loadingForm)
+    return (
+      <div className="h-outlet flex justify-center">
+        <Spinner />
+      </div>
+    );
+
   return (
-    <div className="h-full w-full p-4">
+    <div
+      className={`h-full ${
+        verdict && loading == false ? "lg:h-full" : "lg:h-outlet"
+      } w-full p-4`}>
       <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0 lg:text-4xl">
         BUSCADOR DE FALLOS JUDICIALES
       </h1>
@@ -282,6 +389,7 @@ const BrowserVerdicts = () => {
             </span>
           </button>
           <button
+            disabled={isSubmitting}
             type="button"
             className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
             onClick={handleCleanForm}>
@@ -293,25 +401,24 @@ const BrowserVerdicts = () => {
         </div>
       </form>
       <hr className="w-5/6 m-auto"></hr>
-      {verdict == null ? (
+      {loading ? (
+        <div className="h-2/5 flex justify-center">
+          <Spinner />
+        </div>
+      ) : verdict == null && loading == false ? (
         <>
-          <img src={fallo} className="mx-auto w-1/3 lg:w-1/5" />
+          <img
+            src={fallo}
+            className="mx-auto w-1/3 lg:min-h-[20rem] lg:w-1/5"
+          />
           <p className="flex justify-center">
             Aún no se ha buscado ningún fallo
           </p>
         </>
-      ) : verdict.data && verdict.data.length === 0 ? (
-        <>
-          <img
-            className="w-1/4 mx-auto"
-            src={notFoundVerdicts}
-            title="notFoundVerdicts"></img>
-          <p className="flex justify-center mb-2">
-            No se encontraron resultados
-          </p>
-        </>
       ) : (
-        <RenderData data={verdict} filter={filter} />
+        <div className="min-h-[28rem]">
+          <RenderData data={verdict} filter={filter} />
+        </div>
       )}
     </div>
   );
