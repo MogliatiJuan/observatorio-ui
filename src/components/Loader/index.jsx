@@ -1,12 +1,10 @@
 import React from "react";
-import { BiLoaderAlt } from "react-icons/bi";
+import { PulseLoader } from "react-spinners";
 
 function Spinner() {
   return (
     <div className="flex items-center justify-center">
-      <div className="animate-spin text-blue-500">
-        <BiLoaderAlt className="text-4xl" />
-      </div>
+      <PulseLoader className="w-max p-5" color="#434b69" />
     </div>
   );
 }

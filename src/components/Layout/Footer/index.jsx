@@ -32,7 +32,7 @@ const Footer = () => {
   return (
     <>
       <footer className="bg-slate-800">
-        <div className="py-2 px-5 flex flex-wrap gap-y-2 lg:justify-evenly lg:flex-nowrap lg:py-5 lg:px-0">
+        <div className="py-2 px-5 flex flex-wrap gap-y-2 md:justify-between lg:justify-evenly lg:flex-nowrap lg:py-5 lg:px-0">
           <div>
             <h3 className="text-white text-xl pb-1">Contacto</h3>
             <hr className="w-8 pb-3 border-t-2 border-blue-500 lg:pb-6"></hr>
@@ -52,8 +52,7 @@ const Footer = () => {
               {Navigation.map((link) => (
                 <li
                   key={link.id}
-                  className="text-white list-none relative overflow-hidden"
-                >
+                  className="text-white list-none relative overflow-hidden">
                   <Link to={link.path} className="relative z-10 group">
                     {link.name}
                     <span className="absolute w-full h-0.5 bg-blue-500 bottom-0 left-0 transform scale-x-0 origin-center transition-transform duration-300 group-hover:scale-x-100 group-hover:opacity-100 opacity-0"></span>
@@ -62,7 +61,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-          <div className="w-full lg:w-fit">
+          <div className="w-full md:w-fit lg:w-fit">
             <h3 className="text-white text-xl pb-1">Ubicación y Mapa</h3>
             <hr className="w-8 border-t-2 pb-6 border-blue-500"></hr>
             <div className="w-full flex justify-center lg:w-fit lg:inline-block">
@@ -72,8 +71,7 @@ const Footer = () => {
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="transform transition-transform hover:scale-105 w-[300px] h-[300px] lg:w-[400px] lg:h-[300px]"
-              ></iframe>
+                className="transform transition-transform hover:scale-105 w-[300px] h-[300px] md:w-[250px] md:h-[250px] lg:w-[400px] lg:h-[300px]"></iframe>
             </div>
           </div>
         </div>

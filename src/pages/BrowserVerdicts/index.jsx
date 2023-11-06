@@ -289,14 +289,16 @@ const BrowserVerdicts = () => {
 
   return (
     <div
-      className={`h-full ${
-        verdict && loading == false ? "lg:h-full" : "lg:h-outlet"
-      } w-full p-4`}>
-      <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0 lg:text-4xl">
+      className={`h-full w-full p-4 ${
+        verdict && loading == false
+          ? "md:h-full lg:h-full "
+          : "md:h-outlet lg:flex lg:flex-col lg:justify-between"
+      }`}>
+      <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0 xl:text-4xl">
         BUSCADOR DE FALLOS JUDICIALES
       </h1>
       <form onSubmit={handleSubmit(submitData)}>
-        <div className="flex flex-col xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-3 xl:justify-center xl:pt-1">
+        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-3 xl:justify-center xl:pt-1">
           {browserFields.map((field) => (
             <Input
               key={field.name}
@@ -400,7 +402,7 @@ const BrowserVerdicts = () => {
           </button>
         </div>
       </form>
-      <hr className="w-5/6 m-auto"></hr>
+      <hr className="w-5/6 mx-auto"></hr>
       {loading ? (
         <div className="h-2/5 flex justify-center">
           <Spinner />
@@ -409,7 +411,7 @@ const BrowserVerdicts = () => {
         <>
           <img
             src={fallo}
-            className="mx-auto w-1/3 lg:min-h-[20rem] lg:w-1/5"
+            className="mx-auto w-1/3 md:w-1/4 lg:w-1/5 2xl:min-h-[10rem]"
           />
           <p className="flex justify-center">
             Aún no se ha buscado ningún fallo

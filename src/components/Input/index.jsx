@@ -24,7 +24,7 @@ const Input = ({
     borderColor: "#687073",
   };
 
-  const browserStyle = "w-full px-3 py-1 xl:w-1/4 xl:p-0";
+  const browserStyle = "w-full px-3 py-1 md:w-2/5 xl:w-1/5 xl:p-0";
 
   if (type === "file") {
     return (
@@ -48,8 +48,7 @@ const Input = ({
           className === "browser"
             ? browserStyle
             : "flex flex-col gap-y-1 text-left"
-        }
-      >
+        }>
         {label && <label htmlFor={name}>{label}</label>}
         <Controller
           name={name}
@@ -97,8 +96,7 @@ const Input = ({
           className === "browser"
             ? browserStyle
             : "flex flex-col gap-y-1 text-left"
-        }
-      >
+        }>
         {label && <label htmlFor={name}>{label}</label>}
         <input
           type={type}
