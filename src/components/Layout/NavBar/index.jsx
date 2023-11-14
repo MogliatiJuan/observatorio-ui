@@ -33,7 +33,7 @@ const NavBar = () => {
         </div>
 
         <ul
-          className={`text-white  md:flex md:items-center md:pb-0  md:static  md:z-auto md:w-auto md:pl-0 left-0 w-full pl-9 absolute transition-all duration-500 ease-in ${
+          className={`z-10 text-white  md:flex md:items-center md:pb-0  md:static  md:z-auto md:w-auto md:pl-0 left-0 w-full pl-9 absolute transition-all duration-500 ease-in ${
             open ? "top-14 bg-navbar " : "top-[-490px]"
           }`}>
           {Links.map((link) => (
