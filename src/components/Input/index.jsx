@@ -17,14 +17,15 @@ const Input = ({
   isMulti = false,
   onchange,
   className,
+  createTable = false,
+  handleClickCreateTable = null,
 }) => {
-  // Estilos comunes
   const commonStyles = {
     borderRadius: "0.375rem",
     borderColor: "#687073",
   };
 
-  const browserStyle = "w-full px-3 py-1 md:w-2/5 xl:w-1/5 xl:p-0";
+  const browserStyle = "w-4/5 px-3 py-1 md:w-2/5 xl:w-1/5 xl:p-0 flex flex-col";
 
   if (type === "file") {
     return (
@@ -50,40 +51,52 @@ const Input = ({
             : "flex flex-col gap-y-1 text-left"
         }>
         {label && <label htmlFor={name}>{label}</label>}
-        <Controller
-          name={name}
-          control={control}
-          rules={{ required: validation }}
-          render={({ field }) => (
-            <Select
-              {...field}
-              isSearchable={true}
-              isClearable={true}
-              isMulti={isMulti}
-              isDisabled={disabled}
-              options={options}
-              placeholder={placeholder || label}
-              noOptionsMessage={() => noOptionsMessage || "No hay opciones"}
-              className="cursor-pointer"
-              styles={{
-                control: (provided, state) => ({
-                  ...provided,
-                  ...commonStyles,
-                  borderColor: state.isFocused
-                    ? "#2563eb"
-                    : commonStyles.borderColor,
-                  boxShadow: state.isFocused
-                    ? "0 0 0 1px #2563eb"
-                    : provided.boxShadow,
-                }),
-              }}
-              onChange={(selectedOption) => {
-                onchange && onchange(selectedOption);
-                setValue(name, selectedOption);
-              }}
-            />
+        <div className="flex justify-between">
+          <Controller
+            name={name}
+            control={control}
+            rules={{ required: validation }}
+            render={({ field }) => (
+              <Select
+                {...field}
+                isSearchable={true}
+                isClearable={true}
+                isMulti={isMulti}
+                isDisabled={disabled}
+                options={options}
+                placeholder={placeholder || label}
+                noOptionsMessage={() => noOptionsMessage || "No hay opciones"}
+                className={`cursor-pointer ${
+                  className === "browser" ? "w-full" : "w-4/5"
+                }`}
+                styles={{
+                  control: (provided, state) => ({
+                    ...provided,
+                    ...commonStyles,
+                    borderColor: state.isFocused
+                      ? "#2563eb"
+                      : commonStyles.borderColor,
+                    boxShadow: state.isFocused
+                      ? "0 0 0 1px #2563eb"
+                      : provided.boxShadow,
+                  }),
+                }}
+                onChange={(selectedOption) => {
+                  onchange && onchange(selectedOption);
+                  setValue(name, selectedOption);
+                }}
+              />
+            )}
+          />
+          {createTable && (
+            <button
+              type="button"
+              className="px-2 py-1 text-sm text-white bg-navbar rounded-md h-9"
+              onClick={handleClickCreateTable}>
+              Agregar
+            </button>
           )}
-        />
+        </div>
         {errors[name] && (
           <p className="text-sm text-red-500">{errors[name].message}</p>
         )}
@@ -101,7 +114,7 @@ const Input = ({
         <input
           type={type}
           {...register(name, { required: validation })}
-          className={`w-full rounded-md py-1.5 focus:border-1 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb]`}
+          className={`rounded-md py-1.5 focus:border-1 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] h-9`}
           placeholder={placeholder || label}
         />
         {errors[name] && (
