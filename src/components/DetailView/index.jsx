@@ -56,7 +56,7 @@ const DetailView = () => {
     MySwal.fire({
       title: `<a href=${file.url} target="_blank">Visualizar en pantalla completa ➚</a>`,
       html: (
-        <div className="w-full h-full mx-auto">
+        <div className="w-full h-full lg:h-[80%] min-[1920px]:h-full 2 mx-auto">
           <iframe
             key={file.file}
             src={file.url}
@@ -67,7 +67,7 @@ const DetailView = () => {
       ),
       customClass: {
         popup: "w-[90vw] h-[70vh] md:h-[80vh] lg:w-[80vw] lg:h-[90vh]",
-        title: "h-fit text-xl lg:text-4xl",
+        title: "h-fit text-xl lg:-mt-4 lg:text-4xl",
         htmlContainer: "h-[25rem] md:h-[40rem] lg:h-[45rem]",
       },
       showConfirmButton: false,
@@ -98,7 +98,8 @@ const DetailView = () => {
         <div
           className={`${
             detail ? "h-full mb-3" : "h-outlet "
-          } w-[95%] mx-auto lg:w-11/12`}>
+          } w-[95%] mx-auto lg:w-11/12`}
+        >
           <h1 className="text-3xl items-center w-max pt-4 flex gap-x-2 lg:text-4xl text-title font-bold">
             <Link to="/buscador">
               <MdOutlineArrowBack />
@@ -226,7 +227,8 @@ const DetailView = () => {
                   <button
                     className="flex items-baseline"
                     key={file.file}
-                    onClick={() => openModal(file)}>
+                    onClick={() => openModal(file)}
+                  >
                     <FaFilePdf className="h-8 w-8" />
                   </button>
                 ) : (
