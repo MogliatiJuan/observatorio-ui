@@ -9,15 +9,13 @@ import formErrorUpload from "@Assets/formErrorUpload.png";
 
 function UploadForm() {
   const [loading, setLoading] = useState(true);
-  // crear estados para cada select a rellenar en el formulario
+
   const [empresasState, setEmpresasState] = useState([]);
   const [tiposJuicioState, setTiposJuicioState] = useState([]);
   const [causasState, setCausasState] = useState([]);
   const [rubrosState, setRubrosState] = useState([]);
   const [provinciasState, setProvinciasState] = useState([]);
   const [etiquetasState, setEtiquetasState] = useState([]);
-
-  //crear estados para cada select dependiente
   const [ciudadesState, setCiudadesState] = useState([]);
   const [tribunalesState, setTribunalesState] = useState([]);
 
@@ -30,6 +28,20 @@ function UploadForm() {
     reset,
     formState: { errors },
   } = useForm();
+
+  const provinciaSelected = watch("tribunalProvincia");
+  const ciudadSelected = watch("tribunalCiudad");
+  const empresasSelected = watch("demandado") || [];
+  const etiquetaSelected = watch("etiquetas") || [];
+  const causasSelected = watch("causas") || [];
+
+  const Toast = MySwal.mixin({
+    toast: true,
+    position: "top",
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+  });
 
   const fetchData = async () => {
     try {
@@ -60,104 +72,94 @@ function UploadForm() {
       setLoading(false);
     }
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
 
-  const fields = [
-    {
-      name: "actor",
-      label: "Actor",
-      type: "text",
-      placeholder: "Actor",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un actor",
-    },
-    {
-      name: "demandado",
-      label: "Demandado",
-      type: "select",
-      options: empresasState?.map((empresa) => ({
-        ...empresa,
-        value: empresa.id,
-        label: corregirCodificacion(empresa.razon_social),
-      })),
-      placeholder: "Seleccione un demandado",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un demandado",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay un demandado coincidente",
-      isMulti: true,
-    },
-    {
-      name: "tipoJuicio",
-      label: "Tipo de juicio",
-      type: "select",
-      options: tiposJuicioState?.map((tipoJuicio) => ({
-        ...tipoJuicio,
-        value: tipoJuicio.id,
-        label: corregirCodificacion(tipoJuicio.description.toUpperCase()),
-      })),
-      placeholder: "Tipo de juicio",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un tipo de juicio",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay un tipo de juicio coincidente",
-    },
-    {
-      name: "causas",
-      label: "Causas del reclamo",
-      type: "select",
-      options: causasState?.map((causa) => ({
-        ...causa,
-        value: causa.id,
-        label: corregirCodificacion(causa.description.toUpperCase()),
-      })),
-      placeholder: "Causas del reclamo",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar una causa del reclamo",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay una causa del reclamo coincidente",
-      isMulti: true,
-    },
-    {
-      name: "rubro",
-      label: "Rubro",
-      type: "select",
-      options: rubrosState?.map((rubro) => ({
-        ...rubro,
-        value: rubro.id,
-        label: corregirCodificacion(rubro.rubro.toUpperCase()),
-      })),
-      placeholder: "Rubro",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un rubro",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay un rubro coincidente",
-      isMulti: true,
-    },
-    {
-      name: "fecha",
-      label: "Fecha",
-      type: "date",
-      placeholder: "Fecha",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar una fecha",
-    },
-  ];
+  const addNewCompany = async (newCompany) => {
+    try {
+      const response = await axiosFallos.post(
+        "/api/datos/empresas",
+        newCompany
+      );
+      const newEmpresa = response.data;
+      setEmpresasState([...empresasState, newEmpresa]);
+      setValue("demandado", [
+        ...empresasSelected,
+        {
+          value: newEmpresa.id,
+          label: corregirCodificacion(newEmpresa.razon_social),
+        },
+      ]);
 
-  const provinciaSelected = watch("tribunalProvincia");
-  const ciudadSelected = watch("tribunalCiudad");
+      Toast.fire({
+        icon: "success",
+        title: "Empresa agregada exitosamente",
+      });
+    } catch (error) {
+      console.error(error);
+      MySwal.fire({
+        text: "Error al agregar la nueva empresa",
+        icon: "error",
+        confirmButtonText: "Entendido",
+      });
+    }
+  };
+
+  const addNewCausaReclamo = async (newCausaReclamo) => {
+    try {
+      const response = await axiosFallos.post(
+        "api/datos/reclamos",
+        newCausaReclamo
+      );
+      const newCausa = response.data;
+      setCausasState([...causasState, newCausa]);
+      setValue("causas", [
+        ...causasSelected,
+        {
+          value: newCausa.id,
+          label: corregirCodificacion(newCausa.description.toUpperCase()),
+        },
+      ]);
+
+      Toast.fire({
+        icon: "success",
+        title: "Causa de reclamo agregada exitosamente",
+      });
+    } catch (error) {
+      console.error(error);
+      MySwal.fire({
+        text: "Error al agregar la nueva causa de reclamo",
+        icon: "error",
+        confirmButtonText: "Entendido",
+      });
+    }
+  };
+  const addNewEtiquetas = async (newEtiqueta) => {
+    try {
+      const response = await axiosFallos.post(
+        "/api/datos/etiquetas",
+        newEtiqueta
+      );
+      const newEtiquetaResponse = response.data;
+      setEtiquetasState([...etiquetasState, newEtiquetaResponse]);
+      setValue("etiquetas", [
+        ...etiquetaSelected,
+        {
+          value: newEtiquetaResponse.id,
+          label: corregirCodificacion(newEtiquetaResponse.description),
+        },
+      ]);
+      Toast.fire({
+        icon: "success",
+        title: "Etiqueta agregada exitosamente",
+      });
+    } catch (error) {
+      console.log(error);
+      MySwal.fire({
+        text: "Error al agregar la nueva etiqueta",
+        icon: "error",
+        confirmButtonText: "Entendido",
+      });
+    }
+  };
 
   const handleChangeProvincia = async (selectedOption) => {
     try {
@@ -203,7 +205,7 @@ function UploadForm() {
       }
     });
     try {
-      const response = await axiosFallos.post("/api/fallo", formData);
+      await axiosFallos.post("/api/fallo", formData);
       MySwal.fire({
         html: `<div class="flex flex-col gap-y-2">
         <img src=${formUploaded} alt="imagen de subida exitosa" />
@@ -226,11 +228,258 @@ function UploadForm() {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fields = [
+    {
+      name: "actor",
+      label: "Actor",
+      type: "text",
+      placeholder: "Actor",
+      register: register,
+      errors: errors,
+      validation: "Es obligatorio cargar un actor",
+    },
+    {
+      name: "demandado",
+      label: "Demandado",
+      type: "select",
+      options: empresasState?.map((empresa) => ({
+        ...empresa,
+        value: empresa.id,
+        label: corregirCodificacion(empresa.razon_social),
+      })),
+      placeholder: "Seleccione un demandado",
+      register: register,
+      errors: errors,
+      validation: "Es obligatorio cargar un demandado",
+      setValue: setValue,
+      control: control,
+      noOptionsMessage: "No hay un demandado coincidente",
+      isMulti: true,
+      createTable: true,
+      handleClickCreateTable: () => {
+        MySwal.fire({
+          title: "Agregar nueva empresa",
+          html: (
+            <div className="flex flex-col gap-y-2 items-start">
+              <div className="w-full flex justify-between items-center">
+                <label>Razón Social:</label>
+                <input className="rounded-md" type="text" id="razon_social" />
+              </div>
+              <div className="w-full flex justify-between items-center">
+                <label>CUIT:</label>
+                <input className="rounded-md" type="number" id="cuit" />
+              </div>
+            </div>
+          ),
+          confirmButtonText: "Agregar",
+          showCancelButton: true,
+          cancelButtonText: "Cancelar",
+          preConfirm: () => {
+            const razon_social = document.getElementById("razon_social").value;
+            const cuit = document.getElementById("cuit").value;
+            if (!razon_social || !cuit) {
+              MySwal.showValidationMessage(
+                `Debe completar todos los campos para agregar una empresa`
+              );
+            }
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            addNewCompany({
+              razon_social: document.getElementById("razon_social").value,
+              cuit: document.getElementById("cuit").value,
+            });
+          }
+        });
+      },
+    },
+    {
+      name: "tipoJuicio",
+      label: "Tipo de juicio",
+      type: "select",
+      options: tiposJuicioState?.map((tipoJuicio) => ({
+        ...tipoJuicio,
+        value: tipoJuicio.id,
+        label: corregirCodificacion(tipoJuicio.description.toUpperCase()),
+      })),
+      placeholder: "Tipo de juicio",
+      register: register,
+      errors: errors,
+      validation: "Es obligatorio cargar un tipo de juicio",
+      setValue: setValue,
+      control: control,
+      noOptionsMessage: "No hay un tipo de juicio coincidente",
+    },
+    {
+      name: "causas",
+      label: "Causas del reclamo",
+      type: "select",
+      options: causasState?.map((causa) => ({
+        ...causa,
+        value: causa.id,
+        label: corregirCodificacion(causa.description.toUpperCase()),
+      })),
+      placeholder: "Causas del reclamo",
+      register: register,
+      errors: errors,
+      validation: "Es obligatorio cargar una causa del reclamo",
+      setValue: setValue,
+      control: control,
+      noOptionsMessage: "No hay una causa del reclamo coincidente",
+      isMulti: true,
+      createTable: true,
+      handleClickCreateTable: () => {
+        MySwal.fire({
+          title: "Agregar nueva causa",
+          html: (
+            <div className="flex flex-col gap-y-2 items-start">
+              <div className="w-full flex justify-between items-center">
+                <label>Causa de reclamo:</label>
+                <input className="rounded-md" type="text" id="causa_reclamo" />
+              </div>
+            </div>
+          ),
+          confirmButtonText: "Agregar",
+          showCancelButton: true,
+          cancelButtonText: "Cancelar",
+          preConfirm: () => {
+            const causa = document.getElementById("causa_reclamo").value;
+            if (!causa) {
+              MySwal.showValidationMessage(
+                `Debe completar el campo para agregar una causa de reclamo`
+              );
+            }
+          },
+        }).then((result) => {
+          if (result.isConfirmed) {
+            addNewCausaReclamo({
+              description: document.getElementById("causa_reclamo").value,
+            });
+          }
+        });
+      },
+    },
+    {
+      name: "rubro",
+      label: "Rubro",
+      type: "select",
+      options: rubrosState?.map((rubro) => ({
+        ...rubro,
+        value: rubro.id,
+        label: corregirCodificacion(rubro.rubro.toUpperCase()),
+      })),
+      placeholder: "Rubro",
+      register: register,
+      errors: errors,
+      validation: "Es obligatorio cargar un rubro",
+      setValue: setValue,
+      control: control,
+      noOptionsMessage: "No hay un rubro coincidente",
+      isMulti: true,
+    },
+    {
+      name: "fecha",
+      label: "Fecha",
+      type: "date",
+      placeholder: "Fecha",
+      register: register,
+      errors: errors,
+      validation: "Es obligatorio cargar una fecha",
+    },
+  ];
+
+  const courtFields = [
+    {
+      name: "tribunalProvincia",
+      type: "select",
+      label: "Provincia",
+      placeholder: "Seleccione una provincia",
+      noOptionsMessage: "No hay una provincia coincidente",
+      options: provinciasState.map((provincia) => ({
+        ...provincia,
+        value: provincia.id,
+        label: corregirCodificacion(provincia.nombre),
+      })),
+      onchange: handleChangeProvincia,
+      register: register,
+      errors: errors,
+      setValue: setValue,
+      control: control,
+    },
+    {
+      name: "tribunalCiudad",
+      type: "select",
+      label: "Ciudad",
+
+      placeholder: "Seleccione una ciudad",
+      noOptionsMessage: "No hay una ciudad coincidente",
+      options: ciudadesState.map((ciudad) => ({
+        ...ciudad,
+        value: ciudad.id,
+        label: corregirCodificacion(ciudad.nombre),
+      })),
+      onchange: handleChangeCiudad,
+      register: register,
+      errors: errors,
+      disabled: !provinciaSelected,
+      setValue: setValue,
+      control: control,
+    },
+    {
+      name: "idTribunal",
+      type: "select",
+      label: "Tribunal",
+      placeholder: "Seleccione un tribunal",
+      noOptionsMessage: "No hay un tribunal coincidente",
+      options: tribunalesState.map((tribunal) => ({
+        ...tribunal,
+        value: tribunal.id,
+        label: corregirCodificacion(tribunal.nombre),
+      })),
+      register: register,
+      errors: errors,
+      disabled: !ciudadSelected,
+      setValue: setValue,
+      control: control,
+    },
+  ];
+
+  const moneyFields = [
+    {
+      name: "punitivo",
+      label: "Daño Punitivo",
+      type: "number",
+      placeholder: "Daño Punitivo",
+      register: register,
+      errors: errors,
+    },
+    {
+      name: "moral",
+      label: "Daño Moral",
+      type: "number",
+      placeholder: "Daño Moral",
+      register: register,
+      errors: errors,
+    },
+    {
+      name: "patrimonial",
+      label: "Patrimonial",
+      type: "number",
+      placeholder: "Monto Patrimonial",
+      register: register,
+      errors: errors,
+    },
+  ];
+
   if (!loading) {
     return (
-      <div className="p-4 h-full w-full">
+      <div className="p-4 h-full w-full bg-gray-100">
         <form
-          className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto"
+          className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto bg-white drop-shadow-xl rounded-md p-6"
           onSubmit={handleSubmit(submitForm)}>
           <span className="md:text-4xl md:text-left text-3xl text-center font-bold text-title w-full md:mx-auto uppercase">
             Carga de fallo judicial
@@ -262,93 +511,56 @@ function UploadForm() {
                 control={field.control}
                 noOptionsMessage={field.noOptionsMessage}
                 isMulti={field.isMulti ? field.isMulti : false}
+                createTable={field.createTable ? field.createTable : false}
+                handleClickCreateTable={
+                  field.handleClickCreateTable
+                    ? field.handleClickCreateTable
+                    : null
+                }
               />
             ))}
           </div>
           <span className="text-xl font-semibold text-title mt-3">
             Información del tribunal
           </span>
-          <Input
-            type="select"
-            name="tribunalProvincia"
-            label="Provincia"
-            validation="Debe seleccionar una provincia"
-            placeholder="Seleccione una provincia"
-            noOptionsMessage="No hay una provincia coincidente"
-            options={provinciasState.map((provincia) => ({
-              ...provincia,
-              value: provincia.id,
-              label: corregirCodificacion(provincia.nombre),
-            }))}
-            onchange={handleChangeProvincia}
-            register={register}
-            errors={errors}
-            setValue={setValue}
-            control={control}
-          />
-
-          <Input
-            type="select"
-            name="tribunalCiudad"
-            label="Ciudad"
-            validation="Debe seleccionar una ciudad"
-            placeholder="Seleccione una ciudad"
-            noOptionsMessage="No hay una ciudad coincidente"
-            options={ciudadesState.map((ciudad) => ({
-              ...ciudad,
-              value: ciudad.id,
-              label: corregirCodificacion(ciudad.nombre),
-            }))}
-            onchange={handleChangeCiudad}
-            register={register}
-            errors={errors}
-            disabled={!provinciaSelected}
-            setValue={setValue}
-            control={control}
-          />
-          <Input
-            name="idTribunal"
-            type="select"
-            label="Tribunal"
-            validation="Debe seleccionar un tribunal"
-            placeholder="Seleccione un tribunal"
-            noOptionsMessage="No hay un tribunal coincidente"
-            options={tribunalesState.map((tribunal) => ({
-              ...tribunal,
-              value: tribunal.id,
-              label: corregirCodificacion(tribunal.nombre),
-            }))}
-            register={register}
-            errors={errors}
-            disabled={!ciudadSelected}
-            setValue={setValue}
-            control={control}
-          />
+          {courtFields.map((field) => (
+            <Input
+              key={field.name}
+              name={field.name}
+              label={field.label}
+              type={field.type}
+              options={field.options}
+              placeholder={field.placeholder}
+              register={field.register}
+              errors={field.errors}
+              validation={field.validation}
+              setValue={field.setValue}
+              control={field.control}
+              noOptionsMessage={field.noOptionsMessage}
+              isMulti={field.isMulti ? field.isMulti : false}
+              createTable={field.createTable ? field.createTable : false}
+              handleClickCreateTable={
+                field.handleClickCreateTable
+                  ? field.handleClickCreateTable
+                  : null
+              }
+              onchange={field.onchange}
+              disabled={field.disabled}
+            />
+          ))}
           <span className="text-xl font-semibold text-title mt-3">Montos</span>
-          <Input
-            label="Daño Punitivo"
-            name="punitivo"
-            type="number"
-            placeholder="Daño Punitivo"
-            register={register}
-            errors={errors}
-          />
-          <Input
-            label="Daño Moral"
-            name="moral"
-            type="number"
-            placeholder="Daño Moral"
-            register={register}
-            errors={errors}
-          />
-          <Input
-            label="Patrimonial"
-            name="patrimonial"
-            type="number"
-            placeholder="Monto Patrimonial"
-            register={register}
-            errors={errors}
-          />
+          {moneyFields.map((field) => (
+            <Input
+              key={field.name}
+              name={field.name}
+              label={field.label}
+              type={field.type}
+              options={field.options}
+              placeholder={field.placeholder}
+              register={field.register}
+              errors={field.errors}
+            />
+          ))}
           <span className="text-xl font-semibold text-title mt-3">
             Resumen del caso
           </span>
@@ -356,7 +568,7 @@ function UploadForm() {
             type="select"
             name="etiquetas"
             label="Etiquetas"
-            validation="Debe seleccionar una etiqueta"
+            validation="Es obligatorio cargar una etiqueta"
             placeholder="Seleccione una etiqueta"
             noOptionsMessage="No hay una etiqueta coincidente"
             options={etiquetasState.map((etiqueta) => ({
@@ -369,6 +581,37 @@ function UploadForm() {
             setValue={setValue}
             control={control}
             isMulti={true}
+            createTable={true}
+            handleClickCreateTable={() => {
+              MySwal.fire({
+                title: "Agregar nueva etiqueta",
+                html: (
+                  <div className="flex flex-col gap-y-2 items-start">
+                    <div className="w-full flex justify-between items-center">
+                      <label>Etiqueta:</label>
+                      <input className="rounded-md" type="text" id="etiqueta" />
+                    </div>
+                  </div>
+                ),
+                confirmButtonText: "Agregar",
+                showCancelButton: true,
+                cancelButtonText: "Cancelar",
+                preConfirm: () => {
+                  const etiqueta = document.getElementById("etiqueta").value;
+                  if (!etiqueta) {
+                    MySwal.showValidationMessage(
+                      `Debe completa el campo para agregar una etiqueta`
+                    );
+                  }
+                },
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  addNewEtiquetas({
+                    description: document.getElementById("etiqueta").value,
+                  });
+                }
+              });
+            }}
           />
           <div className="flex flex-col gap-y-1">
             <label htmlFor="resumen">Resumen</label>
@@ -382,7 +625,7 @@ function UploadForm() {
 
             {errors["resumen"] && errors["resumen"].type === "required" && (
               <p className="text-sm text-red-500">
-                Debe completar un resumen del fallo
+                Es obligatorio completar un resumen del fallo
               </p>
             )}
             {errors["resumen"] && errors["resumen"].type === "maxLength" && (
