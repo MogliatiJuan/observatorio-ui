@@ -291,14 +291,14 @@ const BrowserVerdicts = () => {
     <div
       className={`h-full w-full p-4 ${
         verdict && loading == false
-          ? "md:h-outlet lg:h-full "
+          ? "md:h-full lg:h-full "
           : "lg:flex lg:flex-col lg:justify-between"
       }`}>
       <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0 xl:text-4xl">
         BUSCADOR DE FALLOS JUDICIALES
       </h1>
       <form onSubmit={handleSubmit(submitData)}>
-        <div className="flex flex-col md:flex-row md:flex-wrap md:justify-center xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-3 xl:justify-center xl:pt-1">
+        <div className="flex flex-col items-center md:flex-row md:flex-wrap md:justify-center xl:flex-row xl:flex-wrap xl:gap-x-6 xl:gap-y-3 xl:justify-center xl:pt-1">
           {browserFields.map((field) => (
             <Input
               key={field.name}
