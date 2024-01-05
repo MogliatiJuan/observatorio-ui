@@ -479,7 +479,7 @@ function UploadForm() {
     return (
       <div className="p-4 h-full w-full bg-gray-100">
         <form
-          className="flex flex-col gap-y-2 w-full px-4 md:w-1/2 md:mx-auto bg-white drop-shadow-xl rounded-md p-6"
+          className="flex flex-col gap-y-2 w-full px-4 md:w-2/3 md:mx-auto xl:w-1/2 bg-white drop-shadow-xl rounded-md p-6"
           onSubmit={handleSubmit(submitForm)}>
           <span className="md:text-4xl md:text-left text-3xl text-center font-bold text-title w-full md:mx-auto uppercase">
             Carga de fallo judicial
