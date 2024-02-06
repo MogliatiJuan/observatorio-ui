@@ -111,7 +111,7 @@ const BrowserVerdicts = () => {
         if (data[key] !== undefined && data[key] !== "" && data[key] !== null) {
           filteredObj[key] = Array.isArray(data[key])
             ? data[key].map((value) => value.value)
-            : data[key].value;
+            : data[key];
         }
       }
 
