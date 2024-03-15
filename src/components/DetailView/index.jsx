@@ -117,10 +117,10 @@ const DetailView = () => {
       ) : (
         <div
           className={`${
-            detail ? "h-full" : "h-outlet "
-          } w-[95%] mx-auto lg:w-2/3 bg-white`}
+            detail ? "h-full" : "h-outlet"
+          } w-full md:w-[95%] mx-auto lg:w-2/3 bg-white`}
         >
-          <div className="w-full py-1.5 px-5 flex flex-row flex-wrap justify-between items-center lg:text-3xl text-title text-3xl font-bold">
+          <div className="w-full pt-1.5 px-5 flex flex-col flex-wrap justify-between text-title text-3xl font-bold">
             <button
               onClick={() => history(-1)}
               className="flex items-center gap-x-2"
@@ -128,14 +128,12 @@ const DetailView = () => {
               <MdOutlineArrowBack />
               Volver
             </button>
-            <h1>DETALLE DEL FALLO</h1>
           </div>
 
-          <section className="flex flex-col gap-y-3 pt-3 lg:px-5 lg:py-3 lg:shadow-lg">
-            <div className="mx-auto">
-              <span className="font-black text-title text-3xl">
-                {detail.fecha}
-              </span>
+          <section className="flex flex-col mb-2 gap-y-2 md:gap-y-3 lg:px-5 lg:shadow-lg">
+            <div className="flex flex-row justify-between px-3 md:p-0 font-black text-title text-3xl">
+              <h1>DETALLE DEL FALLO</h1>
+              <span>{detail.fecha}</span>
             </div>
             <Card title="Resumen">
               <p className="pl-2">{detail.resumen}</p>
@@ -146,17 +144,6 @@ const DetailView = () => {
               </div>{" "}
             </Card>
             <Card title="Demandado/s">
-              {detail.demandado.map((ente) => (
-                <div key={ente.cuit} className="flex flex-row items-baseline">
-                  <div
-                    className="w-fit flex flex-row flex-wrap gap-x-2"
-                    key={ente.cuit}
-                  >
-                    <p className="uppercase">- {ente.razon_social}</p>
-                    <p>/ CUIT: {ente.cuit}</p>
-                  </div>
-                </div>
-              ))}{" "}
               {detail.demandado.map((ente) => (
                 <div key={ente.cuit} className="flex flex-row items-baseline">
                   <div
@@ -207,7 +194,7 @@ const DetailView = () => {
                     <p className="pl-2" key={rub}>
                       {rub}
                     </p>
-                  ))}{" "}
+                  ))}
                 </Card>
               </div>
             </div>
@@ -218,19 +205,22 @@ const DetailView = () => {
                   {detail.punitivo && (
                     <p className="pl-2 gap-x-1 flex items-center">
                       <MdScatterPlot />
-                      Daño Punitivo: {detail.punitivo}
+                      Daño Punitivo:{" "}
+                      {parseInt(detail.punitivo).toLocaleString("es-AR")}
                     </p>
                   )}
                   {detail.moral && (
                     <p className="pl-2 gap-x-1 flex items-center">
                       <MdScatterPlot />
-                      Daño Moral: {detail.moral}
+                      Daño Moral:{" "}
+                      {parseInt(detail.moral).toLocaleString("es-AR")}
                     </p>
                   )}
                   {detail.patrimonial && (
                     <p className="pl-2 gap-x-1 flex items-center">
                       <MdScatterPlot />
-                      Daño Patrimonial: {detail.patrimonial}
+                      Daño Patrimonial:{" "}
+                      {parseInt(detail.patrimonial).toLocaleString("es-AR")}
                     </p>
                   )}
                 </Card>
@@ -270,18 +260,20 @@ const DetailView = () => {
               </Card>
             )}
 
-            <div className="flex flex-row flex-wrap gap-x-3 justify-center">
-              {shareButtons.map((shareButton, index) => (
-                <shareButton.button
-                  key={index}
-                  url="https://observatorio-fallos-judiciales.netlify.app/buscador/detalle/2261"
-                  title="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
-                  hashtag="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
-                >
-                  <shareButton.icon size={42} round />
-                </shareButton.button>
-              ))}
-            </div>
+            <Card title="Compartir en Redes Sociales">
+              <div className="flex flex-row flex-wrap gap-x-3 justify-center">
+                {shareButtons.map((shareButton, index) => (
+                  <shareButton.button
+                    key={index}
+                    url={window.location.origin + window.location.pathname}
+                    title="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
+                    hashtag="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
+                  >
+                    <shareButton.icon size={42} round />
+                  </shareButton.button>
+                ))}
+              </div>
+            </Card>
           </section>
         </div>
       )}
