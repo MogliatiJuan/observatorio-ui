@@ -21,13 +21,11 @@ const RenderData = ({ data, filter }) => {
   useEffect(() => {
     if (primerRenderizado) {
       data?.data.length > 0 && updateData(currentPage);
-      scrollToRef();
     } else {
       setCurrentData(data.data);
       setNPages(data.totalPages);
       setTotalRows(data.totalRows);
       setPrimerRenderizado(true);
-      scrollToRef();
     }
   }, [currentPage]);
 
@@ -77,15 +75,6 @@ const RenderData = ({ data, filter }) => {
     }
   };
 
-  const scrollToRef = () => {
-    if (dataRef.current) {
-      dataRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
   const openModal = (resumen) => {
     MySwal.fire({
       title: `Resumen del fallo`,
@@ -110,7 +99,8 @@ const RenderData = ({ data, filter }) => {
         <img
           className="w-1/4 mx-auto"
           src={notFoundVerdicts}
-          title="notFoundVerdicts"></img>
+          title="notFoundVerdicts"
+        ></img>
         <p className="flex justify-center mb-2">No se encontraron resultados</p>
       </>
     );
@@ -127,12 +117,14 @@ const RenderData = ({ data, filter }) => {
       {loading === false && (
         <div
           ref={dataRef}
-          className="mt-4 [&>:nth-child(2n+1)]:bg-verdictsPrimary [&>:nth-child(2n+2)]:bg-verdictsSecondary">
+          className="mt-4 [&>:nth-child(2n+1)]:bg-verdictsPrimary [&>:nth-child(2n+2)]:bg-verdictsSecondary"
+        >
           {currentData?.length > 0 &&
             currentData.map((item) => (
               <div
                 className="py-2 px-3 my-3 mx-2 flex justify-between lg:mx-auto rounded-md lg:w-2/3 lg:my-1 lg:px-3 lg:py-1"
-                key={item.nroExpediente}>
+                key={item.nroExpediente}
+              >
                 <div className="flex flex-row flex-wrap gap-x-2 items-center">
                   {item.fecha && (
                     <span className="w-full font-bold text-title text-xl lg:w-fit ">
@@ -183,18 +175,28 @@ const RenderData = ({ data, filter }) => {
                     ))}
                 </div>
                 <div className="flex gap-x-2">
-                  <button
+                  <span
+                    title="Ver Resumen"
                     className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
-                    onClick={() => {
-                      openModal(item.resumen);
-                    }}>
-                    <TbListDetails />
-                  </button>
-                  <button className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer">
-                    <Link to={`/buscador/detalle/${item.nroExpediente}`}>
-                      <TbFileSearch />
-                    </Link>
-                  </button>
+                  >
+                    <button
+                      onClick={() => {
+                        openModal(item.resumen);
+                      }}
+                    >
+                      <TbListDetails />
+                    </button>
+                  </span>
+                  <span
+                    title="Ver Detalle"
+                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
+                  >
+                    <button>
+                      <Link to={`/buscador/detalle/${item.nroExpediente}`}>
+                        <TbFileSearch />
+                      </Link>
+                    </button>
+                  </span>
                 </div>
               </div>
             ))}
