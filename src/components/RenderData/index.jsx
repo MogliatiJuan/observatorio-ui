@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import MySwal from "@Utils/swal";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
 import formErrorUpload from "@Assets/formErrorUpload.png";
-import Pagination from "../Pagination";
-import { axiosFallos } from "../../api";
-import Spinner from "../Loader";
+import Pagination from "@Components/Pagination";
+import Spinner from "@Components/Loader";
+import { axiosFallos } from "@Api";
 
-const RenderData = ({ data, filter }) => {
+const RenderData = ({ data, filter, pagination = true }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [nPages, setNPages] = useState(1);
   const [currentData, setCurrentData] = useState([]);
@@ -21,15 +21,13 @@ const RenderData = ({ data, filter }) => {
   useEffect(() => {
     if (primerRenderizado) {
       data?.data.length > 0 && updateData(currentPage);
-      scrollToRef();
     } else {
       setCurrentData(data.data);
       setNPages(data.totalPages);
       setTotalRows(data.totalRows);
       setPrimerRenderizado(true);
-      scrollToRef();
     }
-  }, [currentPage]);
+  }, [currentPage, data]);
 
   const updateData = async (newPage) => {
     const params = {
@@ -64,7 +62,7 @@ const RenderData = ({ data, filter }) => {
               error?.response?.data?.error || error?.response?.data?.code
             } - ${error?.response?.data?.message} ${
               error?.response?.data?.details !== null
-                ? `- ${error?.response?.data?.details}`
+                ? ` - ${error?.response?.data?.details}`
                 : ""
             }`,
             showConfirmButton: true,
@@ -77,18 +75,9 @@ const RenderData = ({ data, filter }) => {
     }
   };
 
-  const scrollToRef = () => {
-    if (dataRef.current) {
-      dataRef.current.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
-
   const openModal = (resumen) => {
     MySwal.fire({
-      title: `Resumen del fallo`,
+      title: "Resumen del fallo",
       html: (
         <div className="w-full h-full mx-auto">
           <p>{resumen}</p>
@@ -133,9 +122,9 @@ const RenderData = ({ data, filter }) => {
               <div
                 className="py-2 px-3 my-3 mx-2 flex justify-between lg:mx-auto rounded-md lg:w-2/3 lg:my-1 lg:px-3 lg:py-1"
                 key={item.nroExpediente}>
-                <div className="flex flex-row flex-wrap gap-x-2 items-center">
+                <div className="flex flex-row flex-wrap gap-x-2 items-center text-xs md:text-base lg:text-xl">
                   {item.fecha && (
-                    <span className="w-full font-bold text-title text-xl lg:w-fit ">
+                    <span className="w-full font-bold text-title text-base md:text-xl lg:w-fit ">
                       {item.fecha}
                     </span>
                   )}
@@ -183,24 +172,31 @@ const RenderData = ({ data, filter }) => {
                     ))}
                 </div>
                 <div className="flex gap-x-2">
-                  <button
-                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
-                    onClick={() => {
-                      openModal(item.resumen);
-                    }}>
-                    <TbListDetails />
-                  </button>
-                  <button className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer">
-                    <Link to={`/buscador/detalle/${item.nroExpediente}`}>
-                      <TbFileSearch />
-                    </Link>
-                  </button>
+                  <span
+                    title="Ver Resumen"
+                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer">
+                    <button
+                      onClick={() => {
+                        openModal(item.resumen);
+                      }}>
+                      <TbListDetails />
+                    </button>
+                  </span>
+                  <span
+                    title="Ver Detalle"
+                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer">
+                    <button>
+                      <Link to={`/buscador/detalle/${item.nroExpediente}`}>
+                        <TbFileSearch />
+                      </Link>
+                    </button>
+                  </span>
                 </div>
               </div>
             ))}
         </div>
       )}
-      {!loading && currentData?.length >= 1 && (
+      {!loading && currentData?.length >= 1 && pagination && (
         <Pagination
           rows={totalRows}
           nPages={nPages}
