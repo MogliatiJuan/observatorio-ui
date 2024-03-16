@@ -130,8 +130,8 @@ const DetailView = () => {
             </button>
           </div>
 
-          <section className="flex flex-col mb-2 gap-y-2 md:gap-y-3 lg:px-5 lg:shadow-lg">
-            <div className="flex flex-row justify-between px-3 md:p-0 font-black text-title text-3xl">
+          <section className="flex flex-col pb-2 gap-y-2 sm:px-3 md:gap-y-3 lg:px-5 lg:shadow-lg">
+            <div className="flex flex-row justify-between px-2 md:px-3 font-black text-title text-3xl">
               <h1>DETALLE DEL FALLO</h1>
               <span>{detail.fecha}</span>
             </div>

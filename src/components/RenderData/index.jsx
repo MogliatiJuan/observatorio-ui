@@ -99,7 +99,8 @@ const RenderData = ({ data, filter, pagination = true }) => {
         <img
           className="w-1/4 mx-auto"
           src={notFoundVerdicts}
-          title="notFoundVerdicts"></img>
+          title="notFoundVerdicts"
+        ></img>
         <p className="flex justify-center mb-2">No se encontraron resultados</p>
       </>
     );
@@ -116,12 +117,14 @@ const RenderData = ({ data, filter, pagination = true }) => {
       {loading === false && (
         <div
           ref={dataRef}
-          className="mt-4 [&>:nth-child(2n+1)]:bg-verdictsPrimary [&>:nth-child(2n+2)]:bg-verdictsSecondary">
+          className="mt-4 [&>:nth-child(2n+1)]:bg-verdictsPrimary [&>:nth-child(2n+2)]:bg-verdictsSecondary"
+        >
           {currentData?.length > 0 &&
             currentData.map((item) => (
               <div
                 className="py-2 px-3 my-3 mx-2 flex justify-between lg:mx-auto rounded-md lg:w-2/3 lg:my-1 lg:px-3 lg:py-1"
-                key={item.nroExpediente}>
+                key={item.nroExpediente}
+              >
                 <div className="flex flex-row flex-wrap gap-x-2 items-center text-xs md:text-base lg:text-xl">
                   {item.fecha && (
                     <span className="w-full font-bold text-title text-base md:text-xl lg:w-fit ">
@@ -139,7 +142,7 @@ const RenderData = ({ data, filter, pagination = true }) => {
                     item.demandado.flatMap((dem, index) => (
                       <span key={dem.cuit}>
                         {index === 0 && "|"} {dem.razon_social}
-                        {index !== item.etiquetas.length - 1 ? "," : ""}
+                        {index !== item.demandado.length - 1 ? "," : ""}
                       </span>
                     ))}
 
@@ -174,17 +177,20 @@ const RenderData = ({ data, filter, pagination = true }) => {
                 <div className="flex gap-x-2">
                   <span
                     title="Ver Resumen"
-                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer">
+                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
+                  >
                     <button
                       onClick={() => {
                         openModal(item.resumen);
-                      }}>
+                      }}
+                    >
                       <TbListDetails />
                     </button>
                   </span>
                   <span
                     title="Ver Detalle"
-                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer">
+                    className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
+                  >
                     <button>
                       <Link to={`/buscador/detalle/${item.nroExpediente}`}>
                         <TbFileSearch />
