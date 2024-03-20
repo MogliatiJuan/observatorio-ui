@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import {
+  FacebookIcon,
+  FacebookShareButton,
+  TwitterShareButton,
+  WhatsappIcon,
+  WhatsappShareButton,
+  XIcon,
+} from "react-share";
+import { useParams, useNavigate } from "react-router-dom";
 import { MdOutlineArrowBack, MdScatterPlot } from "react-icons/md";
-import { CgShapeHalfCircle } from "react-icons/cg";
-import { TbBuildingFactory2 } from "react-icons/tb";
-import { FaFilePdf } from "react-icons/fa";
 import { axiosFallos } from "../../api";
+import { Card } from "@Components";
 import corregirCodificacion from "@Utils/corregirCodificacion";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
 import errorDetailView from "@Assets/errorDetailView.png";
@@ -13,6 +19,7 @@ import Spinner from "../Loader";
 
 const DetailView = () => {
   const { id = null } = useParams();
+  const history = useNavigate();
   const [detail, setDetail] = useState(null);
 
   useEffect(() => {
@@ -71,7 +78,8 @@ const DetailView = () => {
           />
           <button
             onClick={closeModal}
-            className="bg-navbar text-white font-bold py-2 px-4 rounded w-fit mx-auto">
+            className="bg-navbar text-white font-bold py-2 px-4 rounded w-fit mx-auto"
+          >
             Cerrar
           </button>
         </div>
@@ -84,8 +92,11 @@ const DetailView = () => {
     });
   };
 
-  const getIconClass = (file) =>
-    file?.split(".")[1].toLowerCase() === "pdf" ? "pdf" : "image";
+  const shareButtons = [
+    { icon: XIcon, button: TwitterShareButton },
+    { icon: FacebookIcon, button: FacebookShareButton },
+    { icon: WhatsappIcon, button: WhatsappShareButton },
+  ];
 
   return (
     <>
@@ -106,168 +117,163 @@ const DetailView = () => {
       ) : (
         <div
           className={`${
-            detail ? "h-full mb-3" : "h-outlet "
-          } w-[95%] mx-auto lg:w-11/12`}>
-          <h1 className="text-3xl items-center w-max pt-4 flex gap-x-2 lg:text-4xl text-title font-bold">
-            <Link to="/buscador">
+            detail ? "h-full" : "h-outlet"
+          } w-full md:w-[95%] mx-auto lg:w-2/3 bg-white`}
+        >
+          <div className="w-full pt-1.5 px-5 flex flex-col flex-wrap justify-between text-title text-3xl font-bold">
+            <button
+              onClick={() => history(-1)}
+              className="flex items-center gap-x-2"
+            >
               <MdOutlineArrowBack />
-            </Link>
-            Detalle del Fallo Judicial
-          </h1>
+              Volver
+            </button>
+          </div>
 
-          <section className="pt-2 lg:pt-8 lg:pl-4">
-            <div className="flex justify-between lg:justify-between">
-              <div>
-                {detail.actor && (
-                  <>
-                    <h3 className="text-2xl text-title font-semibold">
-                      Demandante
-                    </h3>
-                    <p className="pl-2">{detail.actor}</p>
-                  </>
-                )}
+          <section className="flex flex-col pb-2 gap-y-2 sm:px-3 md:gap-y-3 lg:px-5 lg:shadow-lg">
+            <div className="flex flex-row justify-between px-2 md:px-3 font-black text-title text-3xl">
+              <h1>DETALLE DEL FALLO</h1>
+              <span>{detail.fecha}</span>
+            </div>
+            <Card title="Resumen">
+              <p className="pl-2">{detail.resumen}</p>
+            </Card>
+            <Card title="Demandante/s">
+              <div className="flex flex-row items-baseline">
+                <p className="uppercase">{detail.actor}</p>
+              </div>{" "}
+            </Card>
+            <Card title="Demandado/s">
+              {detail.demandado.map((ente) => (
+                <div key={ente.cuit} className="flex flex-row items-baseline">
+                  <div
+                    className="w-fit flex flex-row flex-wrap gap-x-2"
+                    key={ente.cuit}
+                  >
+                    <p className="uppercase">- {ente.razon_social}</p>
+                    <p>/ CUIT: {ente.cuit}</p>
+                  </div>
+                </div>
+              ))}
+            </Card>
+            <div className="flex gap-x-2">
+              <div className="w-1/2">
+                <Card title="Causas del Fallo">
+                  {detail.causas.map((causa) => (
+                    <p className="pl-2" key={causa}>
+                      {causa}
+                    </p>
+                  ))}{" "}
+                </Card>
               </div>
-              <div>
-                {detail.fecha && (
-                  <span className="m-0 font-bold text-title text-3xl p-1 rounded-md shadow-md lg:mr-20">
-                    {detail.fecha}
-                  </span>
-                )}
+              <div className="w-1/2">
+                <Card title="Juzgado">
+                  {detail.juzgado || detail.Ciudad || detail.Provincia ? (
+                    <p className="pl-2">
+                      {corregirCodificacion(detail.juzgado)}{" "}
+                      {detail.juzgado && "- "}
+                      {corregirCodificacion(detail.Ciudad)}{" "}
+                      {detail.Ciudad && "- "}
+                      {corregirCodificacion(detail.Provincia)}
+                    </p>
+                  ) : (
+                    <p className="pl-2">No se aplicó juzgado respectivo</p>
+                  )}
+                </Card>
               </div>
             </div>
-
-            {detail.demandado.length > 0 && (
-              <h3 className={`text-2xl text-title font-semibold`}>
-                Demandados
-              </h3>
-            )}
-
-            {detail.demandado.map((ente) => (
-              <div key={ente.cuit} className="flex items-baseline pl-2">
-                <span>
-                  <TbBuildingFactory2 />
-                </span>
-                <div className="pl-2 w-fit" key={ente.cuit}>
-                  <p className="font-semibold">
-                    Razon Social:
-                    <span className="font-normal"> {ente.razon_social}</span>
-                  </p>
-                  <p className="font-semibold border-b border-title">
-                    CUIT:<span className="font-normal"> {ente.cuit}</span>
-                  </p>
-                </div>
+            <div className="flex gap-x-2">
+              <div className="w-1/2">
+                <Card title="Tipo de Juicio">
+                  <p className="pl-2">{detail.tipoJuicio}</p>
+                </Card>
               </div>
-            ))}
-
-            {detail.causas.length > 0 && (
-              <h3 className={`text-2xl text-title font-semibold`}>
-                Causas del Fallo
-              </h3>
-            )}
-            {detail.causas.map((causa) => (
-              <p className="pl-2" key={causa}>
-                {causa}
-              </p>
-            ))}
-
-            {detail.juzgado && (
-              <>
-                <h3 className={`text-2xl text-title font-semibold`}>Juzgado</h3>
-                <p className="pl-2">
-                  {detail.Provincia} - {detail.Ciudad} -{" "}
-                  {corregirCodificacion(detail.juzgado)}
-                </p>
-              </>
-            )}
-
-            {detail.tipoJuicio && (
-              <>
-                <h3 className={`text-2xl text-title font-semibold`}>
-                  Tipo de Juicio
-                </h3>
-                <p className="pl-2">{detail.tipoJuicio}</p>
-              </>
-            )}
-
-            {detail.rubro.length > 0 && (
-              <h3 className={`text-2xl text-title font-semibold`}>Rubro</h3>
-            )}
-            {detail.rubro.map((rub) => (
-              <p className="pl-2" key={rub}>
-                {rub}
-              </p>
-            ))}
+              <div className="w-1/2">
+                <Card title="Rubro">
+                  {detail.rubro.map((rub) => (
+                    <p className="pl-2" key={rub}>
+                      {rub}
+                    </p>
+                  ))}
+                </Card>
+              </div>
+            </div>
 
             {(detail.punitivo || detail.moral || detail.patrimonial) && (
               <>
-                <h3 className={`text-2xl text-title font-semibold`}>
-                  Valores asociados
-                </h3>
-                {detail.punitivo && (
-                  <p className="pl-2 gap-x-1 flex items-center">
-                    <MdScatterPlot />
-                    Daño Punitivo: {detail.punitivo}
-                  </p>
-                )}
-                {detail.moral && (
-                  <p className="pl-2 gap-x-1 flex items-center">
-                    <MdScatterPlot />
-                    Daño Moral: {detail.moral}
-                  </p>
-                )}
-                {detail.patrimonial && (
-                  <p className="pl-2 gap-x-1 flex items-center">
-                    <MdScatterPlot />
-                    Daño Patrimonial: {detail.patrimonial}
-                  </p>
-                )}
+                <Card title="Valores asociados">
+                  {detail.punitivo && (
+                    <p className="pl-2 gap-x-1 flex items-center">
+                      <MdScatterPlot />
+                      Daño Punitivo:{" "}
+                      {parseInt(detail.punitivo).toLocaleString("es-AR")}
+                    </p>
+                  )}
+                  {detail.moral && (
+                    <p className="pl-2 gap-x-1 flex items-center">
+                      <MdScatterPlot />
+                      Daño Moral:{" "}
+                      {parseInt(detail.moral).toLocaleString("es-AR")}
+                    </p>
+                  )}
+                  {detail.patrimonial && (
+                    <p className="pl-2 gap-x-1 flex items-center">
+                      <MdScatterPlot />
+                      Daño Patrimonial:{" "}
+                      {parseInt(detail.patrimonial).toLocaleString("es-AR")}
+                    </p>
+                  )}
+                </Card>
               </>
             )}
-
-            {detail.files.length > 0 && (
-              <h3 className={`text-2xl text-title font-semibold`}>
-                Archivos adjuntos
-              </h3>
-            )}
-            <div className="w-full ml-2 mx-auto h-full flex flex-col gap-y-3 lg:flex-row lg:flex-wrap lg:w-full lg:gap-0 lg:gap-x-6">
-              {detail.files.map((file) =>
-                getIconClass(file.file) === "pdf" ? (
-                  <button
-                    className="flex items-baseline"
-                    key={file.file}
-                    onClick={() => openModal(file)}>
-                    <FaFilePdf className="h-8 w-8" />
-                  </button>
-                ) : (
-                  <img
-                    key={file.file}
-                    src={file.url}
-                    alt={file.file}
-                    className="w-11/12 object-contain lg:w-2/5 lg:h-72"
-                  />
-                )
-              )}
-            </div>
-
             {detail.etiquetas.length > 0 && (
-              <h3 className={`text-2xl text-title font-semibold`}>
-                Etiquetas relacionadas
-              </h3>
+              <div className="flex flex-col flex-wrap gap-y-1">
+                <Card title="Etiquetas relacionadas">
+                  <div className="flex flex-row flex-wrap gap-x-3 gap-y-2">
+                    {detail.etiquetas.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 rounded-md bg-light_grey capitalize"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Card>
+              </div>
             )}
-            {detail.etiquetas.map((tag) => (
-              <p className="pl-2 flex items-center gap-x-2" key={tag}>
-                <CgShapeHalfCircle /> {tag}
-              </p>
-            ))}
+            {detail.files.length > 0 && (
+              <Card title="Archivos adjuntos">
+                <div className="flex flex-row flex-wrap justify-center gap-x-3 gap-y-2">
+                  {detail.files.map((file, index) => {
+                    return (
+                      <button
+                        key={file.file}
+                        className="px-4 py-2 rounded-sm bg-verdictsPrimary"
+                        onClick={() => openModal(detail.files[index])}
+                      >
+                        Ver Documento Adjunto {index + 1}
+                      </button>
+                    );
+                  })}
+                </div>
+              </Card>
+            )}
 
-            {detail.resumen && (
-              <>
-                <h3 className={`text-2xl text-title font-semibold`}>
-                  Resumen del Fallo
-                </h3>
-                <p className="pl-2">{detail.resumen}</p>
-              </>
-            )}
+            <Card title="Compartir en Redes Sociales">
+              <div className="flex flex-row flex-wrap gap-x-3 justify-center">
+                {shareButtons.map((shareButton, index) => (
+                  <shareButton.button
+                    key={index}
+                    url={window.location.origin + window.location.pathname}
+                    title="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
+                    hashtag="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
+                  >
+                    <shareButton.icon size={42} round />
+                  </shareButton.button>
+                ))}
+              </div>
+            </Card>
           </section>
         </div>
       )}
