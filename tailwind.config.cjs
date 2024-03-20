@@ -44,6 +44,7 @@ module.exports = {
         verdictsSecondary: "#e6ebf3",
         general: "#5a689b",
         hoverGeneral: "#434b69",
+        light_grey: "#eee",
       },
     },
   },

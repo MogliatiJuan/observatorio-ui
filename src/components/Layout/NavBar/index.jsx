@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdMenu, MdMenuOpen } from "react-icons/md";
 import { Link } from "react-router-dom";
-import balanceIcon from "@Assets/balance.png";
+import icon from "@Assets/icon.png";
 
 const NavBar = () => {
   const Links = [
@@ -20,26 +20,30 @@ const NavBar = () => {
         <div>
           <Link
             to="/"
-            className="flex items-center gap-x-2.5 divide-x divide-x-white">
-            <img src={balanceIcon} className="h-6" />
+            className="flex items-center gap-x-2.5 divide-x divide-x-white"
+          >
+            <img src={icon} className="h-6" />
             <p className="pl-2 text-white">OBSERVATORIO</p>
           </Link>
         </div>
 
         <div
           onClick={() => setOpen(!open)}
-          className="text-3xl right-8 top-6 cursor-pointer md:hidden text-white">
+          className="text-3xl right-8 top-6 cursor-pointer md:hidden text-white"
+        >
           {!open ? <MdMenu /> : <MdMenuOpen />}
         </div>
 
         <ul
           className={`z-10 text-white  md:flex md:items-center md:pb-0  md:static  md:z-auto md:w-auto md:pl-0 left-0 w-full pl-9 absolute transition-all duration-500 ease-in ${
             open ? "top-14 bg-navbar " : "top-[-490px]"
-          }`}>
+          }`}
+        >
           {Links.map((link) => (
             <li
               key={link.id}
-              className="md:ml-8 text-xl md:my-0 my-7 hover:border-b-2">
+              className="md:ml-8 text-xl md:my-0 my-7 hover:border-b-2"
+            >
               <Link to={link.path} onClick={closeMenu}>
                 {link.name}
               </Link>

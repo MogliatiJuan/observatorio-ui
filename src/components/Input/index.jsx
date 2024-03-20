@@ -49,7 +49,8 @@ const Input = ({
           className === "browser"
             ? browserStyle
             : "flex flex-col gap-y-1 text-left"
-        }>
+        }
+      >
         {label && <label htmlFor={name}>{label}</label>}
         <div className="flex justify-between">
           <Controller
@@ -79,6 +80,7 @@ const Input = ({
                     boxShadow: state.isFocused
                       ? "0 0 0 1px #2563eb"
                       : provided.boxShadow,
+                    background: "transparent",
                   }),
                 }}
                 onChange={(selectedOption) => {
@@ -92,7 +94,8 @@ const Input = ({
             <button
               type="button"
               className="px-2 py-1 text-sm text-white bg-navbar rounded-md h-9"
-              onClick={handleClickCreateTable}>
+              onClick={handleClickCreateTable}
+            >
               Agregar
             </button>
           )}
@@ -109,12 +112,13 @@ const Input = ({
           className === "browser"
             ? browserStyle
             : "flex flex-col gap-y-1 text-left"
-        }>
+        }
+      >
         {label && <label htmlFor={name}>{label}</label>}
         <input
           type={type}
           {...register(name, { required: validation })}
-          className={`rounded-md py-1.5 focus:border-1 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] h-9`}
+          className={`rounded-md py-1.5 focus:border-1 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] h-9 bg-transparent`}
           placeholder={placeholder || label}
         />
         {errors[name] && (

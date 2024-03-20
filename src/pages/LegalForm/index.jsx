@@ -480,7 +480,8 @@ function UploadForm() {
       <div className="p-4 h-full w-full bg-gray-100">
         <form
           className="flex flex-col gap-y-2 w-full px-4 md:w-2/3 md:mx-auto xl:w-1/2 bg-white drop-shadow-xl rounded-md p-6"
-          onSubmit={handleSubmit(submitForm)}>
+          onSubmit={handleSubmit(submitForm)}
+        >
           <span className="md:text-4xl md:text-left text-3xl text-center font-bold text-title w-full md:mx-auto uppercase">
             Carga de fallo judicial
           </span>
@@ -619,9 +620,10 @@ function UploadForm() {
               className={`border border-[#687073] pl-1 py-2.5 rounded-md outline-none`}
               {...register("resumen", {
                 required: true,
-                maxLength: 400,
+                maxLength: 600,
               })}
-              name="resumen"></textarea>
+              name="resumen"
+            ></textarea>
 
             {errors["resumen"] && errors["resumen"].type === "required" && (
               <p className="text-sm text-red-500">
@@ -630,13 +632,14 @@ function UploadForm() {
             )}
             {errors["resumen"] && errors["resumen"].type === "maxLength" && (
               <p className="text-sm text-red-500">
-                Máximo de caracteres alcanzado: 400
+                Máximo de caracteres alcanzado: 600
               </p>
             )}
           </div>
           <button
             type="submit"
-            className="w-24 h-12 bg-general  p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-hoverGeneral">
+            className="w-24 h-12 bg-general  p-2.5 my-5 text-white font-semibold rounded-md mx-auto hover:bg-hoverGeneral"
+          >
             {"CARGAR"}
           </button>
         </form>
