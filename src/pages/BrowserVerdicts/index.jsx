@@ -111,6 +111,8 @@ const BrowserVerdicts = () => {
         if (data[key] !== undefined && data[key] !== "" && data[key] !== null) {
           filteredObj[key] = Array.isArray(data[key])
             ? data[key].map((value) => value.value)
+            : typeof data[key] == "object"
+            ? data[key].value
             : data[key];
         }
       }
@@ -236,10 +238,14 @@ const BrowserVerdicts = () => {
 
   const handleCleanForm = () => {
     reset();
-    setValue("demandado", "");
-    setValue("rubro", "");
-    setValue("causas", "");
-    setValue("etiquetas", "");
+    setValue("demandado", null);
+    setValue("rubro", null);
+    setValue("causas", null);
+    setValue("tipoJuicio", null);
+    setValue("etiquetas", null);
+    setValue("idTribunal", null);
+    setValue("idCiudad", null);
+    setValue("idProvincia", null);
     setVerdict(null);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
@@ -293,7 +299,8 @@ const BrowserVerdicts = () => {
         verdict && loading == false
           ? "md:h-full lg:h-full "
           : "lg:flex lg:flex-col lg:justify-between"
-      }`}>
+      }`}
+    >
       <h1 className="text-3xl font-bold text-title text-center pt-1 lg:p-0 xl:text-4xl">
         BUSCADOR DE FALLOS JUDICIALES
       </h1>
@@ -332,7 +339,7 @@ const BrowserVerdicts = () => {
               provinces &&
               provinces.map((prov) => ({
                 value: parseInt(prov.id),
-                label: prov.nombre,
+                label: corregirCodificacion(prov.nombre),
               }))
             }
             onchange={handleSubmitProvince}
@@ -384,7 +391,8 @@ const BrowserVerdicts = () => {
           <button
             disabled={isSubmitting}
             type="submit"
-            className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral">
+            className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
+          >
             {"Buscar"}
             <span>
               <AiOutlineSearch />
@@ -394,7 +402,8 @@ const BrowserVerdicts = () => {
             disabled={isSubmitting}
             type="button"
             className="h-12 bg-general flex gap-x-2 items-center p-2.5 my-5 text-white font-semibold rounded-md hover:bg-hoverGeneral"
-            onClick={handleCleanForm}>
+            onClick={handleCleanForm}
+          >
             {"Limpiar fallos"}
             <span>
               <VscFilterFilled />
