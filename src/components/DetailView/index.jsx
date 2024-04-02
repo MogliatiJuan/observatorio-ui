@@ -1,26 +1,30 @@
-import React, { useEffect, useState } from "react";
-import {
-  FacebookIcon,
-  FacebookShareButton,
-  TwitterShareButton,
-  WhatsappIcon,
-  WhatsappShareButton,
-  XIcon,
-} from "react-share";
-import { useParams, useNavigate } from "react-router-dom";
-import { MdOutlineArrowBack, MdScatterPlot } from "react-icons/md";
+import React, { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import { axiosFallos } from "../../api";
-import { Card } from "@Components";
-import corregirCodificacion from "@Utils/corregirCodificacion";
+import { Loader } from "@Components";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
 import errorDetailView from "@Assets/errorDetailView.png";
 import MySwal from "@Utils/swal";
 import Spinner from "../Loader";
+import { DataContext } from "../../context/selectsContext";
+import DetailContent from "./detailContent";
+
+dayjs.extend(customParseFormat);
 
 const DetailView = () => {
   const { id = null } = useParams();
-  const history = useNavigate();
   const [detail, setDetail] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [reloadData, setReloadData] = useState(false);
+  const [editableDetail, setEditableDetail] = useState(null);
+
+  const { isLoading } = useContext(DataContext);
+  const { register, watch, setValue, reset } = useForm();
+
+  const isAdmin = JSON.parse(localStorage.getItem("admin"));
 
   useEffect(() => {
     axiosFallos
@@ -30,7 +34,6 @@ const DetailView = () => {
         window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
       })
       .catch((error) => {
-        console.error(error);
         MySwal.fire({
           showCancelButton: true,
           showConfirmButton: true,
@@ -57,46 +60,66 @@ const DetailView = () => {
           }
         });
       });
-  }, [id]);
+  }, [id, reloadData]);
 
-  const closeModal = () => {
-    MySwal.close();
+  const handleEdit = () => {
+    setIsEditing(true);
+    setEditableDetail({ ...detail });
   };
 
-  const openModal = (file) => {
-    MySwal.fire({
-      html: (
-        <div className="w-full h-full mx-auto flex flex-col gap-y-1">
-          <a href={file.url} target="_blank">
-            Visualizar en pantalla completa ➚
-          </a>
-          <iframe
-            key={file.file}
-            src={file.url}
-            title={file.file}
-            className="h-full md:w-full lg:w-full lg:h-full"
-          />
-          <button
-            onClick={closeModal}
-            className="bg-navbar text-white font-bold py-2 px-4 rounded w-fit mx-auto"
-          >
-            Cerrar
-          </button>
-        </div>
-      ),
-      customClass: {
-        popup: "w-[90vw] h-[70vh] md:h-[80vh] lg:w-[80vw] lg:h-[90vh]",
-        htmlContainer: "h-full  ",
-      },
-      showConfirmButton: false,
+  const handleChange = (name, value) => {
+    setEditableDetail((prevDetails) => ({
+      ...prevDetails,
+      [name]: value,
+    }));
+  };
+
+  const handleSave = async (values) => {
+    const formData = new FormData();
+    if (
+      values.ciudad === null ||
+      values.juzgado === null ||
+      values.provincia === null
+    ) {
+      values.ciudad = null;
+      values.juzgado = null;
+      values.provincia = null;
+    }
+    delete values.punitivo;
+    delete values.moral;
+    delete values.patrimonial;
+    watch("file")?.length > 0 && formData.append("file", values?.file[0]);
+    const iterableData = { ...editableDetail, ...values };
+    Object.keys(iterableData).forEach((key) => {
+      if (key !== "file") {
+        if (Array.isArray(iterableData[key])) {
+          iterableData[key].forEach((value) => {
+            formData.append(key, parseInt(value.value || value.id));
+          });
+        } else if (
+          typeof iterableData[key] === "object" &&
+          (iterableData[key]?.value ||
+            iterableData[key]?.id ||
+            iterableData[key]?.id === 0) // para tomar el id de valor 0
+        ) {
+          formData.append(
+            key,
+            parseInt(iterableData[key]?.value || iterableData[key]?.id)
+          );
+        } else {
+          formData.append(key, iterableData[key]);
+        }
+      }
     });
+    await axiosFallos.put(`/api/fallo/${id}`, formData);
+    setReloadData(!reloadData);
+    reset();
+    setIsEditing(false);
   };
 
-  const shareButtons = [
-    { icon: XIcon, button: TwitterShareButton },
-    { icon: FacebookIcon, button: FacebookShareButton },
-    { icon: WhatsappIcon, button: WhatsappShareButton },
-  ];
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
@@ -115,167 +138,18 @@ const DetailView = () => {
           <p className="flex justify-center">No se encontraron resultados</p>
         </>
       ) : (
-        <div
-          className={`${
-            detail ? "h-full" : "h-outlet"
-          } w-full md:w-[95%] mx-auto lg:w-2/3 bg-white`}
-        >
-          <div className="w-full pt-1.5 px-5 flex flex-col flex-wrap justify-between text-title text-3xl font-bold">
-            <button
-              onClick={() => history(-1)}
-              className="flex items-center gap-x-2"
-            >
-              <MdOutlineArrowBack />
-              Volver
-            </button>
-          </div>
-
-          <section className="flex flex-col pb-2 gap-y-2 sm:px-3 md:gap-y-3 lg:px-5 lg:shadow-lg">
-            <div className="flex flex-row justify-between px-2 md:px-3 font-black text-title text-3xl">
-              <h1>DETALLE DEL FALLO</h1>
-              <span>{detail.fecha}</span>
-            </div>
-            <Card title="Resumen">
-              <p className="pl-2">{detail.resumen}</p>
-            </Card>
-            <Card title="Demandante/s">
-              <div className="flex flex-row items-baseline">
-                <p className="uppercase">{detail.actor}</p>
-              </div>{" "}
-            </Card>
-            <Card title="Demandado/s">
-              {detail.demandado.map((ente) => (
-                <div key={ente.cuit} className="flex flex-row items-baseline">
-                  <div
-                    className="w-fit flex flex-row flex-wrap gap-x-2"
-                    key={ente.cuit}
-                  >
-                    <p className="uppercase">- {ente.razon_social}</p>
-                    <p>/ CUIT: {ente.cuit}</p>
-                  </div>
-                </div>
-              ))}
-            </Card>
-            <div className="flex gap-x-2">
-              <div className="w-1/2">
-                <Card title="Causas del Fallo">
-                  {detail.causas.map((causa) => (
-                    <p className="pl-2" key={causa}>
-                      {causa}
-                    </p>
-                  ))}{" "}
-                </Card>
-              </div>
-              <div className="w-1/2">
-                <Card title="Juzgado">
-                  {detail.juzgado || detail.Ciudad || detail.Provincia ? (
-                    <p className="pl-2">
-                      {corregirCodificacion(detail.juzgado)}{" "}
-                      {detail.juzgado && "- "}
-                      {corregirCodificacion(detail.Ciudad)}{" "}
-                      {detail.Ciudad && "- "}
-                      {corregirCodificacion(detail.Provincia)}
-                    </p>
-                  ) : (
-                    <p className="pl-2">No se aplicó juzgado respectivo</p>
-                  )}
-                </Card>
-              </div>
-            </div>
-            <div className="flex gap-x-2">
-              <div className="w-1/2">
-                <Card title="Tipo de Juicio">
-                  <p className="pl-2">{detail.tipoJuicio}</p>
-                </Card>
-              </div>
-              <div className="w-1/2">
-                <Card title="Rubro">
-                  {detail.rubro.map((rub) => (
-                    <p className="pl-2" key={rub}>
-                      {rub}
-                    </p>
-                  ))}
-                </Card>
-              </div>
-            </div>
-
-            {(detail.punitivo || detail.moral || detail.patrimonial) && (
-              <>
-                <Card title="Valores asociados">
-                  {detail.punitivo && (
-                    <p className="pl-2 gap-x-1 flex items-center">
-                      <MdScatterPlot />
-                      Daño Punitivo:{" "}
-                      {parseInt(detail.punitivo).toLocaleString("es-AR")}
-                    </p>
-                  )}
-                  {detail.moral && (
-                    <p className="pl-2 gap-x-1 flex items-center">
-                      <MdScatterPlot />
-                      Daño Moral:{" "}
-                      {parseInt(detail.moral).toLocaleString("es-AR")}
-                    </p>
-                  )}
-                  {detail.patrimonial && (
-                    <p className="pl-2 gap-x-1 flex items-center">
-                      <MdScatterPlot />
-                      Daño Patrimonial:{" "}
-                      {parseInt(detail.patrimonial).toLocaleString("es-AR")}
-                    </p>
-                  )}
-                </Card>
-              </>
-            )}
-            {detail.etiquetas.length > 0 && (
-              <div className="flex flex-col flex-wrap gap-y-1">
-                <Card title="Etiquetas relacionadas">
-                  <div className="flex flex-row flex-wrap gap-x-3 gap-y-2">
-                    {detail.etiquetas.map((tag, index) => (
-                      <span
-                        key={index}
-                        className="px-2 py-1 rounded-md bg-light_grey capitalize"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </Card>
-              </div>
-            )}
-            {detail.files.length > 0 && (
-              <Card title="Archivos adjuntos">
-                <div className="flex flex-row flex-wrap justify-center gap-x-3 gap-y-2">
-                  {detail.files.map((file, index) => {
-                    return (
-                      <button
-                        key={file.file}
-                        className="px-4 py-2 rounded-sm bg-verdictsPrimary"
-                        onClick={() => openModal(detail.files[index])}
-                      >
-                        Ver Documento Adjunto {index + 1}
-                      </button>
-                    );
-                  })}
-                </div>
-              </Card>
-            )}
-
-            <Card title="Compartir en Redes Sociales">
-              <div className="flex flex-row flex-wrap gap-x-3 justify-center">
-                {shareButtons.map((shareButton, index) => (
-                  <shareButton.button
-                    key={index}
-                    url={window.location.origin + window.location.pathname}
-                    title="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
-                    hashtag="¡Nuevo fallo judicial! ¿Qué opinan ustedes? #FalloJudicial #JusticiaAbierta"
-                  >
-                    <shareButton.icon size={42} round />
-                  </shareButton.button>
-                ))}
-              </div>
-            </Card>
-          </section>
-        </div>
+        <DetailContent
+          isAdmin={isAdmin}
+          isEditing={isEditing}
+          handleSave={handleSave}
+          detail={detail}
+          editableDetail={editableDetail}
+          handleEdit={handleEdit}
+          handleChange={handleChange}
+          setValue={setValue}
+          register={register}
+          setIsEditing={setIsEditing}
+        />
       )}
     </>
   );
