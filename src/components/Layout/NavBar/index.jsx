@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { MdMenu, MdMenuOpen } from "react-icons/md";
+import React, { useContext, useState } from "react";
+import { MdMenu, MdMenuOpen, MdLogout } from "react-icons/md";
 import { Link } from "react-router-dom";
 import icon from "@Assets/icon.png";
+import Context from "../../../context/VerdictsContext";
 
 const NavBar = () => {
   const Links = [
@@ -12,9 +13,12 @@ const NavBar = () => {
   ];
   const [open, setOpen] = useState(false);
 
+  const { token, logout } = useContext(Context); // Accede al token y la función logout desde el contexto
+
   const closeMenu = () => {
     setOpen(false);
   };
+
   return (
     <header className="shadow-md w-full bg-navbar">
       <div className="flex items-center justify-between py-4 md:px-10 px-7 h-20">
@@ -50,6 +54,11 @@ const NavBar = () => {
               </Link>
             </li>
           ))}
+          {token && (
+            <button className="ml-2 text-2xl" onClick={logout}>
+              <MdLogout />
+            </button>
+          )}
         </ul>
       </div>
     </header>

@@ -1,9 +1,10 @@
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import { Input } from "@Components";
 import { useForm } from "react-hook-form";
 import { axiosFallos } from "../../api/index.js";
 import { useNavigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import Context from "../../context/VerdictsContext.jsx";
 
 const LoginView = () => {
   const {
@@ -13,11 +14,13 @@ const LoginView = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+  const { setToken } = useContext(Context); // Accede al contexto para obtener setToken
 
   const handleLogin = (data) => {
     axiosFallos.post("/api/auth/login", data).then((res) => {
       localStorage.setItem("token", res.data.token);
       const token = jwtDecode(res.data.token);
+      setToken(token);
       const isAdmin = token.rol.some((r) => r.rol === "ADMIN");
       localStorage.setItem("admin", isAdmin);
       reset();
