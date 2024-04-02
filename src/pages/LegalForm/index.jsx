@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { axiosFallos } from "@Api/index.js";
 import { Input } from "@Components";
@@ -6,16 +6,11 @@ import corregirCodificacion from "@Utils/corregirCodificacion";
 import MySwal from "@Utils/swal";
 import formUploaded from "@Assets/formUploaded.png";
 import formErrorUpload from "@Assets/formErrorUpload.png";
+import { DataContext } from "../../context/selectsContext";
 
 function UploadForm() {
   const [loading, setLoading] = useState(true);
 
-  const [empresasState, setEmpresasState] = useState([]);
-  const [tiposJuicioState, setTiposJuicioState] = useState([]);
-  const [causasState, setCausasState] = useState([]);
-  const [rubrosState, setRubrosState] = useState([]);
-  const [provinciasState, setProvinciasState] = useState([]);
-  const [etiquetasState, setEtiquetasState] = useState([]);
   const [ciudadesState, setCiudadesState] = useState([]);
   const [tribunalesState, setTribunalesState] = useState([]);
 
@@ -28,6 +23,17 @@ function UploadForm() {
     reset,
     formState: { errors },
   } = useForm();
+
+  const {
+    empresas: empresasState,
+    tiposJuicio: tiposJuicioState,
+    causas: causasState,
+    rubros: rubrosState,
+    provincias: provinciasState,
+    etiquetas: etiquetasState,
+    divisas,
+    isLoading,
+  } = useContext(DataContext);
 
   const provinciaSelected = watch("tribunalProvincia");
   const ciudadSelected = watch("tribunalCiudad");
@@ -42,36 +48,6 @@ function UploadForm() {
     timer: 3000,
     timerProgressBar: true,
   });
-
-  const fetchData = async () => {
-    try {
-      const [
-        empresasResponse,
-        tiposJuicioResponse,
-        causasResponse,
-        rubrosResponse,
-        provinciasResponse,
-        etiquetasResponse,
-      ] = await Promise.all([
-        axiosFallos.get("/api/datos/empresas"),
-        axiosFallos.get("/api/datos/tipojuicio"),
-        axiosFallos.get("/api/datos/reclamos"),
-        axiosFallos.get("/api/datos/rubros"),
-        axiosFallos.get("/api/datos/provincias"),
-        axiosFallos.get("/api/datos/etiquetas"),
-      ]);
-      setEmpresasState(empresasResponse.data);
-      setTiposJuicioState(tiposJuicioResponse.data);
-      setCausasState(causasResponse.data);
-      setRubrosState(rubrosResponse.data);
-      setProvinciasState(provinciasResponse.data);
-      setEtiquetasState(etiquetasResponse.data);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const addNewCompany = async (newCompany) => {
     try {
@@ -152,7 +128,6 @@ function UploadForm() {
         title: "Etiqueta agregada exitosamente",
       });
     } catch (error) {
-      console.log(error);
       MySwal.fire({
         text: "Error al agregar la nueva etiqueta",
         icon: "error",
@@ -227,10 +202,6 @@ function UploadForm() {
       setLoading(false);
     }
   };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   const fields = [
     {
@@ -473,9 +444,20 @@ function UploadForm() {
       register: register,
       errors: errors,
     },
+    {
+      name: "divisa",
+      label: "Seleccione la divisa a utilizar",
+      type: "select",
+      options: divisas,
+      placeholder: "Divisa",
+      register: register,
+      setValue: setValue,
+      errors: errors,
+      control: control,
+    },
   ];
 
-  if (!loading) {
+  if (!isLoading && !loading) {
     return (
       <div className="p-4 h-full w-full bg-gray-100">
         <form
@@ -556,10 +538,16 @@ function UploadForm() {
               name={field.name}
               label={field.label}
               type={field.type}
-              options={field.options}
+              setValue={field.setValue}
+              options={field.options?.map((o) => ({
+                value: o.id,
+                label: o.nombreDivisa,
+                nombre: o.codigoDivisa,
+              }))}
               placeholder={field.placeholder}
               register={field.register}
               errors={field.errors}
+              control={field.control}
             />
           ))}
           <span className="text-xl font-semibold text-title mt-3">
