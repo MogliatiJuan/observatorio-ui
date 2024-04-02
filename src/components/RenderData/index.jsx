@@ -145,21 +145,23 @@ const RenderData = ({ data, filter, pagination = true }) => {
                         {index !== item.demandado.length - 1 ? "," : ""}
                       </span>
                     ))}
-
                   {item.resumen && (
                     <span>
                       |{" "}
                       {item.resumen.substring(
                         0,
-                        item.resumen.lastIndexOf(" ", 100)
-                      )}{" "}
-                      [...]
+                        item.resumen.lastIndexOf(" ", 100) !== -1
+                          ? item.resumen.lastIndexOf(" ", 100)
+                          : item.resumen.length
+                      )}
+                      {item.resumen.length > 100 && " [...]"}
                     </span>
                   )}
+
                   {Array.isArray(item.etiquetas) &&
                     item.etiquetas.flatMap((tag, index) => (
-                      <span key={tag}>
-                        {index === 0 && "|"} {tag}
+                      <span key={tag.id}>
+                        {index === 0 && "|"} {tag.nombre}
                         {index !== item.etiquetas.length - 1 ? "," : ""}
                       </span>
                     ))}
@@ -168,8 +170,8 @@ const RenderData = ({ data, filter, pagination = true }) => {
                   ) && " | "}
                   {Array.isArray(item.causas) &&
                     item.causas.flatMap((causa, index) => (
-                      <span key={causa}>
-                        {index === 0 && "|"} {causa}
+                      <span key={causa.id}>
+                        {index === 0 && "|"} {causa.nombre}
                         {index !== item.causas.length - 1 ? "," : ""}
                       </span>
                     ))}
