@@ -104,7 +104,7 @@ const DetailView = () => {
         ) {
           formData.append(
             key,
-            parseInt(iterableData[key]?.value || iterableData[key]?.id)
+            parseInt(iterableData[key]?.id || iterableData[key]?.value)
           );
         } else {
           formData.append(key, iterableData[key]);
