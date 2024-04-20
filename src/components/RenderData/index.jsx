@@ -1,5 +1,10 @@
-import { useEffect, useRef, useState } from "react";
-import { TbFileSearch, TbListDetails } from "react-icons/tb";
+import { useContext, useEffect, useRef, useState } from "react";
+import {
+  TbFileSearch,
+  TbListDetails,
+  TbTrash,
+  TbRestore,
+} from "react-icons/tb";
 import { VscLaw } from "react-icons/vsc";
 import { Link } from "react-router-dom";
 import MySwal from "@Utils/swal";
@@ -8,6 +13,8 @@ import formErrorUpload from "@Assets/formErrorUpload.png";
 import Pagination from "@Components/Pagination";
 import Spinner from "@Components/Loader";
 import { axiosFallos } from "@Api";
+import VerdictsContext from "@Context/VerdictsContext";
+import showError from "@Utils/swal/showError";
 
 const RenderData = ({ data, filter, pagination = true }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -17,6 +24,8 @@ const RenderData = ({ data, filter, pagination = true }) => {
   const [loading, setLoading] = useState(false);
   const [primerRenderizado, setPrimerRenderizado] = useState(false);
   const dataRef = useRef(null);
+
+  const { token } = useContext(VerdictsContext);
 
   useEffect(() => {
     if (primerRenderizado) {
@@ -34,6 +43,11 @@ const RenderData = ({ data, filter, pagination = true }) => {
       ...filter,
       page: newPage,
     };
+    const hasParanoid = data?.data.some(
+      (verdict) => verdict.deletedAt !== null
+    );
+
+    hasParanoid && (params.paranoid = false);
 
     try {
       setLoading(true);
@@ -44,7 +58,6 @@ const RenderData = ({ data, filter, pagination = true }) => {
       setNPages(response.data.totalPages);
       setTotalRows(response.data.totalRows);
     } catch (error) {
-      console.error(error);
       MySwal.fire({
         showCancelButton: true,
         showConfirmButton: true,
@@ -56,18 +69,7 @@ const RenderData = ({ data, filter, pagination = true }) => {
         confirmButtonText: "Ver detalle de error",
       }).then((res) => {
         if (res.isConfirmed) {
-          MySwal.fire({
-            title: "Detalle del Error",
-            text: `${error?.response?.data.status} - ${
-              error?.response?.data?.error || error?.response?.data?.code
-            } - ${error?.response?.data?.message} ${
-              error?.response?.data?.details !== null
-                ? ` - ${error?.response?.data?.details}`
-                : ""
-            }`,
-            showConfirmButton: true,
-            confirmButtonText: "Aceptar",
-          });
+          showError({ error });
         }
       });
     } finally {
@@ -91,6 +93,23 @@ const RenderData = ({ data, filter, pagination = true }) => {
       showConfirmButton: false,
       showCloseButton: true,
     });
+  };
+
+  const handleMDU = async ({ id, change }) => {
+    try {
+      switch (change) {
+        case "restore":
+          await axiosFallos.post(`/api/fallo/restore/${id}`);
+          updateData();
+          break;
+        case "delete":
+          await axiosFallos.delete(`/api/fallo/${id}`);
+          updateData();
+          break;
+      }
+    } catch (error) {
+      showError({ error });
+    }
   };
 
   if (data?.data?.length == 0 || data?.length == 0)
@@ -123,29 +142,45 @@ const RenderData = ({ data, filter, pagination = true }) => {
             currentData.map((item) => (
               <div
                 className="py-2 px-3 my-3 mx-2 flex justify-between lg:mx-auto rounded-md lg:w-2/3 lg:my-1 lg:px-3 lg:py-1"
-                key={item.nroExpediente}
+                key={item?.nroExpediente}
               >
                 <div className="flex flex-row flex-wrap gap-x-2 items-center text-xs md:text-base lg:text-xl">
-                  {item.fecha && (
+                  {item?.fecha && (
                     <span className="w-full font-bold text-title text-base md:text-xl lg:w-fit ">
-                      {item.fecha}
+                      {item?.fecha}
                     </span>
                   )}
-                  {item.actor && (
+                  {item?.actor && (
                     <>
-                      <span>{item.actor}</span>
-                      {item.actor &&
-                        Array.isArray(item.demandado.length > 0) && <VscLaw />}
+                      <span>{item?.actor}</span>
+                      {item?.actor &&
+                        Array.isArray(item?.demandado?.length > 0) && (
+                          <VscLaw />
+                        )}
                     </>
                   )}
-                  {Array.isArray(item.demandado) &&
-                    item.demandado.flatMap((dem, index) => (
+                  {item?.demandadoActores.length > 0 &&
+                    item?.demandadoActores.flatMap((dem, index) => (
+                      <span key={dem.cuit}>
+                        {index === 0 && "|"} {dem.razon_social}
+                        {index !== item.demandadoActores.length - 1 ? "," : ""}
+                      </span>
+                    ))}
+                  {Array.isArray(item?.demandado) &&
+                    item?.demandado.flatMap((dem, index) => (
                       <span key={dem.cuit}>
                         {index === 0 && "|"} {dem.razon_social}
                         {index !== item.demandado.length - 1 ? "," : ""}
                       </span>
                     ))}
-                  {item.resumen && (
+                  {item?.demandadoEmpresas.length > 0 &&
+                    item?.demandadoEmpresas.flatMap((dem, index) => (
+                      <span key={dem.cuit}>
+                        {index === 0 && "|"} {dem.razon_social}
+                        {index !== item.demandadoEmpresas.length - 1 ? "," : ""}
+                      </span>
+                    ))}
+                  {item?.resumen && (
                     <span>
                       |{" "}
                       {item.resumen.substring(
@@ -154,11 +189,11 @@ const RenderData = ({ data, filter, pagination = true }) => {
                           ? item.resumen.lastIndexOf(" ", 100)
                           : item.resumen.length
                       )}
-                      {item.resumen.length > 100 && " [...]"}
+                      {item?.resumen.length > 100 && " [...]"}
                     </span>
                   )}
 
-                  {Array.isArray(item.etiquetas) &&
+                  {Array.isArray(item?.etiquetas) &&
                     item.etiquetas.flatMap((tag, index) => (
                       <span key={tag.id}>
                         {index === 0 && "|"} {tag.nombre}
@@ -166,10 +201,10 @@ const RenderData = ({ data, filter, pagination = true }) => {
                       </span>
                     ))}
                   {Array.isArray(
-                    item.etiquetas.length > 0 && item.causas.length > 0
+                    item?.etiquetas.length > 0 && item?.causas.length > 0
                   ) && " | "}
-                  {Array.isArray(item.causas) &&
-                    item.causas.flatMap((causa, index) => (
+                  {Array.isArray(item?.causas) &&
+                    item?.causas.flatMap((causa, index) => (
                       <span key={causa.id}>
                         {index === 0 && "|"} {causa.nombre}
                         {index !== item.causas.length - 1 ? "," : ""}
@@ -183,7 +218,7 @@ const RenderData = ({ data, filter, pagination = true }) => {
                   >
                     <button
                       onClick={() => {
-                        openModal(item.resumen);
+                        openModal(item?.resumen);
                       }}
                     >
                       <TbListDetails />
@@ -194,11 +229,41 @@ const RenderData = ({ data, filter, pagination = true }) => {
                     className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
                   >
                     <button>
-                      <Link to={`/buscador/detalle/${item.nroExpediente}`}>
+                      <Link to={`/buscador/detalle/${item?.nroExpediente}`}>
                         <TbFileSearch />
                       </Link>
                     </button>
                   </span>
+                  {token && (
+                    <span
+                      title="Borrar fallo"
+                      className="text-[2.5rem] self-start lg:text-[2rem] text-[#2b2f40] lg:self-center cursor-pointer"
+                    >
+                      {item.deletedAt ? (
+                        <button
+                          onClick={() =>
+                            handleMDU({
+                              id: item?.nroExpediente,
+                              change: "restore",
+                            })
+                          }
+                        >
+                          <TbRestore />
+                        </button>
+                      ) : (
+                        <button
+                          onClick={() =>
+                            handleMDU({
+                              id: item?.nroExpediente,
+                              change: "delete",
+                            })
+                          }
+                        >
+                          <TbTrash />
+                        </button>
+                      )}
+                    </span>
+                  )}
                 </div>
               </div>
             ))}

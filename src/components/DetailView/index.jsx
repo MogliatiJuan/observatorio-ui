@@ -1,15 +1,17 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
-import { axiosFallos } from "../../api";
+import { axiosFallos } from "@Api";
 import { Loader } from "@Components";
+import { DataContext } from "@Context/selectsContext";
+import showError from "@Utils/swal/showError";
+import MySwal from "@Utils/swal";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
 import errorDetailView from "@Assets/errorDetailView.png";
-import MySwal from "@Utils/swal";
+import success from "@Assets/undraw_Next_tasks_re_5eyy.png";
 import Spinner from "../Loader";
-import { DataContext } from "../../context/selectsContext";
 import DetailContent from "./detailContent";
 
 dayjs.extend(customParseFormat);
@@ -45,18 +47,7 @@ const DetailView = () => {
           confirmButtonText: "Ver detalle de error",
         }).then((res) => {
           if (res.isConfirmed) {
-            MySwal.fire({
-              title: "Detalle del Error",
-              text: `${error?.response?.data.status} - ${
-                error?.response?.data?.error || error?.response?.data?.code
-              } - ${error?.response?.data?.message} ${
-                error?.response?.data?.details !== null
-                  ? `- ${error?.response?.data?.details}`
-                  : ""
-              }`,
-              showConfirmButton: true,
-              confirmButtonText: "Aceptar",
-            });
+            showError({ error });
           }
         });
       });
@@ -89,7 +80,15 @@ const DetailView = () => {
     delete values.moral;
     delete values.patrimonial;
     watch("file")?.length > 0 && formData.append("file", values?.file[0]);
-    const iterableData = { ...editableDetail, ...values };
+    const iterableData = {
+      ...editableDetail,
+      ...values,
+      resumen: editableDetail.resumen,
+      fecha: editableDetail.fecha,
+      actor: editableDetail.actor,
+      demandado: editableDetail.demandado,
+    };
+
     Object.keys(iterableData).forEach((key) => {
       if (key !== "file") {
         if (Array.isArray(iterableData[key])) {
@@ -100,7 +99,7 @@ const DetailView = () => {
           typeof iterableData[key] === "object" &&
           (iterableData[key]?.value ||
             iterableData[key]?.id ||
-            iterableData[key]?.id === 0) // para tomar el id de valor 0
+            iterableData[key]?.value === 0) // para tomar el id de valor 0
         ) {
           formData.append(
             key,
@@ -111,10 +110,26 @@ const DetailView = () => {
         }
       }
     });
-    await axiosFallos.put(`/api/fallo/${id}`, formData);
-    setReloadData(!reloadData);
-    reset();
-    setIsEditing(false);
+    await axiosFallos
+      .put(`/api/fallo/${id}`, formData)
+      .then((res) => {
+        MySwal.fire({
+          showConfirmButton: true,
+          html: `<div class="flex flex-col gap-y-2">
+          <img src=${success} alt="actualizacionFalloExitoso" />
+          <span class="text-lg font-semibold text-title">Los cambios se aplicaron correctamente</span>
+          </div>`,
+          confirmButtonText: "Continuar",
+        });
+      })
+      .catch((error) => {
+        showError({ error });
+      })
+      .finally(() => {
+        setReloadData(!reloadData);
+        reset();
+        setIsEditing(false);
+      });
   };
 
   if (isLoading) {

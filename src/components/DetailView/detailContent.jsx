@@ -11,11 +11,11 @@ import {
   XIcon,
 } from "react-share";
 import { Card, Input } from "@Components";
+import { axiosFallos } from "@Api";
+import { DataContext } from "@Context/selectsContext";
 import formatDate from "@Utils/formatearFecha";
 import corregirCodificacion from "@Utils/corregirCodificacion";
 import MySwal from "@Utils/swal";
-import { axiosFallos } from "@Api";
-import { DataContext } from "../../context/selectsContext";
 
 const DetailContent = ({
   isAdmin,
@@ -43,6 +43,8 @@ const DetailContent = ({
     control,
     reset,
     getValues,
+    setError,
+    clearErrors,
     formState: { errors },
   } = useForm();
   const history = useNavigate();
@@ -53,80 +55,101 @@ const DetailContent = ({
   const ciudadSelected = watch("ciudad");
 
   useEffect(() => {
-    handleChangeProvincia({
-      ...detail?.provincia,
-      value: detail?.provincia?.id,
-    });
-    handleChangeCiudad({
-      ...detail?.ciudad,
-      value: detail?.ciudad?.id,
-    });
-    setValue("fecha", detail?.fecha);
-    setValue("resumen", detail?.resumen);
-    setValue("actor", detail?.actor);
-    setValue(
-      "demandado",
-      detail.demandado.map((d) => ({
-        value: d.id,
-        label: corregirCodificacion(d.razon_social),
-        razon_social: corregirCodificacion(d.razon_social),
-        cuit: d.cuit,
-      }))
-    );
-    setValue(
-      "causas",
-      detail.causas.map((c) => ({
-        value: c?.id,
-        label: corregirCodificacion(c?.nombre.toUpperCase()),
-        nombre: corregirCodificacion(c?.nombre.toUpperCase()),
-      }))
-    );
-    setValue("tipoJuicio", {
-      id: detail?.tipoJuicio?.id,
-      label: detail?.tipoJuicio?.nombre,
-      nombre: detail?.tipoJuicio?.nombre,
-    });
-    setValue(
-      "rubro",
-      detail.rubro.map((r) => ({
-        value: r?.id,
-        label: r?.nombre,
-        nombre: r?.nombre,
-      }))
-    );
-    setValue(
-      "etiquetas",
-      detail.etiquetas.map((e) => ({
-        value: e?.id,
-        label: e?.nombre,
-        nombre: e?.nombre,
-      }))
-    );
-    setValue("moral", detail?.moral);
-    setValue("patrimonial", detail?.patrimonial);
-    setValue("punitivo", detail?.punitivo);
-    setValue("divisa", {
-      value: detail?.divisa?.id,
-      label: detail?.divisa?.nombre,
-    });
-    detail?.provincia?.id &&
-      setValue("provincia", {
-        value: detail?.provincia?.id,
-        label: corregirCodificacion(detail?.provincia?.nombre),
-        nombre: corregirCodificacion(detail?.provincia?.nombre),
+    if (isEditing) {
+      detail?.provincia?.id &&
+        handleChangeProvincia({
+          ...detail?.provincia,
+          value: detail?.provincia?.id,
+        });
+      detail?.ciudad?.id &&
+        handleChangeCiudad({
+          ...detail?.ciudad,
+          value: detail?.ciudad?.id,
+        });
+      detail?.fecha && setValue("fecha", detail?.fecha ?? "");
+      detail?.resumen && setValue("resumen", detail?.resumen ?? "");
+      detail?.actor && setValue("actor", detail?.actor ?? "");
+      detail?.demandadoActores.length > 0 &&
+        setValue(
+          "demandadoActores",
+          detail?.demandadoActores.map((d) => ({
+            value: d.id,
+            label: corregirCodificacion(d.razon_social),
+            razon_social: corregirCodificacion(d.razon_social),
+            cuit: d.cuit,
+          }))
+        );
+      detail?.demandadoEmpresas.length > 0 &&
+        setValue(
+          "demandadoEmpresas",
+          detail?.demandadoEmpresas.map((d) => ({
+            value: d.id,
+            label: corregirCodificacion(d.razon_social),
+            razon_social: corregirCodificacion(d.razon_social),
+            cuit: d.cuit,
+          }))
+        );
+      detail?.demandado && setValue("demandado", detail?.demandado ?? "");
+      detail?.causas.length > 0 &&
+        setValue(
+          "causas",
+          detail.causas.map((c) => ({
+            value: c?.id,
+            label: corregirCodificacion(c?.nombre.toUpperCase()),
+            nombre: corregirCodificacion(c?.nombre.toUpperCase()),
+          }))
+        );
+      detail?.tipoJuicio?.id &&
+        setValue("tipoJuicio", {
+          id: detail?.tipoJuicio?.id,
+          label: detail?.tipoJuicio?.nombre,
+          nombre: detail?.tipoJuicio?.nombre,
+        });
+      detail?.rubro.length > 0 &&
+        setValue(
+          "rubro",
+          detail.rubro.map((r) => ({
+            value: r?.id,
+            label: r?.nombre,
+            nombre: r?.nombre,
+          }))
+        );
+      detail?.etiquetas.length > 0 &&
+        setValue(
+          "etiquetas",
+          detail.etiquetas.map((e) => ({
+            value: e?.id,
+            label: e?.nombre,
+            nombre: e?.nombre,
+          }))
+        );
+      detail?.moral && setValue("moral", detail?.moral ?? "");
+      detail?.patrimonial && setValue("patrimonial", detail?.patrimonial ?? "");
+      detail?.punitivo && setValue("punitivo", detail?.punitivo ?? "");
+      setValue("divisa", {
+        value: detail?.divisa?.id,
+        label: detail?.divisa?.nombre,
       });
-    detail?.ciudad?.nombre &&
-      setValue("ciudad", {
-        value: detail?.ciudad?.id,
-        label: corregirCodificacion(detail?.ciudad?.nombre),
-        nombre: corregirCodificacion(detail?.ciudad?.nombre),
-      });
-    (detail?.juzgado?.id || detail?.juzgado?.id === 0) &&
-      setValue("juzgado", {
-        value: detail?.juzgado?.id,
-        label: corregirCodificacion(detail?.juzgado?.nombre),
-        nombre: corregirCodificacion(detail?.juzgado?.nombre),
-      });
+      detail?.provincia?.id &&
+        setValue("provincia", {
+          value: detail?.provincia?.id,
+          label: corregirCodificacion(detail?.provincia?.nombre),
+          nombre: corregirCodificacion(detail?.provincia?.nombre),
+        });
+      detail?.ciudad?.nombre &&
+        setValue("ciudad", {
+          value: detail?.ciudad?.id,
+          label: corregirCodificacion(detail?.ciudad?.nombre),
+          nombre: corregirCodificacion(detail?.ciudad?.nombre),
+        });
+      (detail?.juzgado?.id || detail?.juzgado?.id === 0) &&
+        setValue("juzgado", {
+          value: detail?.juzgado?.id,
+          label: corregirCodificacion(detail?.juzgado?.nombre),
+          nombre: corregirCodificacion(detail?.juzgado?.nombre),
+        });
+    }
+    clearErrors();
   }, [isEditing]);
 
   const openModal = (file) => {
@@ -164,8 +187,39 @@ const DetailContent = ({
 
   const handleSaveButtonClick = () => {
     const values = getValues(); // Obtener los valores del formulario
+    if (values.tipoJuicio === null) {
+      return setError(
+        "tipoJuicio",
+        { type: "focus", message: "Se debe seleccionar un tipo" },
+        { shouldFocus: true }
+      );
+    }
+    if (values.fecha == "") {
+      return setError(
+        "fecha",
+        { type: "focus", message: "Se debe colocar una fecha" },
+        { shouldFocus: true }
+      );
+    }
     handleSave(values); // Llamar a la función handleSave con los valores del formulario
-    reset();
+    reset({
+      demandadoEmpresas: [],
+      demandadoActores: [],
+      causas: [],
+      rubro: [],
+      etiquetas: [],
+      fecha: null,
+      resumen: null,
+      actor: null,
+      demandado: null,
+      tipoJuicio: null,
+      moral: null,
+      patrimonial: null,
+      punitivo: null,
+      provincia: null,
+      ciudad: null,
+      juzgado: null,
+    });
   };
 
   const handleChangeProvincia = async (selectedOption) => {
@@ -296,81 +350,191 @@ const DetailContent = ({
           {!isEditing ? (
             <span>{detail.fecha}</span>
           ) : (
-            <input
-              name="fecha"
-              type="text"
-              value={editableDetail.fecha}
-              onChange={(e) =>
-                handleChange("fecha", formatDate(e.target.value))
-              }
-              className="w-32 text-center"
-            />
+            <div className="flex flex-col w-32">
+              <input
+                name="fecha"
+                {...register("fecha")}
+                type="text"
+                value={editableDetail.fecha ?? ""}
+                placeholder={editableDetail?.fecha || "DD/MM/YYYY"}
+                onChange={(e) =>
+                  handleChange("fecha", formatDate(e.target.value))
+                }
+                className="text-center"
+              />
+              {errors["fecha"] && (
+                <p className="text-sm text-red-500">
+                  {errors["fecha"].message}
+                </p>
+              )}
+            </div>
           )}
         </div>
         <Card title="Resumen">
           {!isEditing ? (
-            <p className="pl-2">{detail.resumen}</p>
+            detail.resumen ? (
+              <p className="pl-2">{detail.resumen}</p>
+            ) : (
+              <p className="pl-2">No se proporcionó resumen</p>
+            )
           ) : (
             <input
               name="resumen"
               type="text"
-              value={editableDetail.resumen}
+              value={editableDetail.resumen ?? ""}
+              placeholder={
+                editableDetail.resumen || "Ingrese un resumen del fallo"
+              }
               onChange={(e) => handleChange("resumen", e.target.value)}
             />
           )}
         </Card>
         <Card title="Demandante/s">
-          <div className="flex flex-row items-baseline">
-            {!isEditing ? (
-              <p className="uppercase">{detail.actor}</p>
-            ) : (
-              <input
-                name="actor"
-                type="text"
-                value={editableDetail.actor}
-                onChange={(e) => handleChange("actor", e.target.value)}
+          {!isEditing ? (
+            <>
+              {detail?.demandadoActores?.length > 0 || detail?.actor ? (
+                <>
+                  {detail.demandadoActores.map((ente) => (
+                    <div
+                      key={ente.cuit}
+                      className="flex flex-row items-baseline"
+                    >
+                      <div
+                        className="w-fit flex flex-row flex-wrap gap-x-2"
+                        key={ente.cuit}
+                      >
+                        <p className="uppercase">- {ente.razon_social}</p>
+                        <p>/ CUIT: {ente.cuit}</p>
+                      </div>
+                    </div>
+                  ))}
+                  {detail?.actor && (
+                    <p className="uppercase">· {detail.actor}</p>
+                  )}
+                </>
+              ) : (
+                <p>No se seleccionaron demandados</p>
+              )}
+            </>
+          ) : (
+            <>
+              <Input
+                name="actorCheck"
+                type="checkbox"
+                label={`${
+                  Array.isArray(detail?.demandadoActores) &&
+                  detail?.demandadoActores.length > 0
+                    ? "Persona física como actor"
+                    : "Persona jurídica como actor"
+                }`}
+                register={register}
+                errors={errors}
               />
-            )}
-          </div>
+              {!watch("actorCheck") ? (
+                <Input
+                  key="demandadoActores"
+                  name="demandadoActores"
+                  label="Demandado como persona jurídica"
+                  type="select"
+                  options={empresas?.map((empresa) => ({
+                    ...empresa,
+                    value: empresa.id,
+                    label: corregirCodificacion(empresa.razon_social),
+                  }))}
+                  placeholder="Seleccione un demandado"
+                  register={register}
+                  errors={errors}
+                  validation="Es obligatorio cargar un demandado"
+                  setValue={setValue}
+                  control={control}
+                  noOptionsMessage="No hay un demandado coincidente"
+                  isMulti={true}
+                  onchange={(e) => handleChange("demandadoActores", e)}
+                />
+              ) : (
+                <input
+                  name="actor"
+                  type="text"
+                  value={editableDetail.actor ?? ""}
+                  placeholder={editableDetail.actor || "Ingrese actor"}
+                  onChange={(e) => handleChange("actor", e.target.value)}
+                />
+              )}
+            </>
+          )}
         </Card>
         <Card title="Demandado/s">
           {!isEditing ? (
-            detail.demandado.length > 0 ? (
-              detail.demandado.map((ente) => (
-                <div key={ente.cuit} className="flex flex-row items-baseline">
-                  <div
-                    className="w-fit flex flex-row flex-wrap gap-x-2"
-                    key={ente.cuit}
-                  >
-                    <p className="uppercase">- {ente.razon_social}</p>
-                    <p>/ CUIT: {ente.cuit}</p>
-                  </div>
-                </div>
-              ))
-            ) : (
-              <p>No se seleccionaron demandados</p>
-            )
+            <>
+              {detail?.demandadoEmpresas?.length > 0 || detail?.demandado ? (
+                <>
+                  {detail.demandadoEmpresas.map((ente) => (
+                    <div
+                      key={ente.cuit}
+                      className="flex flex-row items-baseline"
+                    >
+                      <div
+                        className="w-fit flex flex-row flex-wrap gap-x-2"
+                        key={ente.cuit}
+                      >
+                        <p className="uppercase">- {ente.razon_social}</p>
+                        <p>/ CUIT: {ente.cuit}</p>
+                      </div>
+                    </div>
+                  ))}
+                  {detail?.demandado && (
+                    <p className="uppercase">· {detail.demandado}</p>
+                  )}
+                </>
+              ) : (
+                <p>No se seleccionaron demandados</p>
+              )}
+            </>
           ) : (
-            <Input
-              key="demandado"
-              name="demandado"
-              label="Demandado"
-              type="select"
-              options={empresas?.map((empresa) => ({
-                ...empresa,
-                value: empresa.id,
-                label: corregirCodificacion(empresa.razon_social),
-              }))}
-              placeholder="Seleccione un demandado"
-              register={register}
-              errors={errors}
-              validation="Es obligatorio cargar un demandado"
-              setValue={setValue}
-              control={control}
-              noOptionsMessage="No hay un demandado coincidente"
-              isMulti={true}
-              onchange={(e) => handleChange("demandado", e)}
-            />
+            <>
+              <Input
+                name="demandadoCheck"
+                type="checkbox"
+                label={`${
+                  Array.isArray(detail?.demandadoEmpresas) &&
+                  detail?.demandadoEmpresas.length > 0
+                    ? "Persona física como demandado"
+                    : "Persona jurídica como demandado"
+                }`}
+                register={register}
+                errors={errors}
+              />
+              {!watch("demandadoCheck") ? (
+                <Input
+                  key="demandadoEmpresas"
+                  name="demandadoEmpresas"
+                  label="Demandado como persona jurídica"
+                  type="select"
+                  options={empresas?.map((empresa) => ({
+                    ...empresa,
+                    value: empresa.id,
+                    label: corregirCodificacion(empresa.razon_social),
+                  }))}
+                  placeholder="Seleccione un demandado"
+                  register={register}
+                  errors={errors}
+                  validation="Es obligatorio cargar un demandado"
+                  setValue={setValue}
+                  control={control}
+                  noOptionsMessage="No hay un demandado coincidente"
+                  isMulti={true}
+                  onchange={(e) => handleChange("demandadoEmpresas", e)}
+                />
+              ) : (
+                <input
+                  name="demandado"
+                  type="text"
+                  value={editableDetail.demandado ?? ""}
+                  placeholder={editableDetail.demandado || "Ingrese demandado"}
+                  onChange={(e) => handleChange("demandado", e.target.value)}
+                />
+              )}
+            </>
           )}
         </Card>
         <div className="flex flex-col gap-y-2 sm:flex-row sm:gap-x-2">
@@ -556,7 +720,7 @@ const DetailContent = ({
                   />
                 </div>
               )}
-              {detail.punitivo &&
+              {detail?.punitivo &&
                 (!isEditing ? (
                   <p className="pl-2 gap-x-1 flex items-center">
                     <MdScatterPlot />
@@ -568,13 +732,16 @@ const DetailContent = ({
                     <input
                       name="punitivo"
                       type="number"
-                      value={editableDetail.punitivo}
+                      value={editableDetail.punitivo ?? ""}
+                      placeholder={
+                        editableDetail.punitivo || "Ingrese valor punitivo"
+                      }
                       onChange={(e) => handleChange("punitivo", e.target.value)}
                       className="w-32 ml-2"
                     />
                   </span>
                 ))}
-              {detail.moral &&
+              {detail?.moral &&
                 (!isEditing ? (
                   <p className="pl-2 gap-x-1 flex items-center">
                     <MdScatterPlot />
@@ -586,13 +753,16 @@ const DetailContent = ({
                     <input
                       name="moral"
                       type="number"
-                      value={editableDetail.moral}
+                      value={editableDetail.moral ?? ""}
+                      placeholder={
+                        editableDetail.moral || "Ingrese valor moral"
+                      }
                       onChange={(e) => handleChange("moral", e.target.value)}
                       className="w-32 ml-2"
                     />
                   </span>
                 ))}
-              {detail.patrimonial &&
+              {detail?.patrimonial &&
                 (!isEditing ? (
                   <p className="pl-2 gap-x-1 flex items-center">
                     <MdScatterPlot />
@@ -604,7 +774,11 @@ const DetailContent = ({
                     <input
                       name="patrimonial"
                       type="number"
-                      value={editableDetail.patrimonial}
+                      value={editableDetail.patrimonial ?? ""}
+                      placeholder={
+                        editableDetail.patrimonial ||
+                        "Ingrese valor patrimonial"
+                      }
                       onChange={(e) =>
                         handleChange("patrimonial", e.target.value)
                       }
