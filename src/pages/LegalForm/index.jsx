@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { axiosFallos } from "@Api/index.js";
 import { Input } from "@Components";
@@ -6,13 +6,19 @@ import corregirCodificacion from "@Utils/corregirCodificacion";
 import MySwal from "@Utils/swal";
 import formUploaded from "@Assets/formUploaded.png";
 import formErrorUpload from "@Assets/formErrorUpload.png";
-import { DataContext } from "../../context/selectsContext";
 
 function UploadForm() {
   const [loading, setLoading] = useState(true);
 
+  const [empresasState, setEmpresasState] = useState([]);
+  const [tiposJuicioState, setTiposJuicioState] = useState([]);
+  const [causasState, setCausasState] = useState([]);
+  const [rubrosState, setRubrosState] = useState([]);
+  const [provinciasState, setProvinciasState] = useState([]);
+  const [etiquetasState, setEtiquetasState] = useState([]);
   const [ciudadesState, setCiudadesState] = useState([]);
   const [tribunalesState, setTribunalesState] = useState([]);
+  const [divisasState, setDivisasState] = useState([]);
 
   const {
     register,
@@ -24,22 +30,20 @@ function UploadForm() {
     formState: { errors },
   } = useForm();
 
-  const {
-    empresas: empresasState,
-    tiposJuicio: tiposJuicioState,
-    causas: causasState,
-    rubros: rubrosState,
-    provincias: provinciasState,
-    etiquetas: etiquetasState,
-    divisas,
-    isLoading,
-  } = useContext(DataContext);
-
   const provinciaSelected = watch("tribunalProvincia");
   const ciudadSelected = watch("tribunalCiudad");
   const empresasSelected = watch("demandado") || [];
   const etiquetaSelected = watch("etiquetas") || [];
   const causasSelected = watch("causas") || [];
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    if (!watch("firmActor")) setValue("actor", null);
+    if (watch("personDemandado")) setValue("demandado", null);
+  }, [watch("firmActor"), watch("personDemandado")]);
 
   const Toast = MySwal.mixin({
     toast: true,
@@ -48,6 +52,39 @@ function UploadForm() {
     timer: 3000,
     timerProgressBar: true,
   });
+
+  const fetchData = async () => {
+    try {
+      const [
+        empresasResponse,
+        tiposJuicioResponse,
+        causasResponse,
+        rubrosResponse,
+        provinciasResponse,
+        etiquetasResponse,
+        divisasResponse,
+      ] = await Promise.all([
+        axiosFallos.get("/api/datos/empresas"),
+        axiosFallos.get("/api/datos/tipojuicio"),
+        axiosFallos.get("/api/datos/reclamos"),
+        axiosFallos.get("/api/datos/rubros"),
+        axiosFallos.get("/api/datos/provincias"),
+        axiosFallos.get("/api/datos/etiquetas"),
+        axiosFallos.get("/api/datos/divisas"),
+      ]);
+      setEmpresasState(empresasResponse.data);
+      setTiposJuicioState(tiposJuicioResponse.data);
+      setCausasState(causasResponse.data);
+      setRubrosState(rubrosResponse.data);
+      setProvinciasState(provinciasResponse.data);
+      setEtiquetasState(etiquetasResponse.data);
+      setDivisasState(divisasResponse.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const addNewCompany = async (newCompany) => {
     try {
@@ -108,6 +145,7 @@ function UploadForm() {
       });
     }
   };
+
   const addNewEtiquetas = async (newEtiqueta) => {
     try {
       const response = await axiosFallos.post(
@@ -148,6 +186,7 @@ function UploadForm() {
       console.error(error);
     }
   };
+
   const handleChangeCiudad = async (selectedOption) => {
     try {
       setValue("idTribunal", null);
@@ -190,7 +229,6 @@ function UploadForm() {
       });
       reset();
     } catch (error) {
-      console.error(error);
       MySwal.fire({
         html: `<div class="flex flex-col gap-y-2">
         <img src=${formErrorUpload} alt="imagen de subida fallida" />
@@ -203,165 +241,270 @@ function UploadForm() {
     }
   };
 
-  const fields = [
-    {
-      name: "actor",
-      label: "Actor",
-      type: "text",
-      placeholder: "Actor",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un actor",
-    },
-    {
-      name: "demandado",
-      label: "Demandado",
-      type: "select",
-      options: empresasState?.map((empresa) => ({
-        ...empresa,
-        value: empresa.id,
-        label: corregirCodificacion(empresa.razon_social),
-      })),
-      placeholder: "Seleccione un demandado",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un demandado",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay un demandado coincidente",
-      isMulti: true,
-      createTable: true,
-      handleClickCreateTable: () => {
-        MySwal.fire({
-          title: "Agregar nueva empresa",
-          html: (
-            <div className="flex flex-col gap-y-2 items-start">
-              <div className="w-full flex justify-between items-center">
-                <label>Razón Social:</label>
-                <input className="rounded-md" type="text" id="razon_social" />
-              </div>
-              <div className="w-full flex justify-between items-center">
-                <label>CUIT:</label>
-                <input className="rounded-md" type="number" id="cuit" />
-              </div>
-            </div>
-          ),
-          confirmButtonText: "Agregar",
-          showCancelButton: true,
-          cancelButtonText: "Cancelar",
-          preConfirm: () => {
-            const razon_social = document.getElementById("razon_social").value;
-            const cuit = document.getElementById("cuit").value;
-            if (!razon_social || !cuit) {
-              MySwal.showValidationMessage(
-                `Debe completar todos los campos para agregar una empresa`
-              );
-            }
-          },
-        }).then((result) => {
-          if (result.isConfirmed) {
-            addNewCompany({
-              razon_social: document.getElementById("razon_social").value,
-              cuit: document.getElementById("cuit").value,
-            });
-          }
-        });
+  const fields = useMemo(
+    () => [
+      {
+        name: "firmActor",
+        label: "Persona jurídica como actor",
+        type: "checkbox",
+        register: register,
+        placeholder: "Seleccione tipo de actor",
+        errors: errors,
       },
-    },
-    {
-      name: "tipoJuicio",
-      label: "Tipo de juicio",
-      type: "select",
-      options: tiposJuicioState?.map((tipoJuicio) => ({
-        ...tipoJuicio,
-        value: tipoJuicio.id,
-        label: corregirCodificacion(tipoJuicio.description.toUpperCase()),
-      })),
-      placeholder: "Tipo de juicio",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un tipo de juicio",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay un tipo de juicio coincidente",
-    },
-    {
-      name: "causas",
-      label: "Causas del reclamo",
-      type: "select",
-      options: causasState?.map((causa) => ({
-        ...causa,
-        value: causa.id,
-        label: corregirCodificacion(causa.description.toUpperCase()),
-      })),
-      placeholder: "Causas del reclamo",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar una causa del reclamo",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay una causa del reclamo coincidente",
-      isMulti: true,
-      createTable: true,
-      handleClickCreateTable: () => {
-        MySwal.fire({
-          title: "Agregar nueva causa",
-          html: (
-            <div className="flex flex-col gap-y-2 items-start">
-              <div className="w-full flex justify-between items-center">
-                <label>Causa de reclamo:</label>
-                <input className="rounded-md" type="text" id="causa_reclamo" />
-              </div>
-            </div>
-          ),
-          confirmButtonText: "Agregar",
-          showCancelButton: true,
-          cancelButtonText: "Cancelar",
-          preConfirm: () => {
-            const causa = document.getElementById("causa_reclamo").value;
-            if (!causa) {
-              MySwal.showValidationMessage(
-                `Debe completar el campo para agregar una causa de reclamo`
-              );
-            }
-          },
-        }).then((result) => {
-          if (result.isConfirmed) {
-            addNewCausaReclamo({
-              description: document.getElementById("causa_reclamo").value,
-            });
+      !watch("firmActor")
+        ? {
+            name: "actor",
+            label: "Persona como actor",
+            type: "text",
+            placeholder: "Persona como actor",
+            register: register,
+            errors: errors,
+            validation: "Es obligatorio cargar un actor",
           }
-        });
+        : {
+            name: "actor",
+            label: "Empresa como actor",
+            type: "select",
+            placeholder: "Seleccione un actor",
+            register: register,
+            options: empresasState?.map((empresa) => ({
+              ...empresa,
+              value: empresa.id,
+              label: corregirCodificacion(empresa.razon_social),
+            })),
+            setValue: setValue,
+            errors: errors,
+            control: control,
+            noOptionsMessage: "No hay un demandado coincidente",
+            isMulti: true,
+            validation: "Es obligatorio cargar un actor",
+            createTable: true,
+            handleClickCreateTable: () => {
+              MySwal.fire({
+                title: "Agregar nueva empresa",
+                html: (
+                  <div className="flex flex-col gap-y-2 items-start">
+                    <div className="w-full flex justify-between items-center">
+                      <label>Razón Social:</label>
+                      <input
+                        className="rounded-md"
+                        type="text"
+                        id="razon_social"
+                      />
+                    </div>
+                    <div className="w-full flex justify-between items-center">
+                      <label>CUIT:</label>
+                      <input className="rounded-md" type="number" id="cuit" />
+                    </div>
+                  </div>
+                ),
+                confirmButtonText: "Agregar",
+                showCancelButton: true,
+                cancelButtonText: "Cancelar",
+                preConfirm: () => {
+                  const razon_social =
+                    document.getElementById("razon_social").value;
+                  const cuit = document.getElementById("cuit").value;
+                  if (!razon_social || !cuit) {
+                    MySwal.showValidationMessage(
+                      `Debe completar todos los campos para agregar una empresa`
+                    );
+                  }
+                },
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  addNewCompany({
+                    razon_social: document.getElementById("razon_social").value,
+                    cuit: document.getElementById("cuit").value,
+                  });
+                }
+              });
+            },
+          },
+      {
+        name: "personDemandado",
+        label: "Persona física como actor",
+        type: "checkbox",
+        register: register,
+        placeholder: "Seleccione tipo de actor",
+        errors: errors,
       },
-    },
-    {
-      name: "rubro",
-      label: "Rubro",
-      type: "select",
-      options: rubrosState?.map((rubro) => ({
-        ...rubro,
-        value: rubro.id,
-        label: corregirCodificacion(rubro.rubro.toUpperCase()),
-      })),
-      placeholder: "Rubro",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar un rubro",
-      setValue: setValue,
-      control: control,
-      noOptionsMessage: "No hay un rubro coincidente",
-      isMulti: true,
-    },
-    {
-      name: "fecha",
-      label: "Fecha",
-      type: "date",
-      placeholder: "Fecha",
-      register: register,
-      errors: errors,
-      validation: "Es obligatorio cargar una fecha",
-    },
-  ];
+      !watch("personDemandado")
+        ? {
+            name: "demandado",
+            label: "Empresa demandada",
+            type: "select",
+            options: empresasState?.map((empresa) => ({
+              ...empresa,
+              value: empresa.id,
+              label: corregirCodificacion(empresa.razon_social),
+            })),
+            placeholder: "Seleccione un demandado",
+            register: register,
+            errors: errors,
+            validation: "Es obligatorio cargar un demandado",
+            setValue: setValue,
+            control: control,
+            noOptionsMessage: "No hay un demandado coincidente",
+            isMulti: true,
+            createTable: true,
+            handleClickCreateTable: () => {
+              MySwal.fire({
+                title: "Agregar nueva empresa",
+                html: (
+                  <div className="flex flex-col gap-y-2 items-start">
+                    <div className="w-full flex justify-between items-center">
+                      <label>Razón Social:</label>
+                      <input
+                        className="rounded-md"
+                        type="text"
+                        id="razon_social"
+                      />
+                    </div>
+                    <div className="w-full flex justify-between items-center">
+                      <label>CUIT:</label>
+                      <input className="rounded-md" type="number" id="cuit" />
+                    </div>
+                  </div>
+                ),
+                confirmButtonText: "Agregar",
+                showCancelButton: true,
+                cancelButtonText: "Cancelar",
+                preConfirm: () => {
+                  const razon_social =
+                    document.getElementById("razon_social").value;
+                  const cuit = document.getElementById("cuit").value;
+                  if (!razon_social || !cuit) {
+                    MySwal.showValidationMessage(
+                      `Debe completar todos los campos para agregar una empresa`
+                    );
+                  }
+                },
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  addNewCompany({
+                    razon_social: document.getElementById("razon_social").value,
+                    cuit: document.getElementById("cuit").value,
+                  });
+                }
+              });
+            },
+          }
+        : {
+            name: "demandado",
+            label: "Persona demandada",
+            type: "text",
+            placeholder: "Persona demandada",
+            register: register,
+            errors: errors,
+            validation: "Es obligatorio cargar un demandado",
+          },
+      {
+        name: "tipoJuicio",
+        label: "Tipo de juicio",
+        type: "select",
+        options: tiposJuicioState?.map((tipoJuicio) => ({
+          ...tipoJuicio,
+          value: tipoJuicio.id,
+          label: corregirCodificacion(tipoJuicio.description.toUpperCase()),
+        })),
+        placeholder: "Tipo de juicio",
+        register: register,
+        errors: errors,
+        validation: "Es obligatorio cargar un tipo de juicio",
+        setValue: setValue,
+        control: control,
+        noOptionsMessage: "No hay un tipo de juicio coincidente",
+      },
+      {
+        name: "causas",
+        label: "Causas del reclamo",
+        type: "select",
+        options: causasState?.map((causa) => ({
+          ...causa,
+          value: causa.id,
+          label: corregirCodificacion(causa.description.toUpperCase()),
+        })),
+        placeholder: "Causas del reclamo",
+        register: register,
+        errors: errors,
+        validation: "Es obligatorio cargar una causa del reclamo",
+        setValue: setValue,
+        control: control,
+        noOptionsMessage: "No hay una causa del reclamo coincidente",
+        isMulti: true,
+        createTable: true,
+        handleClickCreateTable: () => {
+          MySwal.fire({
+            title: "Agregar nueva causa",
+            html: (
+              <div className="flex flex-col gap-y-2 items-start">
+                <div className="w-full flex justify-between items-center">
+                  <label>Causa de reclamo:</label>
+                  <input
+                    className="rounded-md"
+                    type="text"
+                    id="causa_reclamo"
+                  />
+                </div>
+              </div>
+            ),
+            confirmButtonText: "Agregar",
+            showCancelButton: true,
+            cancelButtonText: "Cancelar",
+            preConfirm: () => {
+              const causa = document.getElementById("causa_reclamo").value;
+              if (!causa) {
+                MySwal.showValidationMessage(
+                  `Debe completar el campo para agregar una causa de reclamo`
+                );
+              }
+            },
+          }).then((result) => {
+            if (result.isConfirmed) {
+              addNewCausaReclamo({
+                description: document.getElementById("causa_reclamo").value,
+              });
+            }
+          });
+        },
+      },
+      {
+        name: "rubro",
+        label: "Rubro",
+        type: "select",
+        options: rubrosState?.map((rubro) => ({
+          ...rubro,
+          value: rubro.id,
+          label: corregirCodificacion(rubro.rubro.toUpperCase()),
+        })),
+        placeholder: "Rubro",
+        register: register,
+        errors: errors,
+        validation: "Es obligatorio cargar un rubro",
+        setValue: setValue,
+        control: control,
+        noOptionsMessage: "No hay un rubro coincidente",
+        isMulti: true,
+      },
+      {
+        name: "fecha",
+        label: "Fecha",
+        type: "date",
+        placeholder: "Fecha",
+        register: register,
+        errors: errors,
+        validation: "Es obligatorio cargar una fecha",
+      },
+    ],
+    [
+      empresasState,
+      rubrosState,
+      causasState,
+      watch("firmActor"),
+      watch("personDemandado"),
+    ]
+  );
 
   const courtFields = [
     {
@@ -448,7 +591,7 @@ function UploadForm() {
       name: "divisa",
       label: "Seleccione la divisa a utilizar",
       type: "select",
-      options: divisas,
+      options: divisasState,
       placeholder: "Divisa",
       register: register,
       setValue: setValue,
@@ -457,7 +600,7 @@ function UploadForm() {
     },
   ];
 
-  if (!isLoading && !loading) {
+  if (!loading) {
     return (
       <div className="p-4 h-full w-full bg-gray-100">
         <form
