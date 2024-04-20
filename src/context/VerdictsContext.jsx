@@ -4,13 +4,13 @@ const Context = React.createContext({});
 
 export function VerdictsContextProvider({ children }) {
   const [verdict, setVerdict] = useState(null);
+
   const [token, setToken] = useState(localStorage.getItem("token"));
 
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("admin");
     setToken(null);
-    window.location.reload();
   };
 
   const contextValue = useMemo(
