@@ -5,9 +5,17 @@ const Context = React.createContext({});
 export function VerdictsContextProvider({ children }) {
   const [verdict, setVerdict] = useState(null);
 
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("admin");
+    setToken(null);
+  };
+
   const contextValue = useMemo(
-    () => ({ verdict, setVerdict }),
-    [verdict, setVerdict]
+    () => ({ verdict, setVerdict, token, setToken, logout }),
+    [verdict, setVerdict, token, setToken]
   );
 
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;

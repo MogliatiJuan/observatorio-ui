@@ -57,7 +57,7 @@ const Footer = () => {
             <hr className="w-8 pb-3 border-t-2 border-blue-500 lg:pb-6"></hr>
             <div className="leading-loose">
               {Contact.map((cont) => (
-                <div key={cont.id} className="flex items-center gap-x-2">
+                <div key={cont.name} className="flex items-center gap-x-2">
                   {cont.type === "tel" ? (
                     <>
                       <span className="text-white text-xl">{cont.icon}</span>
@@ -83,7 +83,12 @@ const Footer = () => {
             </div>
             <div className="mt-3 flex flex-row gap-x-3">
               {RRSS.map((i) => (
-                <a href={i.url} target="_blank" className="text-white text-4xl">
+                <a
+                  href={i.url}
+                  key={i.url}
+                  target="_blank"
+                  className="text-white text-4xl"
+                >
                   {i.icon}
                 </a>
               ))}

@@ -105,6 +105,27 @@ const Input = ({
         )}
       </div>
     );
+  } else if (type === "checkbox") {
+    return (
+      <div
+        className={`${
+          className === "browser"
+            ? browserStyle
+            : "flex flex-row gap-x-3 text-left"
+        } !flex-row gap-x-3 items-center mt-3`}
+      >
+        <input
+          type={type}
+          {...register(name, { required: validation })}
+          className={`rounded-md px-3 py-3 focus:border-1 focus:border-[#2563eb] focus:ring-1 focus:ring-[#2563eb] bg-transparent`}
+          placeholder={placeholder || label}
+        />
+        {label && <label htmlFor={name}>{label}</label>}
+        {errors[name] && (
+          <p className="text-sm text-red-500">{errors[name].message}</p>
+        )}
+      </div>
+    );
   } else {
     return (
       <div
