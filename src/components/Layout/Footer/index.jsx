@@ -11,11 +11,10 @@ import logo from "@Assets/logo.png";
 
 const Footer = () => {
   const Navigation = [
-    { name: "Página Principal", path: "/principal", id: 1 },
+    { name: "Página Principal", path: "/", id: 1 },
     { name: "Subir Fallo", path: "/cargafallo", id: 2 },
-    { name: "Fallos", path: "/fallos", id: 3 },
     { name: "Buscador", path: "/buscador", id: 4 },
-    { name: "Ingresar", path: "/logIn", id: 5 },
+    { name: "Iniciar Sesión", path: "/inicio-sesion", id: 5 },
   ];
 
   const Contact = [

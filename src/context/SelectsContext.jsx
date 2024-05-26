@@ -39,7 +39,7 @@ export const DataProvider = ({ children }) => {
         axiosFallos.get("/api/datos/divisas"),
       ]);
 
-      // Aquí actualizamos el estado `data` directamente con `setData`
+      // Actualizo el estado `data` directamente con `setData`
       setData({
         empresas: empresasResponse.data,
         tiposJuicio: tiposJuicioResponse.data,
@@ -48,11 +48,11 @@ export const DataProvider = ({ children }) => {
         provincias: provinciasResponse.data,
         etiquetas: etiquetasResponse.data,
         divisas: divisasResponse.data,
-        isLoading: false, // Actualizamos el estado de carga a `false`
+        isLoading: false, // Actualizo el estado de carga a `false`
       });
     } catch (error) {
       console.error("Error fetching data:", error);
-      setData((prevState) => ({ ...prevState, isLoading: false })); // Si hay un error, igual dejamos de cargar
+      setData((prevState) => ({ ...prevState, isLoading: false })); // Si hay un error, igual dejo de cargar
     }
   };
 
