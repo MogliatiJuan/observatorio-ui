@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { axiosFallos } from "@Api";
+import { Button, RenderData } from "@Components";
 import bgHome from "@Assets/backgroundObs.jpg";
 import headerBanner from "@Assets/mainPicture.png";
-import Button from "@Components/Button";
-import RenderData from "@Components/RenderData";
 
 const Home = () => {
   const [lastVerdicts, setLastVerdicts] = useState([]);
@@ -25,7 +24,8 @@ const Home = () => {
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
         }}
-        className="flex flex-col items-end justify-end">
+        className="flex flex-col items-end justify-end"
+      >
         <div className="bg-navbar p-4 mb-10" style={{ width: "80%" }}>
           <span className="text-white text-4xl font-bold">
             OBSERVATORIO DE FALLOS DE CONSUMO

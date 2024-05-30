@@ -1,19 +1,25 @@
-import React, { useState } from "react";
-import { MdMenu, MdMenuOpen } from "react-icons/md";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { MdMenu, MdMenuOpen, MdLogout } from "react-icons/md";
+import { Link, useNavigate } from "react-router-dom";
 import icon from "@Assets/icon.png";
+import Context from "../../../context/VerdictsContext";
 
 const NavBar = () => {
+  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const { token, logout } = useContext(Context); // Accede al token y la función logout desde el contexto
+
   const Links = [
     { name: "Página Principal", path: "/principal", id: 1 },
     { name: "Subir Fallo", path: "/cargafallo", id: 2 },
-    { name: "Buscador", path: "/buscador", id: 4 },
+    { name: "Buscador", path: "/buscador", id: 3 },
   ];
-  const [open, setOpen] = useState(false);
 
   const closeMenu = () => {
     setOpen(false);
   };
+
   return (
     <header className="shadow-md w-full bg-navbar">
       <div className="flex items-center justify-between py-4 md:px-10 px-7 h-20">
@@ -42,13 +48,33 @@ const NavBar = () => {
           {Links.map((link) => (
             <li
               key={link.id}
-              className="md:ml-8 text-xl md:my-0 my-7 hover:border-b-2"
+              className="md:ml-8 text-xl my-7 md:my-0 hover:border-b-2"
             >
               <Link to={link.path} onClick={closeMenu}>
                 {link.name}
               </Link>
             </li>
           ))}
+          <li
+            key="sign"
+            className="text-xl md:ml-8 my-7 md:my-0 hover:border-b-2"
+          >
+            {token ? (
+              <Link
+                onClick={async () => {
+                  await logout();
+                  navigate("/");
+                }}
+                className="flex items-center gap-x-2"
+              >
+                Cerrar sesión <MdLogout />
+              </Link>
+            ) : (
+              <Link to="/inicio-sesion" onClick={closeMenu}>
+                Iniciar sesión
+              </Link>
+            )}
+          </li>
         </ul>
       </div>
     </header>

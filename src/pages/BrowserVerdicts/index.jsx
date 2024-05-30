@@ -1,17 +1,16 @@
-import { useContext, useEffect, useMemo, useRef, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiOutlineSearch } from "react-icons/ai";
 import { VscFilterFilled } from "react-icons/vsc";
-import Input from "@Components/Input";
+import { Input, Loader, RenderData } from "@Components";
+import { axiosFallos } from "@Api";
+import VerdictsContext from "@Context/VerdictsContext";
 import corregirCodificacion from "@Utils/corregirCodificacion";
+import MySwal from "@Utils/swal";
+import showError from "@Utils/swal/showError";
 import reload from "@Assets/reload.png";
 import fallo from "@Assets/fallo.png";
 import noData from "@Assets/noData.png";
-import MySwal from "@Utils/swal";
-import VerdictsContext from "../../context/VerdictsContext";
-import { axiosFallos } from "../../api";
-import { RenderData } from "../../components";
-import Spinner from "../../components/Loader";
 
 const BrowserVerdicts = () => {
   const {
@@ -24,7 +23,7 @@ const BrowserVerdicts = () => {
     reset,
   } = useForm();
 
-  const { verdict, setVerdict } = useContext(VerdictsContext);
+  const { verdict, setVerdict, token } = useContext(VerdictsContext);
 
   const [factories, setFactories] = useState([]);
   const [rubros, setRubros] = useState([]);
@@ -65,7 +64,6 @@ const BrowserVerdicts = () => {
         setProvinces(provincesResponse.data);
         setTags(tagsResponse.data);
       } catch (error) {
-        console.error(error);
         MySwal.fire({
           showCancelButton: true,
           showConfirmButton: true,
@@ -77,18 +75,7 @@ const BrowserVerdicts = () => {
           confirmButtonText: "Ver detalle de error",
         }).then((res) => {
           if (res.isConfirmed) {
-            MySwal.fire({
-              title: "Detalle del Error",
-              text: `${error?.response?.data.status} - ${
-                error?.response?.data?.error || error?.response?.data?.code
-              } - ${error?.response?.data?.message} ${
-                error?.response?.data?.details !== null
-                  ? `- ${error?.response?.data?.details}`
-                  : ""
-              }`,
-              showConfirmButton: true,
-              confirmButtonText: "Aceptar",
-            });
+            showError({ error });
           }
         });
       } finally {
@@ -135,18 +122,7 @@ const BrowserVerdicts = () => {
         confirmButtonText: "Ver detalle de error",
       }).then((res) => {
         if (res.isConfirmed) {
-          MySwal.fire({
-            title: "Detalle del Error",
-            text: `${error?.response?.data.status} - ${
-              error?.response?.data?.error || error?.response?.data?.code
-            } - ${error?.response?.data?.message} ${
-              error?.response?.data?.details !== null
-                ? `- ${error?.response?.data?.details}`
-                : ""
-            }`,
-            showConfirmButton: true,
-            confirmButtonText: "Aceptar",
-          });
+          showError({ error });
         }
       });
       console.error(error);
@@ -179,18 +155,7 @@ const BrowserVerdicts = () => {
         confirmButtonText: "Ver detalle de error",
       }).then((res) => {
         if (res.isConfirmed) {
-          MySwal.fire({
-            title: "Detalle del Error",
-            text: `${error?.response?.data.status} - ${
-              error?.response?.data?.error || error?.response?.data?.code
-            } - ${error?.response?.data?.message} ${
-              error?.response?.data?.details !== null
-                ? `- ${error?.response?.data?.details}`
-                : ""
-            }`,
-            showConfirmButton: true,
-            confirmButtonText: "Aceptar",
-          });
+          showError({ error });
         }
       });
       console.error(error);
@@ -218,21 +183,9 @@ const BrowserVerdicts = () => {
         confirmButtonText: "Ver detalle de error",
       }).then((res) => {
         if (res.isConfirmed) {
-          MySwal.fire({
-            title: "Detalle del Error",
-            text: `${error?.response?.data.status} - ${
-              error?.response?.data?.error || error?.response?.data?.code
-            } - ${error?.response?.data?.message} ${
-              error?.response?.data?.details !== null
-                ? `- ${error?.response?.data?.details}`
-                : ""
-            }`,
-            showConfirmButton: true,
-            confirmButtonText: "Aceptar",
-          });
+          showError({ error });
         }
       });
-      console.error(error);
     }
   };
 
@@ -246,20 +199,55 @@ const BrowserVerdicts = () => {
     setValue("idTribunal", null);
     setValue("idCiudad", null);
     setValue("idProvincia", null);
+    setValue("demandadoEmpresas", null);
+    setValue("actorEmpresas", null);
     setVerdict(null);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  const searchAllVerdicts = async () => {
+    const result = await axiosFallos.get("/api/fallo/", {
+      params: { paranoid: false },
+    });
+    setVerdict(result.data);
+  };
+
   const browserFields = useMemo(
     () => [
-      { label: "Actor", name: "actor", type: "text" },
       {
-        label: "Demandado",
-        name: "demandado",
-        type: "select",
-        options: factories,
-        isMulti: true,
+        name: "firmActor",
+        label: "Persona jurídica como actor",
+        type: "checkbox",
+        register: register,
+        placeholder: "Seleccione tipo de actor",
+        errors: errors,
       },
+      !watch("firmActor")
+        ? { label: "Actor", name: "actor", type: "text" }
+        : {
+            label: "Actor",
+            name: "actorEmpresas",
+            type: "select",
+            options: factories,
+            isMulti: true,
+          },
+      {
+        name: "personDemandado",
+        label: "Persona física como demandado",
+        type: "checkbox",
+        register: register,
+        placeholder: "Seleccione tipo de actor",
+        errors: errors,
+      },
+      !watch("personDemandado")
+        ? {
+            label: "Demandado",
+            name: "demandadoEmpresas",
+            type: "select",
+            options: factories,
+            isMulti: true,
+          }
+        : { label: "Demandado", name: "demandado", type: "text" },
       {
         label: "Rubro",
         name: "rubro",
@@ -283,13 +271,21 @@ const BrowserVerdicts = () => {
         isMulti: true,
       },
     ],
-    [factories, typeTrials, tags, rubros, claims]
+    [
+      factories,
+      typeTrials,
+      tags,
+      rubros,
+      claims,
+      watch("firmActor"),
+      watch("personDemandado"),
+    ]
   );
 
   if (loadingForm)
     return (
       <div className="h-outlet flex justify-center">
-        <Spinner />
+        <Loader />
       </div>
     );
 
@@ -411,10 +407,23 @@ const BrowserVerdicts = () => {
           </button>
         </div>
       </form>
+      {token && (
+        <button
+          disabled={isSubmitting}
+          type="button"
+          className="h-12 mx-auto bg-general flex gap-x-2 justify-between items-center p-2.5 mb-3 text-white font-semibold rounded-md hover:bg-hoverGeneral"
+          onClick={searchAllVerdicts}
+        >
+          {"Buscar todos los fallos borrados"}
+          <span>
+            <AiOutlineSearch />
+          </span>
+        </button>
+      )}
       <hr className="w-5/6 mx-auto"></hr>
       {loading ? (
         <div className="h-2/5 flex justify-center">
-          <Spinner />
+          <Loader />
         </div>
       ) : verdict == null && loading == false ? (
         <>
