@@ -323,10 +323,10 @@ function UploadForm() {
           },
       {
         name: "personDemandado",
-        label: "Persona física como actor",
+        label: "Persona física como demandada",
         type: "checkbox",
         register: register,
-        placeholder: "Seleccione tipo de actor",
+        placeholder: "Seleccione tipo de demandado",
         errors: errors,
       },
       !watch("personDemandado")
@@ -579,25 +579,6 @@ function UploadForm() {
       register: register,
       errors: errors,
     },
-    {
-      name: "patrimonial",
-      label: "Patrimonial",
-      type: "number",
-      placeholder: "Monto Patrimonial",
-      register: register,
-      errors: errors,
-    },
-    {
-      name: "divisa",
-      label: "Seleccione la divisa a utilizar",
-      type: "select",
-      options: divisasState,
-      placeholder: "Divisa",
-      register: register,
-      setValue: setValue,
-      errors: errors,
-      control: control,
-    },
   ];
 
   if (!loading) {
@@ -693,6 +674,34 @@ function UploadForm() {
               control={field.control}
             />
           ))}
+          <div className="flex flex-row gap-x-3">
+            <Input
+              key={"patrimonial"}
+              name={"patrimonial"}
+              label={"Patrimonial"}
+              type={"number"}
+              setValue={setValue}
+              placeholder={"Daño Patrimonial"}
+              register={register}
+              errors={errors}
+            />
+            <Input
+              key={"divisa"}
+              name={"divisa"}
+              label={"Seleccione la divisa a utilizar"}
+              type={"select"}
+              setValue={setValue}
+              options={divisasState.map((o) => ({
+                value: o.id,
+                label: o.nombreDivisa,
+                nombre: o.codigoDivisa,
+              }))}
+              placeholder={"Divisa"}
+              register={register}
+              errors={errors}
+              control={control}
+            />
+          </div>
           <span className="text-xl font-semibold text-title mt-3">
             Resumen del caso
           </span>

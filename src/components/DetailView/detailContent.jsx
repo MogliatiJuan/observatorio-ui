@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { MdOutlineArrowBack, MdScatterPlot } from "react-icons/md";
@@ -45,7 +45,7 @@ const DetailContent = ({
     getValues,
     setError,
     clearErrors,
-    formState: { errors },
+    formState: { errors, dirtyFields },
   } = useForm();
   const history = useNavigate();
 
@@ -315,6 +315,28 @@ const DetailContent = ({
     { icon: WhatsappIcon, button: WhatsappShareButton },
   ];
 
+  const dynamicInputActor = useMemo(() => {
+    let input;
+    if (Object.values(dirtyFields).length === 0) {
+      input = editableDetail?.demandadoActores?.length > 0 ? true : false;
+      if (!input) setValue("actorCheck", true);
+    } else {
+      input = watch("actorCheck") ? false : true;
+    }
+    return input;
+  }, [watch("actorCheck"), editableDetail?.demandadoActores]);
+
+  const dynamicInputDemandado = useMemo(() => {
+    let input;
+    if (Object.values(dirtyFields).length === 0) {
+      input = editableDetail?.demandadoEmpresas?.length > 0 ? true : false;
+      if (!input) setValue("demandadoCheck", true);
+    } else {
+      input = watch("demandadoCheck") ? false : true;
+    }
+    return input;
+  }, [watch("demandadoCheck"), editableDetail?.demandadoEmpresas]);
+
   return (
     <div
       className={`${
@@ -343,7 +365,6 @@ const DetailContent = ({
           </div>
         )}
       </div>
-
       <section className="flex flex-col pb-2 gap-y-2 mx-1.5 sm:mx-0 sm:px-3 md:gap-y-3 lg:px-5 lg:shadow-lg">
         <div className="flex flex-row justify-between px-2 md:px-3 font-black text-title text-3xl">
           <h1>DETALLE DEL FALLO</h1>
@@ -413,7 +434,7 @@ const DetailContent = ({
                   )}
                 </>
               ) : (
-                <p>No se seleccionaron demandados</p>
+                <p>No se seleccionaron demandantes</p>
               )}
             </>
           ) : (
@@ -424,30 +445,30 @@ const DetailContent = ({
                 label={`${
                   Array.isArray(detail?.demandadoActores) &&
                   detail?.demandadoActores.length > 0
-                    ? "Persona física como actor"
-                    : "Persona jurídica como actor"
+                    ? "Persona jurídica como demandante"
+                    : "Persona física como demandante"
                 }`}
                 register={register}
                 errors={errors}
               />
-              {!watch("actorCheck") ? (
+              {dynamicInputActor ? (
                 <Input
                   key="demandadoActores"
                   name="demandadoActores"
-                  label="Demandado como persona jurídica"
+                  label="Demandante como persona jurídica"
                   type="select"
                   options={empresas?.map((empresa) => ({
                     ...empresa,
                     value: empresa.id,
                     label: corregirCodificacion(empresa.razon_social),
                   }))}
-                  placeholder="Seleccione un demandado"
+                  placeholder="Seleccione un demandante"
                   register={register}
                   errors={errors}
-                  validation="Es obligatorio cargar un demandado"
+                  validation="Es obligatorio cargar un demandante"
                   setValue={setValue}
                   control={control}
-                  noOptionsMessage="No hay un demandado coincidente"
+                  noOptionsMessage="No hay un demandante coincidente"
                   isMulti={true}
                   onchange={(e) => handleChange("demandadoActores", e)}
                 />
@@ -504,7 +525,7 @@ const DetailContent = ({
                 register={register}
                 errors={errors}
               />
-              {!watch("demandadoCheck") ? (
+              {dynamicInputDemandado ? (
                 <Input
                   key="demandadoEmpresas"
                   name="demandadoEmpresas"
@@ -695,36 +716,17 @@ const DetailContent = ({
         </div>
         {(detail.punitivo || detail.moral || detail.patrimonial) && (
           <>
-            <Card title={`Valores asociados en ${detail.divisa.codigo}`}>
-              {isEditing && (
-                <div className="w-full sm:w-2/4">
-                  <Input
-                    key="divisa"
-                    name="divisa"
-                    label="Seleccione la divisa a utilizar"
-                    type="select"
-                    options={divisas.map((div) => ({
-                      value: div.codigoDivisa,
-                      id: div.id,
-                      label: div.nombreDivisa,
-                    }))}
-                    placeholder="Seleccione una divisa"
-                    register={register}
-                    errors={errors}
-                    validation="Es obligatorio cargar una divisa"
-                    setValue={setValue}
-                    control={control}
-                    noOptionsMessage="No hay una divisa coincidente"
-                    isMulti={false}
-                    onchange={(e) => handleChange("divisa", e)}
-                  />
-                </div>
-              )}
+            <Card title={`Daños asociados`}>
               {detail?.punitivo &&
                 (!isEditing ? (
                   <p className="pl-2 gap-x-1 flex items-center">
                     <MdScatterPlot />
-                    Daño Punitivo: {detail.punitivo}
+                    Daño Punitivo:{" "}
+                    {parseFloat(detail.punitivo).toLocaleString("es-AR", {
+                      style: "currency",
+                      currency: "ARS",
+                    })}{" "}
+                    ARS
                   </p>
                 ) : (
                   <span>
@@ -745,7 +747,12 @@ const DetailContent = ({
                 (!isEditing ? (
                   <p className="pl-2 gap-x-1 flex items-center">
                     <MdScatterPlot />
-                    Daño Moral: {detail.moral}
+                    Daño Moral:{" "}
+                    {parseFloat(detail.moral).toLocaleString("es-AR", {
+                      style: "currency",
+                      currency: "ARS",
+                    })}{" "}
+                    ARS
                   </p>
                 ) : (
                   <span>
@@ -766,25 +773,58 @@ const DetailContent = ({
                 (!isEditing ? (
                   <p className="pl-2 gap-x-1 flex items-center">
                     <MdScatterPlot />
-                    Daño Patrimonial: {detail.patrimonial}
+                    Daño Patrimonial:{" "}
+                    {detail.divisa.codigo === "ARS"
+                      ? parseFloat(detail.patrimonial).toLocaleString("es-AR", {
+                          style: "currency",
+                          currency: "ARS",
+                        })
+                      : parseFloat(detail.patrimonial).toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })}
+                    {` ${detail.divisa.codigo}`}
                   </p>
                 ) : (
-                  <span>
-                    Daño Patrimonial
-                    <input
-                      name="patrimonial"
-                      type="number"
-                      value={editableDetail.patrimonial ?? ""}
-                      placeholder={
-                        editableDetail.patrimonial ||
-                        "Ingrese valor patrimonial"
-                      }
-                      onChange={(e) =>
-                        handleChange("patrimonial", e.target.value)
-                      }
-                      className="w-32 ml-2"
-                    />
-                  </span>
+                  <div className="flex flex-row gap-x-3 items-center">
+                    <span>
+                      Daño Patrimonial
+                      <input
+                        name="patrimonial"
+                        type="number"
+                        value={editableDetail.patrimonial ?? ""}
+                        placeholder={
+                          editableDetail.patrimonial ||
+                          "Ingrese valor patrimonial"
+                        }
+                        onChange={(e) =>
+                          handleChange("patrimonial", e.target.value)
+                        }
+                        className="w-32 ml-2"
+                      />
+                    </span>
+                    <div className="w-fit sm:w-2/4">
+                      <Input
+                        key="divisa"
+                        name="divisa"
+                        type="select"
+                        options={divisas.map((div) => ({
+                          value: div.codigoDivisa,
+                          id: div.id,
+                          label: div.nombreDivisa,
+                        }))}
+                        placeholder="Seleccione una divisa"
+                        register={register}
+                        errors={errors}
+                        validation="Es obligatorio cargar una divisa"
+                        setValue={setValue}
+                        control={control}
+                        noOptionsMessage="No hay una divisa coincidente"
+                        isMulti={false}
+                        onchange={(e) => handleChange("divisa", e)}
+                      />
+                    </div>
+                  </div>
                 ))}
             </Card>
           </>

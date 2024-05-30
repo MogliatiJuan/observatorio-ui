@@ -159,7 +159,7 @@ const RenderData = ({ data, filter, pagination = true }) => {
                         )}
                     </>
                   )}
-                  {item?.demandadoActores.length > 0 &&
+                  {item?.demandadoActores?.length > 0 &&
                     item?.demandadoActores.flatMap((dem, index) => (
                       <span key={dem.cuit}>
                         {index === 0 && "|"} {dem.razon_social}
@@ -173,7 +173,7 @@ const RenderData = ({ data, filter, pagination = true }) => {
                         {index !== item.demandado.length - 1 ? "," : ""}
                       </span>
                     ))}
-                  {item?.demandadoEmpresas.length > 0 &&
+                  {item?.demandadoEmpresas?.length > 0 &&
                     item?.demandadoEmpresas.flatMap((dem, index) => (
                       <span key={dem.cuit}>
                         {index === 0 && "|"} {dem.razon_social}
