@@ -12,7 +12,7 @@ import {
 } from "react-share";
 import { Card, Input } from "@Components";
 import { axiosFallos } from "@Api";
-import { DataContext } from "@Context/selectsContext";
+import { DataContext } from "@Context/SelectsContext";
 import formatDate from "@Utils/formatearFecha";
 import corregirCodificacion from "@Utils/corregirCodificacion";
 import MySwal from "@Utils/swal";

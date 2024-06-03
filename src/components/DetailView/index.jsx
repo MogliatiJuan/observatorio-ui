@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import { axiosFallos } from "@Api";
 import { Loader } from "@Components";
-import { DataContext } from "@Context/selectsContext";
+import { DataContext } from "@Context/SelectsContext";
 import showError from "@Utils/swal/showError";
 import MySwal from "@Utils/swal";
 import notFoundVerdicts from "@Assets/notFoundVerdicts.png";
